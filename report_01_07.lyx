@@ -154,7 +154,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/ASTERDimensions.png
+	filename figures/ASTERDimensionsBW.png
 	lyxscale 50
 	width 50page%
 
@@ -325,7 +325,7 @@ reference "fig:lumpedElementModel"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -533,7 +533,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename figures/fqConvergence.png
-	lyxscale 10
+	lyxscale 20
 	width 50page%
 
 \end_inset
@@ -679,20 +679,21 @@ reference "fig:structParamGraph"
 \end_inset
 
 .
+ It is clear that the booster is stiffer and heavier than the dart.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/beamStructDimGraph.png
 	lyxscale 20
-	width 60page%
+	width 50page%
 
 \end_inset
 
@@ -1567,7 +1568,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{12\:EI_{i}}{l^{3}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{12\:EI_{i}}{l^{3}}$
 \end_inset
 
 
@@ -1579,7 +1592,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $-\frac{12\:EI_{i}}{l^{3}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{-12\:EI_{i}}{l^{3}}$
 \end_inset
 
 
@@ -1591,7 +1616,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $-\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{-6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1603,7 +1640,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $-\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{-6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1629,7 +1678,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $-\frac{12\:EI_{i}}{l^{3}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{-12\:EI_{i}}{l^{3}}$
 \end_inset
 
 
@@ -1641,7 +1702,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{12\:EI_{i}}{l^{3}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{12\:EI_{i}}{l^{3}}$
 \end_inset
 
 
@@ -1653,7 +1726,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1665,7 +1750,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1691,7 +1788,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $-\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{-6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1703,7 +1812,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1715,7 +1836,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{4\:EI_{i}}{l}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{4\:EI_{i}}{l}$
 \end_inset
 
 
@@ -1727,7 +1860,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{2\:EI_{i}}{l}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{2\:EI_{i}}{l}$
 \end_inset
 
 
@@ -1753,7 +1898,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $-\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{-6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1765,7 +1922,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{6\:EI_{i}}{l^{2}}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{6\:EI_{i}}{l^{2}}$
 \end_inset
 
 
@@ -1777,7 +1946,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{2\:EI_{i}}{l}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{2\:EI_{i}}{l}$
 \end_inset
 
 
@@ -1789,7 +1970,19 @@ Case 4
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{4\:EI_{i}}{l}$
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\nicefrac{4\:EI_{i}}{l}$
 \end_inset
 
 
@@ -1810,11 +2003,11 @@ thus
 \begin_inset Formula $k_{11,i}$
 \end_inset
 
-,
+, 
 \begin_inset Formula $k_{12,i}$
 \end_inset
 
-,
+, 
 \begin_inset Formula $k_{21,i}$
 \end_inset
 
@@ -1958,7 +2151,7 @@ EI_{1} & 2\:EI_{1}+2\:EI_{2} & \ddots & \ddots & \vdots\\
 
 \begin_layout Standard
 It is worth noting that 
-\begin_inset Formula $K=K^{T}$
+\begin_inset Formula $K'=K'^{T}$
 \end_inset
 
  that can be explained by Maxwell-Betti reciprocal work theorem.
@@ -2079,6 +2272,11 @@ The stiffness matrix is then
 \end_inset
 
 .
+ One can verify that 
+\begin_inset Formula $K^{T}=K$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2139,15 +2337,15 @@ key "gawronski2004modal"
 \begin_layout Standard
 Considering free vibrations without damping, the system being linear, the
  displacement vector will be 
-\begin_inset Formula $z=Ze^{j\omega t}$
+\begin_inset Formula $z=\phi e^{j\omega t}$
 \end_inset
 
  with 
-\begin_inset Formula $Z$
+\begin_inset Formula $\phi$
 \end_inset
 
  constant thus 
-\begin_inset Formula $\ddot{z}=-\omega^{2}Ze^{j\omega t}$
+\begin_inset Formula $\ddot{z}=-\omega^{2}\phi e^{j\omega t}$
 \end_inset
 
  and Equation 
@@ -2163,7 +2361,7 @@ reference "eq:2ndOrderStruct"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-(-\omega^{2}M+K)\:Z=0\label{eq:freeVibe}
+(-\omega^{2}M+K)\:\phi=0\label{eq:freeVibe}
 \end{equation}
 
 \end_inset
@@ -2181,7 +2379,7 @@ reference "eq:freeVibe"
 
  (i.e.
  
-\begin_inset Formula $Z\ne0$
+\begin_inset Formula $\phi\ne0$
 \end_inset
 
 ) exist if and only if
@@ -2190,7 +2388,7 @@ reference "eq:freeVibe"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-det(-\omega^{2}M+K)=0
+\det(-\omega^{2}M+K)=0
 \]
 
 \end_inset
@@ -2217,7 +2415,7 @@ The solutions are the generalized eigen values
 \end_inset
 
  are the natural frequencies of the structure and the eigen vectors 
-\begin_inset Formula $(Z_{1},Z_{2},...,Z_{n-2})$
+\begin_inset Formula $(\phi_{1},\phi_{2},...,\phi_{n})$
 \end_inset
 
  are the natural modes also called modes shape.
@@ -2225,39 +2423,43 @@ The solutions are the generalized eigen values
 
 \begin_layout Standard
 In this particular study, the structure extremities are free hence the two
- first natural frequencies are 0 and the two first natural modes correspond
- to the rigid-body modes: z-axis translation and y-axis rotation.
+ first natural frequencies are 
+\begin_inset Formula $0\,Hz$
+\end_inset
+
+ and the two first natural modes correspond to the rigid-body modes: z-axis
+ translation and y-axis rotation.
  The natural frequencies and modes shape are renamed 
 \begin_inset Formula $(0,0,\omega_{1},\omega_{2},...,\omega_{n-2})$
 \end_inset
 
  and 
-\begin_inset Formula $(Z_{0,1},Z_{0,2},Z_{1},Z_{2},...,Z_{n-2})$
+\begin_inset Formula $(\phi_{0,1},\phi_{0,2},\phi_{1},\phi_{2},...,\phi_{n-2})$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-The modes shape are plotted in Figure 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+The modes shape of the rigid-body and the first three bending modes are
+ plotted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:modesShape"
 
 \end_inset
 
 .
- 
+ This figure shows that the dart is likely to bend more than the booster.
+ Indeed, the front part of the missile is more flexible so it will bend
+ more.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2299,36 +2501,978 @@ name "fig:modesShape"
 
 \end_layout
 
-\begin_layout Subsection
-Rigid-Body modes and Structural modes
+\begin_layout Standard
+The natural frequencies for the first modes are summarized in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:natFreq"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-The triplet (
-\begin_inset Formula $M$
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mode
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frequency
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(
+\begin_inset Formula $Hz$
 \end_inset
 
-,
-\begin_inset Formula $D$
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(
+\begin_inset Formula $rad.s^{-1}$
 \end_inset
 
-,
-\begin_inset Formula $K$
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+z translation mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+y rotation mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1^{st}$
 \end_inset
 
-) characterizes the structure.
- The structural modes and their natural frequencies can be found by solving
- 
+ bending mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+125
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2^{nd}$
+\end_inset
+
+ bending mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+67.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+425
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3^{rd}$
+\end_inset
+
+ bending mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+139.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+877
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4^{th}$
+\end_inset
+
+ bending mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+213.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1344
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5^{th}$
+\end_inset
+
+ bending mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+335.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2106
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Natural Frequencies of Modes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:natFreq"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Phi=[\phi_{0,1}\:\phi_{0,2}\:\phi_{1}\:\phi_{2}\:\dots\:\phi_{n-2}]$
+\end_inset
+
+ be the modal matrix and 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
+\Omega=\left[\begin{array}{ccccc}
+0\\
+ & 0 &  &  & \text{\huge0}\\
+ &  & \omega_{1}\\
+ &  &  & \ddots\\
+\text{\huge0} &  &  &  & \omega_{n-2}
+\end{array}\right]
+\]
+
+\end_inset
+
+be the matrix of natural frequencies.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $z_{m}$
+\end_inset
+
+ be the displacement vector of modes defined by 
+\begin_inset Formula $z=\Phi z_{m}$
+\end_inset
+
+.
+ The modal matrices of mass 
+\begin_inset Formula $M_{m}$
+\end_inset
+
+, damping 
+\begin_inset Formula $D_{m}$
+\end_inset
+
+ and stiffness 
+\begin_inset Formula $K_{m}$
+\end_inset
+
+ are obtained as follows
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{m}=\Phi^{T}M\Phi
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{m}=\Phi^{T}D\Phi
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+K_{m}=\Phi^{T}K\Phi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The triplet (
+\begin_inset Formula $M_{m}$
+\end_inset
+
+,
+\begin_inset Formula $D_{m}$
+\end_inset
+
+,
+\begin_inset Formula $K_{m}$
+\end_inset
+
+) defines the second-order structural modal model of the missile.
+ The equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2ndOrderStruct"
+
+\end_inset
+
+ becomes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+M_{m}\:\ddot{z}_{m}+D_{m}\ \dot{z}_{m}+K_{m}\:z_{m}=\Phi^{T}F\label{2ndOrderStructModal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Output equation
+\end_layout
+
+\begin_layout Standard
+Three types of sensors are investigated in this paper to measure vibrations:
+ strain gages, gyrometers and accelerometers.
+ Their measurement can be represented by the output equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y=C_{oz}z+C_{ov}\dot{z}+D_{o}F\label{eq:outputEqGeneral}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $y$
+\end_inset
+
+ is a vector containing the measurement of all sensors.
+\end_layout
+
+\begin_layout Standard
+It means that the signal measured by the sensors are a linear combination
+ of the displacement of the nodes (matrix 
+\begin_inset Formula $C_{oz}$
+\end_inset
+
+), their speed (matrix 
+\begin_inset Formula $C_{ov}$
+\end_inset
+
+) and also a feedforward term 
+\begin_inset Formula $D_{o}$
+\end_inset
+
+ on the external forces applied on the nodes.
+\end_layout
+
+\begin_layout Paragraph
+Gyrometer
+\end_layout
+
+\begin_layout Standard
+A gyrometer on node 
+\begin_inset Formula $i$
+\end_inset
+
+ measures 
+\begin_inset Formula $\dot{\theta_{i}}$
+\end_inset
+
+, thus 
+\begin_inset Formula $n$
+\end_inset
+
+ gyrometers can be placed.
+ Since 
+\begin_inset Formula $q$
+\end_inset
+
+ is often used to represent the pitch rate, this letter will be used for
+ gyrometer output matrices.
+ According to Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relationThetaZ"
+
+\end_inset
+
+, 
+\begin_inset Formula $\theta=K_{22}^{-1}K_{21}z$
+\end_inset
+
+, therefore 
+\begin_inset Formula $\dot{\theta_{i}}=K_{22}^{-1}K_{21}\dot{z}.$
+\end_inset
+
+ This yields the output matrices
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{ozq}=0_{n\times n}\qquad C_{ovq}=K_{22}^{-1}K_{21}\qquad\text{and}\qquad D_{oq}=0_{n\times n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Accelerometer
+\end_layout
+
+\begin_layout Standard
+An accelerometer on node 
+\begin_inset Formula $i$
+\end_inset
+
+ measures 
+\begin_inset Formula $\ddot{z_{i}}$
+\end_inset
+
+.
+ The letter assigned to acceleration measurement will be 
+\begin_inset Formula $a$
+\end_inset
+
+ like 
+\begin_inset Quotes eld
+\end_inset
+
+acceleration
+\begin_inset Quotes erd
+\end_inset
+
+ and the measurement will be called 
+\begin_inset Formula $a_{z}$
+\end_inset
+
+.
+ With an accelerometer on each node, there are 
+\begin_inset Formula $n$
+\end_inset
+
+ accelerometers.
+ In Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:outputEqGeneral"
+
+\end_inset
+
+, 
+\begin_inset Formula $\ddot{z}$
+\end_inset
+
+ does not appear.
+ But using the second-order structural equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2ndOrderStruct"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ddot{z}=-M^{-1}K\,z-M^{-1}D\dot{\,z}+F
+\]
+
+\end_inset
+
+thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{oza}=-M^{-1}K\qquad C_{ova}=-M^{-1}D\qquad\text{and}\qquad D_{oa}=Id_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Strain gage
+\end_layout
+
+\begin_layout Standard
+For a strain gage, a first order Taylor developpement to approximate the
+ spatial derivative of 
+\begin_inset Formula $\theta(x)$
+\end_inset
+
+ at node 
+\begin_inset Formula $i$
+\end_inset
+
+ will be conducted.
+ This approximation cannot be made on nodes 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ therefore, only 
+\begin_inset Formula $n-2$
+\end_inset
+
+ strain gages are considered.
+ The letter used for this sensor is 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ which is often assigned to strains.
+\end_layout
+
+\begin_layout Standard
+The Euler-Bernoulli beam theory assumes that each section stays perpendicular
+ to the neutral axis.
+ The strain gages are placed on the upper side of the missile therefore,
+ the local deformation at the surface is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varepsilon(x)=-\frac{\partial\theta}{\partial x}\frac{D(x)}{2}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $D(x)$
+\end_inset
+
+ is the local missile diameter.
+ It is worth noting that 
+\begin_inset Formula $\varepsilon(x)$
+\end_inset
+
+ is positive when the strain gage is stretched and negative when it is compresse
+d.
+\end_layout
+
+\begin_layout Standard
+The partial derivative of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $x$
+\end_inset
+
+ is approximated using a first order Taylor developpement at node 
+\begin_inset Formula $i\in\llbracket2,n-1\rrbracket$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\theta}{\partial x}(x_{i})\simeq\frac{\theta_{i+1}-\theta_{i-1}}{2\,l}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varepsilon_{i}=\frac{-\theta_{i+1}+\theta_{i-1}}{2\,l}\,\frac{D_{i}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\varepsilon=(\varepsilon_{i})_{i\in\llbracket2,n-1\rrbracket}$
+\end_inset
+
+, then the previous equation yields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varepsilon=T_{\varepsilon}\theta
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+T_{\varepsilon}=\frac{1}{4\,l}\left[\begin{array}{cccccccc}
+D_{2} & 0 & -D_{2} &  &  &  &  & \text{\huge0}\\
+ & D_{3} & 0 & -D_{3}\\
+ &  & D_{4} & 0 & -D_{4}\\
+ &  &  & \ddots & \ddots & \ddots\\
+ &  &  &  & D_{n-2} & 0 & -D_{n-2}\\
+\text{\huge0} &  &  &  &  & D_{n-1} & 0 & -D_{n-1}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, using Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relationThetaZ"
+
+\end_inset
+
+, the relation becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varepsilon=T_{\varepsilon}K_{22}^{-1}K_{21}z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{oz\varepsilon}=-T_{\varepsilon}K_{22}^{-1}K_{21}\qquad C_{ov\varepsilon}=0_{(n-2)\times n}\qquad\text{and}\qquad D_{o\varepsilon}=0_{(n-2)\times n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Concatenation
+\end_layout
+
+\begin_layout Standard
+The output vector corresponding to the concatenation of all measurements
+ is 
+\begin_inset Formula $y=\left[\begin{array}{c}
+\varepsilon\\
+q\\
+a_{z}
+\end{array}\right].$
+\end_inset
+
+Therefore
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{oz}=\left[\begin{array}{c}
+C_{oz\varepsilon}\\
+C_{ozq}\\
+C_{oza}
+\end{array}\right]\qquad C_{ov}=\left[\begin{array}{c}
+C_{ov\varepsilon}\\
+C_{ovq}\\
+C_{ova}
+\end{array}\right]\qquad\text{and}\qquad D_{o}=\left[\begin{array}{c}
+D_{o\varepsilon}\\
+D_{oq}\\
+D_{oa}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Modal output matrix
+\end_layout
+
+\begin_layout Standard
+The Output Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:outputEqGeneral"
+
+\end_inset
+
+ will finally be 
+\begin_inset Formula 
+\[
+y=C_{oz}\Phi z_{m}+C_{ov}\Phi\dot{z}_{m}+D_{o}F
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+defining the modal equivalent of the output matrices :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=C_{mz}z_{m}+C_{mv}\Phi\dot{z}_{m}+D_{o}F
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+C_{mz} & =C_{oz}\Phi\\
+C_{mv} & =C_{ov}\Phi
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rigid-body Modes Elimination
+\end_layout
+
+\begin_layout Standard
+The second-order structural model and its output equation in there modal
+ forms have been derived.
+ However, the two rigid-body modes - translation and rotation - must be
+ eliminated.
+ Indeed, this Chapter aims at modeling only vibrations during the flight.
+ The rigid-body dynamics modeled have not been derived using flight dynamics
+ and must be suppressed to keep only vibrations dynamics.
+\end_layout
+
+\begin_layout Standard
+The matrices 
+\begin_inset Formula $M_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $D_{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $K_{m}$
+\end_inset
+
+ are diagonal meaning that there is no interaction between modes due to
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "2ndOrderStructModal"
+
+\end_inset
+
+.
+ Thus, the equation can be simply truncated to get rid of the rigid-body
+ modes by removing the first two rows of 
+\begin_inset Formula $z_{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Phi$
+\end_inset
+
+.
+ From now on, 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Try to find a smart way to explain the rigid-body elimination
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at the output Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:outputEqGeneral"
+
+\end_inset
+
+, truncated the rigid-body modes will remove pitch rate and strain measurement
+ due to them.
+ However, great care must be taken for the acceleration measurement.
 \end_layout
 
 \begin_layout Subsection
