@@ -24,7 +24,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize default
+\paperfontsize 12
 \spacing single
 \use_hyperref false
 \papersize default
@@ -2092,6 +2092,18 @@ The damping matrix is chosen proportionnal to
 \end_inset
 
 .
+ The second-order structural equation is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+M\:\ddot{z}+D\ \dot{z}+K\:z=F\label{eq:2ndOrderStruct}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2114,7 +2126,177 @@ The triplet (
 ) is the nodal realization of the second-order structural model.
  A modal realization must be found to extract the flexible body modes from
  the structural model.
+ The transformation of the nodal model is described in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gawronski2004modal"
+
+\end_inset
+
+ and can be derived as follows.
+\end_layout
+
+\begin_layout Standard
+Considering free vibrations without damping, the system being linear, the
+ displacement vector will be 
+\begin_inset Formula $z=Ze^{j\omega t}$
+\end_inset
+
+ with 
+\begin_inset Formula $Z$
+\end_inset
+
+ constant thus 
+\begin_inset Formula $\ddot{z}=-\omega^{2}Ze^{j\omega t}$
+\end_inset
+
+ and Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2ndOrderStruct"
+
+\end_inset
+
+ becomes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+(-\omega^{2}M+K)\:Z=0\label{eq:freeVibe}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Non-trivial solutions to Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:freeVibe"
+
+\end_inset
+
+ (i.e.
  
+\begin_inset Formula $Z\ne0$
+\end_inset
+
+) exist if and only if
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+det(-\omega^{2}M+K)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The solutions are the generalized eigen values 
+\begin_inset Formula $(\omega_{1}^{2},\omega_{2}^{2},...,\omega_{n}^{2})$
+\end_inset
+
+ of the matrices 
+\begin_inset Formula $K$
+\end_inset
+
+ and 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ 
+\begin_inset Formula $(\omega_{1},\omega_{2},...,\omega_{n})$
+\end_inset
+
+ are the natural frequencies of the structure and the eigen vectors 
+\begin_inset Formula $(Z_{1},Z_{2},...,Z_{n-2})$
+\end_inset
+
+ are the natural modes also called modes shape.
+\end_layout
+
+\begin_layout Standard
+In this particular study, the structure extremities are free hence the two
+ first natural frequencies are 0 and the two first natural modes correspond
+ to the rigid-body modes: z-axis translation and y-axis rotation.
+ The natural frequencies and modes shape are renamed 
+\begin_inset Formula $(0,0,\omega_{1},\omega_{2},...,\omega_{n-2})$
+\end_inset
+
+ and 
+\begin_inset Formula $(Z_{0,1},Z_{0,2},Z_{1},Z_{2},...,Z_{n-2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The modes shape are plotted in Figure 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/modeShape.png
+	lyxscale 30
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modes Shape of ASTER-30
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:modesShape"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2134,7 +2316,7 @@ The triplet (
 \begin_inset Formula $K$
 \end_inset
 
-) characterized the structure.
+) characterizes the structure.
  The structural modes and their natural frequencies can be found by solving
  
 \end_layout
