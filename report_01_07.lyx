@@ -4,6 +4,9 @@
 \begin_header
 \textclass article
 \use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -62,8 +65,8 @@
 \paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 1
-\paperpagestyle default
+\papersides 2
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -325,7 +328,7 @@ reference "fig:lumpedElementModel"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -527,14 +530,14 @@ The method to do so will be explained later.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/fqConvergence.png
 	lyxscale 20
-	width 50page%
+	width 60page%
 
 \end_inset
 
@@ -686,14 +689,14 @@ reference "fig:structParamGraph"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/beamStructDimGraph.png
 	lyxscale 20
-	width 50page%
+	width 60page%
 
 \end_inset
 
@@ -1257,7 +1260,7 @@ Case 4
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2459,14 +2462,14 @@ reference "fig:modesShape"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/modeShape.png
 	lyxscale 30
-	width 50page%
+	width 60page%
 
 \end_inset
 
@@ -2516,7 +2519,7 @@ reference "tab:natFreq"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3030,11 +3033,11 @@ reference "eq:relationThetaZ"
 \end_inset
 
 , 
-\begin_inset Formula $\theta=K_{22}^{-1}K_{21}z$
+\begin_inset Formula $\theta=-K_{22}^{-1}K_{21}z$
 \end_inset
 
 , therefore 
-\begin_inset Formula $\dot{\theta_{i}}=K_{22}^{-1}K_{21}\dot{z}.$
+\begin_inset Formula $\dot{\theta_{i}}=-K_{22}^{-1}K_{21}\dot{z}.$
 \end_inset
 
  This yields the output matrices
@@ -3043,7 +3046,7 @@ reference "eq:relationThetaZ"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-C_{ozq}=0_{n\times n}\qquad C_{ovq}=K_{22}^{-1}K_{21}\qquad\text{and}\qquad D_{oq}=0_{n\times n}
+C_{ozq}=0_{n\times n}\qquad C_{ovq}=-K_{22}^{-1}K_{21}\qquad\text{and}\qquad D_{oq}=0_{n\times n}
 \]
 
 \end_inset
@@ -3284,7 +3287,7 @@ reference "eq:relationThetaZ"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\varepsilon=T_{\varepsilon}K_{22}^{-1}K_{21}z
+\varepsilon=-T_{\varepsilon}K_{22}^{-1}K_{21}z
 \]
 
 \end_inset
@@ -3413,8 +3416,9 @@ The second-order structural model and its output equation in there modal
  However, the two rigid-body modes - translation and rotation - must be
  eliminated.
  Indeed, this Chapter aims at modeling only vibrations during the flight.
- The rigid-body dynamics modeled have not been derived using flight dynamics
- and must be suppressed to keep only vibrations dynamics.
+ The rigid-body dynamics modeled have been derived isolated from gravity
+ and air and do not reflect flight dynamics hence they must be suppressed
+ to keep only vibrations dynamics.
 \end_layout
 
 \begin_layout Standard
@@ -3430,8 +3434,8 @@ The matrices
 \begin_inset Formula $K_{m}$
 \end_inset
 
- are diagonal meaning that there is no interaction between modes due to
- Equation 
+ are diagonal meaning that there is no interaction between modes in Equation
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "2ndOrderStructModal"
@@ -3439,27 +3443,25 @@ reference "2ndOrderStructModal"
 \end_inset
 
 .
- Thus, the equation can be simply truncated to get rid of the rigid-body
- modes by removing the first two rows of 
-\begin_inset Formula $z_{m}$
-\end_inset
-
- and 
+ The rigid-body modes are eliminated by erasing the two first rows of 
 \begin_inset Formula $\Phi$
 \end_inset
 
 .
- From now on, 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Try to find a smart way to explain the rigid-body elimination
-\end_layout
-
+ Hence it is now 
+\begin_inset Formula $\Phi=[\phi_{1}\,\phi_{2}\,\dots\,\phi_{n-2}]$
 \end_inset
 
+ and 
+\begin_inset Formula $z_{m}$
+\end_inset
 
+ only contains structural modes displacement.
+ By doing so, modal mass, damping and stiffness matrices size is now 
+\begin_inset Formula $(n-2)\times(n-2)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3470,13 +3472,687 @@ reference "eq:outputEqGeneral"
 
 \end_inset
 
-, truncated the rigid-body modes will remove pitch rate and strain measurement
- due to them.
- However, great care must be taken for the acceleration measurement.
+, truncating the rigid-body modes will remove rigid-body pitch rate and
+ strain measurement is not influenced by rigid-body modes.
+ However, great care must be taken for the acceleration measurement as 
+\begin_inset Formula $D_{oa}\ne0$
+\end_inset
+
+.
+ To compute the acceleration measurements only due to the vibrations, the
+ acceleration measurements due to the rigid-body modes will be calculated
+ considering a rigid structure.
+\end_layout
+
+\begin_layout Standard
+If the missile is considered as a solid, the equation of lateral acceleration
+ at the center of gravity is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z,CG}=\frac{1}{m}F_{z}
+\]
+
+\end_inset
+
+and the equation of rotational acceleration is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ddot{\theta}=\frac{1}{J_{y,CG}}M_{y,CG}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $F_{z}$
+\end_inset
+
+ is the sum of external forces along the z-axis, 
+\begin_inset Formula $M_{y,CG}$
+\end_inset
+
+ is the sum of moments applied at the center of gravity along the y-axis,
+ 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $J_{y}$
+\end_inset
+
+ are the mass and rotational inertia about the center of gravity along the
+ y-axis.
+ The force and moments are:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{z}=\sum_{j=1}^{n}F_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y,CG}=\sum_{j=1}^{n}(x_{CG}-x_{j})\,F_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The acceleration at each node 
+\begin_inset Formula $i$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z,i}=a_{z,CG}+(x_{CG}-x_{i})\,\ddot{\theta}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, it yields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z,i}=\frac{1}{m}\sum_{j=1}^{n}F_{j}+(x_{CG}-x_{i})\frac{1}{J_{y}}\sum_{j=1}^{n}(x_{CG}-x_{j})\,F_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In matrix formulation, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z,rb}=D_{oa,rb}\,F
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{oa,rb}=\frac{1}{m}Id_{n}+\frac{1}{J_{y}}\left[\begin{array}{c}
+x_{CG}\\
+x_{CG}-l\\
+\vdots\\
+x_{CG}-(n-2)l\\
+x_{CG}-(n-1)l
+\end{array}\right]\left[\begin{array}{ccccc}
+x_{CG} & x_{CG}-l & \dots & x_{CG}-(n-2)l & x_{CG}-(n-1)l\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, the output matrix 
+\begin_inset Formula $D_{oa,rb}$
+\end_inset
+
+ is subtracted from 
+\begin_inset Formula $D_{oa}$
+\end_inset
+
+ to obtain the output matrix from vibrations only :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{oa,fb}=D_{oa}-D_{oa,rb}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+However, this is not completely correct.
+ Indeed, the rigid-body dynamics are different when the missile is considered
+ as flexible.
+ Therefore the rigid-body component in 
+\begin_inset Formula $D_{oa}$
+\end_inset
+
+ is not 
+\begin_inset Formula $D_{oa,rb}$
+\end_inset
+
+.
+ Looking at the Bode plot of the transfer function
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Established later
+\end_layout
+
+\end_inset
+
+ from 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ to 
+\begin_inset Formula $a_{z,75}$
+\end_inset
+
+ on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:F2azBode"
+
+\end_inset
+
+, with this first rigid-body substraction technique, at 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+, 
+\begin_inset Formula $a_{z,75}(\omega)$
+\end_inset
+
+ is not zero (curve 
+\begin_inset Quotes eld
+\end_inset
+
+a_z,fb imperfect).
+ This is incorrect because at 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+, the vibrations are not excited then they should be inexistant and 
+\begin_inset Formula $a_{z,75}=0$
+\end_inset
+
+.
+ Once the state space representation will be established, the good correction
+ will be applied.
 \end_layout
 
 \begin_layout Subsection
 State Space Model
+\end_layout
+
+\begin_layout Standard
+Previously, the second-order structural model in its modal form without
+ the rigid-body modes has been derived.
+ This representation is not convenient for control design.
+ Therefore a state-space representation of this system will be created.
+\end_layout
+
+\begin_layout Subsubsection
+From Second-Order Model to State Space Model
+\end_layout
+
+\begin_layout Standard
+The system must firstly be translated into a state space representation.
+\end_layout
+
+\begin_layout Standard
+Now that the rigid-body modes are eliminated, 
+\begin_inset Formula $K_{m}$
+\end_inset
+
+ is positive-definite and we can define
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Omega=M_{m}^{-\nicefrac{1}{2}}K_{m}^{\nicefrac{1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z=\frac{1}{2}M_{m}^{-1}D_{m}\Omega^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Z is a diagonal matrix containing the modes damping ratios.
+ For instant 
+\begin_inset Formula $Z_{3,3}=\zeta_{3}$
+\end_inset
+
+ is the damping ratio of the third bending mode.
+\end_layout
+
+\begin_layout Standard
+The state vector is defined as 
+\begin_inset Formula $x=\left[\begin{array}{c}
+z_{m}\\
+\dot{z}_{m}
+\end{array}\right]$
+\end_inset
+
+.
+ The input vector is 
+\begin_inset Formula $u=F$
+\end_inset
+
+.
+ The ouput vector is 
+\begin_inset Formula $y=\left[\begin{array}{c}
+\varepsilon\\
+q\\
+a_{z}
+\end{array}\right]$
+\end_inset
+
+ Thus
+\begin_inset Formula 
+\[
+\dot{x}=A\,x+B\,u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=C\,x+D\,u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula 
+\[
+A=\left[\begin{array}{cc}
+0_{(n-2)\times(n-2)} & Id_{n-2}\\
+-\Omega^{2} & -2Z\Omega
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=\left[\begin{array}{c}
+0_{(n-2)\times n}\\
+\Phi^{T}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\left[\begin{array}{cc}
+C_{mz} & C_{mv}\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D=D_{o}=\left[\begin{array}{c}
+0_{(n-2)\times n}\\
+0_{n\times n}\\
+D_{oa,fb}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the previous part, 
+\begin_inset Formula $D_{oa,fb}$
+\end_inset
+
+ has not been clearly defined.
+ To eliminate properly rigid-body dynamics measured by acceleration sensors,
+ the following technique can be used.
+ The acceleration due to rigid-body dynamics is composed of a feedforward
+ term 
+\begin_inset Formula $D_{oa,rb}$
+\end_inset
+
+ only.
+ In the transfer function, this is a static gain.
+ Thus, one can just remove this static value :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z}(j\omega)=-C_{ma}(A-j\omega\,Id)^{-1}B+D_{oa,fb}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $C_{ma}=\left[\begin{array}{cc}
+C_{mza} & C_{mva}\end{array}\right].$
+\end_inset
+
+ At 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+, 
+\begin_inset Formula $a_{z}=0$
+\end_inset
+
+ so 
+\begin_inset Formula $D_{oa,fb}=C_{ma}A^{-1}B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Thanks to this, 
+\begin_inset Formula $a_{z}$
+\end_inset
+
+ is 
+\begin_inset Formula $0$
+\end_inset
+
+ at low frequency as shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:F2azBode"
+
+\end_inset
+
+ (curve 
+\begin_inset Quotes eld
+\end_inset
+
+a_z,fb correct
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/azRBElimination.png
+	lyxscale 30
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode plot of 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ to 
+\begin_inset Formula $a_{z,75}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:F2azBode"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Formulation in State Space Modal Form 2
+\end_layout
+
+\begin_layout Standard
+Gawronski 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gawronski2004modal"
+
+\end_inset
+
+ gives a convenient state space formulation of the structural system.
+ It is the modal form 2.
+ In this form, the state vector is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{m}=\left[\begin{array}{c}
+z_{m,1}\\
+z_{mo,1}\\
+z_{m,2}\\
+z_{mo,2}\\
+\vdots\\
+z_{m,(n-2)}\\
+z_{mo,(n-2)}
+\end{array}\right]
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $z_{mo,i}=\zeta_{i}z_{m,i}+\dot{z}_{m,i}/\omega_{i}$
+\end_inset
+
+.
+ In this form, the modal state matrix 
+\begin_inset Formula $A_{m}$
+\end_inset
+
+ has the particular form:
+\begin_inset Formula 
+\[
+A_{m}=\left[\begin{array}{cccc}
+A_{m1}\\
+ & A_{m2}\\
+ &  & \ddots\\
+ &  &  & A_{m(n-2)}
+\end{array}\right]
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $A_{m}=\left[\begin{array}{cc}
+-\zeta_{i}\omega_{i} & \omega_{i}\\
+\omega_{i} & -\zeta_{i}\omega_{i}
+\end{array}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The transformation matrix 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ defined as 
+\begin_inset Formula $x=V_{m}x_{m}$
+\end_inset
+
+ for 4 modes is 
+\begin_inset Formula 
+\[
+V_{m}=\left[\begin{array}{cccccccc}
+1 & 0\\
+ &  & 1 & 0\\
+ &  &  &  & 1 & 0\\
+ &  &  &  &  &  & 1 & 0\\
+-\nicefrac{\omega_{1}}{\zeta_{1}} & \omega_{1}\\
+ &  & -\nicefrac{\omega_{2}}{\zeta_{2}} & \omega_{2}\\
+ &  &  &  & -\nicefrac{\omega_{3}}{\zeta_{3}} & \omega_{3}\\
+ &  &  &  &  &  & -\nicefrac{\omega_{4}}{\zeta_{4}} & \omega_{4}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, 
+\begin_inset Formula $B_{m}=BV_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $C_{m}=CV_{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $D_{m}=D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This final state-space realization (
+\begin_inset Formula $A_{m},$
+\end_inset
+
+ 
+\begin_inset Formula $B_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $C_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $D_{m}$
+\end_inset
+
+) is the modal state-space model of the vibrations of the missile with outputs
+ 
+\begin_inset Formula $y$
+\end_inset
+
+ containing 
+\begin_inset Formula $n-2$
+\end_inset
+
+ strain measurements 
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $n$
+\end_inset
+
+ gyrometer measurements 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ accelerometers 
+\begin_inset Formula $a_{zi}$
+\end_inset
+
+.
+ This vibrations model will then be added to the flight dynamics model.
 \end_layout
 
 \begin_layout Standard
