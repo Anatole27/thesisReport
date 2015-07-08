@@ -2462,7 +2462,7 @@ reference "fig:modesShape"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2519,16 +2519,17 @@ reference "tab:natFreq"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="3">
+<lyxtabular version="3" rows="9" columns="4">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="decimal" decimal_point="." valignment="top">
-<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <row>
 <cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2539,11 +2540,11 @@ Mode
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Frequency
+Natural Frequency
 \end_layout
 
 \end_inset
@@ -2553,6 +2554,15 @@ Frequency
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Damping Ratio
 \end_layout
 
 \end_inset
@@ -2568,7 +2578,7 @@ Frequency
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2581,7 +2591,7 @@ Frequency
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2590,6 +2600,15 @@ Frequency
 \end_inset
 
 )
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2605,7 +2624,7 @@ z translation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2614,7 +2633,16 @@ z translation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2634,7 +2662,7 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2643,7 +2671,16 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2666,7 +2703,7 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2675,11 +2712,20 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 125
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0%
 \end_layout
 
 \end_inset
@@ -2698,7 +2744,7 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2707,11 +2753,20 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 425
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5%
 \end_layout
 
 \end_inset
@@ -2730,7 +2785,7 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2739,11 +2794,20 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 877
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.3%
 \end_layout
 
 \end_inset
@@ -2762,7 +2826,7 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2771,11 +2835,20 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 1344
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11%
 \end_layout
 
 \end_inset
@@ -2794,7 +2867,7 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2803,11 +2876,20 @@ y rotation mode
 
 \end_inset
 </cell>
-<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 2106
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17%
 \end_layout
 
 \end_inset
@@ -2824,7 +2906,7 @@ y rotation mode
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Natural Frequencies of Modes
+Natural Frequencies and Damping Ratios of Modes
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:natFreq"
@@ -4153,6 +4235,872 @@ This final state-space realization (
 
 .
  This vibrations model will then be added to the flight dynamics model.
+\end_layout
+
+\begin_layout Subsection
+Model Reduction
+\end_layout
+
+\begin_layout Standard
+Currently, the structural model has 
+\begin_inset Formula $n-2$
+\end_inset
+
+ bending modes.
+ The number of nodes chosen is 100 so 98 modes are considered.
+ Most of the high frequency modes are inaccurate because of the Euler-Bernoulli
+ model which is suitable for low frequency dynamics.
+ Fortunately, these modes do not contribute much to the system dynamics.
+ A way to compare every mode contribution is to use the Hankel singular
+ values decomposition of the system.
+ On Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:hsvdEps"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:hsvdGyr"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:hsvdAcc"
+
+\end_inset
+
+, the state contribution in the Hankel singular values have been plotted
+ for the three different types of sensor.
+ The state vector is 
+\begin_inset Formula $x_{m}=\left[\begin{array}{c}
+q_{mi}\\
+q_{moi}
+\end{array}\right]_{i}$
+\end_inset
+
+.
+ The first five bending modes will be kept, the others are truncated.
+ Indeed, on these bar plots, the contribution of the 
+\begin_inset Formula $6^{th}$
+\end_inset
+
+ bending mode (bar 10 and 11) and higher (12 and above) is negligeable.
+ These modes correspond to less than 0.5% of the singular value of the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ mode for the strain gages, less than 1% for the gyrometers and 5% for the
+ accelerometers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/hsvdEps.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hankel Singular Values Decomposition - Strain Gages Output
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hsvdEps"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/hsvdGyr.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hankel Singular Values Decomposition - Gyrometers Output
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hsvdGyr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/hsvdAcc.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hankel Singular Values Decomposition - Accelerometers Output
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hsvdAcc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To reduce the model to the five first modes, the new state space model is
+ (
+\begin_inset Formula $A_{m}^{5}$
+\end_inset
+
+,
+\begin_inset Formula $B_{m}^{5}$
+\end_inset
+
+,
+\begin_inset Formula $C_{m}^{5}$
+\end_inset
+
+,
+\begin_inset Formula $D_{m}^{5}$
+\end_inset
+
+).
+ 
+\begin_inset Formula $A_{m}^{5}$
+\end_inset
+
+ is the 
+\begin_inset Formula $10\times10$
+\end_inset
+
+ upper left corner of 
+\begin_inset Formula $A_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $B_{m}^{5}$
+\end_inset
+
+ is the 10 first rows of 
+\begin_inset Formula $B_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $C_{m}^{5}$
+\end_inset
+
+ is the 10 first columns of 
+\begin_inset Formula $C_{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $D_{m}^{5}$
+\end_inset
+
+ is equal to 
+\begin_inset Formula $D_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+From now on, (
+\begin_inset Formula $A_{m}^{5}$
+\end_inset
+
+,
+\begin_inset Formula $B_{m}^{5}$
+\end_inset
+
+,
+\begin_inset Formula $C_{m}^{5}$
+\end_inset
+
+,
+\begin_inset Formula $D_{m}^{5}$
+\end_inset
+
+) will be simply named (
+\begin_inset Formula $A$
+\end_inset
+
+,
+\begin_inset Formula $B$
+\end_inset
+
+,
+\begin_inset Formula $C$
+\end_inset
+
+,
+\begin_inset Formula $D$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+Actuator & Sensor Placement
+\end_layout
+
+\begin_layout Subsection
+Actuator Placement
+\end_layout
+
+\begin_layout Standard
+The goal of this paper is to enhance the global performance of ASTER-30
+ by adding sensors.
+ No actuators from the original model will be added hence the only actuators
+ available are the thrust vectoring by nozzle orientation at the very rear
+ of the missile and the fins at the tail of the dart.
+ The position of these two actuators on the airframe are 
+\begin_inset Formula $x_{nozzle}=0\,m$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{fins}=2.4\,m$
+\end_inset
+
+.
+ These positions corresponds to the nodes 1 and 50.
+\end_layout
+
+\begin_layout Standard
+It is assumed that the vibrations are mainly excited by the lateral forces
+ generated by these two actuators.
+ The aerodynamic forces are too distributed and weak compared to the rocket
+ motor lateral thrust at the rear of the booster.
+\end_layout
+
+\begin_layout Standard
+The only inputs to the vibration system are thus lateral forces at nodes
+ 1 and 50.
+ The previous system (
+\begin_inset Formula $A$
+\end_inset
+
+,
+\begin_inset Formula $B$
+\end_inset
+
+,
+\begin_inset Formula $C$
+\end_inset
+
+,
+\begin_inset Formula $D$
+\end_inset
+
+) is modified
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Only columns 1 and 50 of 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $D$
+\end_inset
+
+ are kept
+\end_layout
+
+\end_inset
+
+ to keep only the inputs 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $F_{50}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Sensor Placement
+\end_layout
+
+\begin_layout Standard
+The state space model developped in the previous section outputs three different
+ types of sensors : strain gages, gyrometers and accelerometers on all possible
+ node
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $n-2$
+\end_inset
+
+ for the strain gages and 
+\begin_inset Formula $n$
+\end_inset
+
+ for the gyrometers and the accelerometers
+\end_layout
+
+\end_inset
+
+.
+ However, only some of these sensors need to be kept.
+ For each of these types of sensor, the minimum number required to control
+ the structure will be computed and the optimal locations will be determined
+ using a technique of placement.
+\end_layout
+
+\begin_layout Subsubsection
+Placement Indices
+\end_layout
+
+\begin_layout Standard
+Gawronski gives a method to quantitatively assess the location of a sensor
+ given its type 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gawronski2004modal"
+
+\end_inset
+
+.
+ He proposes three different norms : the 
+\begin_inset Formula $H_{2}$
+\end_inset
+
+ Norm, the 
+\begin_inset Formula $H_{\infty}$
+\end_inset
+
+ Norm and the Hankel Norm.
+ Here, the placement will rely on 
+\begin_inset Formula $H_{\infty}$
+\end_inset
+
+ Norm
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Consider explaining why
+\end_layout
+
+\end_inset
+
+.
+ The sensors will be placed only considering the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ bending mode.
+ The higher modes have high natural frequencies that cannot be actively
+ damped.
+ Indeed Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:natFreq"
+
+\end_inset
+
+ gives natural frequencies for the 
+\begin_inset Formula $2^{nd}$
+\end_inset
+
+ mode and higher above 25Hz which is the cutoff frequency of the actuators.
+ 
+\end_layout
+
+\begin_layout Standard
+The first step is to select a set of possible locations for a type of sensor.
+ Let be 
+\begin_inset Formula $S=\{i_{1},i_{2},\dots,i_{s}\}$
+\end_inset
+
+ this set with 
+\begin_inset Formula $s$
+\end_inset
+
+ the number of possible locations.
+ At each of these locations, an index is calculated which represents the
+ ability of the sensor to sense the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ bending mode at this place.
+ This index is called 
+\begin_inset Formula $\sigma_{i}$
+\end_inset
+
+ for the node 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ A simple way to define it is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{i}=\left\Vert G_{1i}\right\Vert _{\infty}
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $G_{1i}$
+\end_inset
+
+ is the transfer function of 
+\begin_inset Formula $[F_{1},F_{50}]$
+\end_inset
+
+ to the sensor considered at node 
+\begin_inset Formula $i$
+\end_inset
+
+ considering only the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ mode.
+\end_layout
+
+\begin_layout Standard
+The damping ratio of the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ bending mode is only 
+\begin_inset Formula $1\%$
+\end_inset
+
+ so the following approximation can be made:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{1i}\simeq\frac{\left\Vert B_{1}\right\Vert _{2}\left\Vert C_{i1}\right\Vert _{2}}{2\zeta_{1}\omega_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The matrices 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{i1}$
+\end_inset
+
+ are the input and output matrices at node 
+\begin_inset Formula $i$
+\end_inset
+
+ for the sensor considered and the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ bending mode.
+ 
+\begin_inset Formula $B_{1}$
+\end_inset
+
+ is the first two rows of 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{i1}$
+\end_inset
+
+ is the first two columns of the part of 
+\begin_inset Formula $C$
+\end_inset
+
+ corresponding to the type of sensor considered.
+\end_layout
+
+\begin_layout Standard
+The bigger is 
+\begin_inset Formula $\sigma_{i}$
+\end_inset
+
+ the greater is the amplitude of the signal measured by the sensor at node
+ 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ Thanks to this method, the locations can be ranked to determine the optimal
+ position to place the sensors.
+ For each type of sensor - strain gages, gyrometers and accelerometers -
+ this technique will be used.
+\end_layout
+
+\begin_layout Subsubsection
+Strain Gages Placement
+\end_layout
+
+\begin_layout Standard
+A strain gage is a long resistor fixed on the skin of the structure.
+ When the skin is stretched or compressed, the strain gage is deformed and
+ the electrical resistance changes.
+ These variations of electrical resistance can be precisely measured with
+ a Weathstone bridge.
+ The great advantage of this sensor is its insensitivity to the rigid-body
+ dynamics of the system.
+ This kind of sensor measures only deformation.
+ Thus, only one of these sensors well placed can determine the flexure of
+ the missile.
+ However, it will be shown later that the signal of this sensor needs to
+ be derivated to damp the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ mode bending.
+ This derivation is likely to increase noise propagation.
+ Another disadvantage is its great sensitivity to temperature variation.
+ The booster part of the missile is greatly heated by the rocket engine
+ and the head of the dart is aerodynamically heated.
+ The possible locations are 
+\begin_inset Formula $x\in[2.2m,\:4.4m]$
+\end_inset
+
+ that corresponds to the set 
+\begin_inset Formula $S=\left\llbracket 46,89\right\rrbracket $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The placement indices have been computed at all locations 
+\begin_inset Formula $i\in\left\llbracket 2,n-1\right\rrbracket $
+\end_inset
+
+ even if the set of location is 
+\begin_inset Formula $S=\left\llbracket 46,89\right\rrbracket $
+\end_inset
+
+ to show entirely how these indices vary.
+ They appear on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:indicesEps"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/indicesEps.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Placement Indices - Strain Gages
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:indicesEps"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the bar plot, the placement indices of locations on the booster are very
+ low compared to those on the dart.
+ Indeed the booster is very stiff so it bends very few compared to the dart.
+ The best location for a strain gage is at node 49 next to the fins at 
+\begin_inset Formula $x=2.38\,m$
+\end_inset
+
+.
+ This location corresponds to the strain antinode of the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ bending mode where the flexure is maximum.
+\end_layout
+
+\begin_layout Subsubsection
+Gyrometers Placement
+\end_layout
+
+\begin_layout Standard
+A gyrometer will measure not only the pitch rate due to the vibrations but
+ also the pitch rate of the rigid-body.
+ The isolate the pitch rate of the vibrations, one needs the measurements
+ of two gyrometers placed at different locations.
+ Hence, the pitch rate of the rigid-body can be removed to keep only the
+ vibrations measurement.
+ At least two gyrometers must be used.
+\end_layout
+
+\begin_layout Standard
+A gyrometer is less sensitive to variations of temperature than a strain
+ gage and can be placed on the booster.
+ However a margin is kept with the two extremities of the missile because
+ the tail is probably dense in technology because of the nozzle and the
+ nose contains a radar.
+ For the gyrometers, the set of locations available is then 
+\begin_inset Formula $S=\left\llbracket 10,92\right\rrbracket $
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $x=\left\llbracket 0.45m,\,1.40m\right\rrbracket $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:indicesGyr"
+
+\end_inset
+
+ shows the placement indices for gyrometers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/indicesGyr.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Placements Indices - Gyrometers
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:indicesGyr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The nose is a place where the gyrometer would be very sensitive to the 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ bending mode.
+ Actually, there is already a gyrometer at 
+\begin_inset Formula $x$
+\end_inset
+
+ somewhere between 
+\begin_inset Formula $3.9\,m$
+\end_inset
+
+ and 
+\begin_inset Formula $4.3\,m$
+\end_inset
+
+ that correspond approximately to node 83.
+ The second gyrometer must be place at the other side of the zero pitch
+ rate node 54.
+ The second best position is then node 10.
+\end_layout
+
+\begin_layout Subsubsection
+Accelerometers Placement
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/indicesAcc.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Placement Indices - Accelerometers
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:indicesAcc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
