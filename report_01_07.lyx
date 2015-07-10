@@ -103,12 +103,1592 @@ set_width "auto"
 
 \end_layout
 
+\begin_layout Part
+Modeling
+\end_layout
+
+\begin_layout Section
+Characteristics
+\end_layout
+
+\begin_layout Section
+Flight Dynamics
+\end_layout
+
+\begin_layout Subsection
+Mass Properties
+\end_layout
+
+\begin_layout Standard
+ASTER-30 has two parts.
+ The booster weights 
+\begin_inset Formula $m_{booster}=310\,kg$
+\end_inset
+
+ and will lose mass along the acceleration phase.
+ However, it is considered that its mass is constant at 310kg to simplify
+ the model.
+ The dart weights 
+\begin_inset Formula $m_{dart}=140\,kg$
+\end_inset
+
+ during the complete flight.
+ The total mass of the missile is then 
+\begin_inset Formula $m=450\,kg$
+\end_inset
+
+ With no more information on mass distribution, it is assumed that the mass
+ is uniformly distributed in the booster and in the dart.
+ The length of the booster is 
+\begin_inset Formula $L_{booster}=2.2m$
+\end_inset
+
+ and the dart is lightly longer with 
+\begin_inset Formula $L_{dart}=2.7m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The center of gravity 
+\begin_inset Formula $G$
+\end_inset
+
+ position is at 
+\begin_inset Formula $x_{CG}=\frac{\int x\,dm}{m}$
+\end_inset
+
+.
+ With the assumption on mass distribution, 
+\begin_inset Formula 
+\[
+x_{CG}=\frac{\frac{1}{2}\,L_{booster}\,m_{booster}+(L_{booster}+\frac{1}{2}L_{dart})\,m_{dart}}{m}
+\]
+
+\end_inset
+
+ that yields 
+\begin_inset Formula $x_{CG}=1.86\,m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The rotational inertia at the center of gravity and about the y-axis is
+ 
+\begin_inset Formula $J_{y}=\int(x-x_{CG})^{2}dm$
+\end_inset
+
+ giving 
+\begin_inset Formula 
+\[
+J_{y}=\frac{1}{3}\frac{m_{booster}}{L_{booster}}\left[(L_{booster}-x_{CG})^{3}+x_{CG}^{3}\right]+\frac{1}{3}\frac{m_{dart}}{L_{dart}}\left[(L_{dart}+L_{booster}-x_{CG})^{3}-(L_{booster}-x_{CG})^{3}\right]
+\]
+
+\end_inset
+
+Finally 
+\begin_inset Formula $J_{y}=789\,kg.m^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Aerodynamics
+\end_layout
+
+\begin_layout Standard
+An aerodynamic model is needed to derive the equations of motion.
+ The atmosphere and the variation of air density will first be defined,
+ then the main body aerodynamics will be described ending with the fins
+ aerodynamics.
+\end_layout
+
+\begin_layout Subsubsection
+Standard Atmosphere
+\end_layout
+
+\begin_layout Standard
+For the atmosphere model, the International Standard Atmosphere is considered.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Main Body Aerodynamics
+\end_layout
+
+\begin_layout Standard
+The reference surface for this kind of airframe is the cross-section of
+ the missile.
+ The bigger cross-section is at the booster and will be taken as reference
+ surface.
+ Thus 
+\begin_inset Formula $S_{ref}=\nicefrac{\pi D_{booster}^{2}}{4}$
+\end_inset
+
+.
+ The length reference will be the largest diameter 
+\begin_inset Formula $L_{ref}=D_{booster}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ASTER-30 has a body which is very similar to the flared frame studied in
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lesieutre2002MISL3"
+
+\end_inset
+
+.
+ Some of its aerodynamic data are in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MISL3"
+
+\end_inset
+
+.
+ In this figure, the x-axis is oriented from nose to tail contrary to this
+ thesis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/aeroCoeff.pdf
+	width 30page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flared Missile Lift and Pitching Moment Coefficients 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lesieutre2002MISL3"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MISL3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The lift coefficient slope in this paper is 
+\begin_inset Formula $C_{L\alpha}=22\,rad^{-1}$
+\end_inset
+
+.
+ Since the airframe is symmetric about its xy-plane, 
+\begin_inset Formula $C_{L0}=0.$
+\end_inset
+
+ Similarily, the zero angle of attack pitching moment coefficient 
+\begin_inset Formula $C_{m0}=0$
+\end_inset
+
+.
+ In this paper, the pitching moment coefficient slope is 
+\begin_inset Formula $C_{m\alpha}=45\,rad^{-1}$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{CM}=0.78\,m$
+\end_inset
+
+.
+ However, this coefficient would place the aerodynamic center at 
+\begin_inset Formula $x_{AC}=\frac{L_{ref}C_{m\alpha}}{C_{L\alpha}}+x_{CM}=1.52\,m$
+\end_inset
+
+.
+ This aerodynamic center in this paper is too aft for this airframe compared
+ to the center of gravity at 
+\begin_inset Formula $x_{CG}=1.86\,m$
+\end_inset
+
+.
+ The aerodynamic center will be placed 
+\begin_inset Formula $7\,cm$
+\end_inset
+
+ aft of the center of gravity at 
+\begin_inset Formula $x_{AC}=1.79\,m$
+\end_inset
+
+.
+ This yields a pitching moment coefficient slope of 
+\begin_inset Formula $C_{m\alpha}=-4.3\,rad^{-1}$
+\end_inset
+
+ 
+\series bold
+at the center of gravity
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+The drag coefficient for such a missile is given in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "fleeman2006tactical"
+
+\end_inset
+
+.
+ The zero-lift drag is 
+\begin_inset Formula $C_{D0}=0.95$
+\end_inset
+
+ and the drag slope is estimated to be 
+\begin_inset Formula $k_{D}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Fins Aerodynamics
+\end_layout
+
+\begin_layout Subsection
+External Efforts
+\end_layout
+
+\begin_layout Standard
+Several external forces act on the missile airframe.
+ These forces are due to gravity, aerodynamics and propulsion.
+ It is important to describe clearly the frames in which they are defined.
+\end_layout
+
+\begin_layout Subsubsection
+Frames
+\end_layout
+
+\begin_layout Standard
+There are four frames to define.
+ They all have the axis 
+\begin_inset Formula $\vec{y_{0}}=\vec{y}$
+\end_inset
+
+ in common because the dynamics considered are only in the xz-plane.
+ 
+\end_layout
+
+\begin_layout Standard
+The first one is the Earth's frame (
+\begin_inset Formula $\vec{z_{0}},\vec{x_{0}}$
+\end_inset
+
+) where 
+\begin_inset Formula $\vec{z_{0}}$
+\end_inset
+
+ is vertical and oriented downward.
+ 
+\begin_inset Formula $\vec{x_{0}}$
+\end_inset
+
+ is oriented forward.
+\end_layout
+
+\begin_layout Standard
+The second one is the aerodynamic frame (
+\begin_inset Formula $\vec{z_{a}},\vec{x_{a}}$
+\end_inset
+
+) with 
+\begin_inset Formula $\vec{x_{a}}$
+\end_inset
+
+ along the speed vector of the missile and 
+\begin_inset Formula $\vec{z_{a}}$
+\end_inset
+
+ normal to 
+\begin_inset Formula $\vec{x_{a}}$
+\end_inset
+
+ and oriented downward.
+ The flight path frame is obtained by rotating the Earth's frame of an angle
+ of 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ the flight path angle around 
+\begin_inset Formula $\vec{y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The third one is the body frame (
+\begin_inset Formula $\vec{z_{b}}$
+\end_inset
+
+,
+\begin_inset Formula $\vec{x_{b}}$
+\end_inset
+
+) where 
+\begin_inset Formula $\vec{x_{b}}$
+\end_inset
+
+ is along the body axis and 
+\begin_inset Formula $\vec{z_{b}}$
+\end_inset
+
+ normal to 
+\begin_inset Formula $\vec{x_{b}}$
+\end_inset
+
+ and oriented downward.
+ The body frame is obtained by rotating the Earth's frame of an angle of
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ the angle of attack around 
+\begin_inset Formula $\vec{y}$
+\end_inset
+
+.
+ The pitch angle is 
+\begin_inset Formula $\theta=\alpha+\gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The last one is the propulsion frame (
+\begin_inset Formula $\vec{z_{T}}$
+\end_inset
+
+,
+\begin_inset Formula $\vec{x_{T}}$
+\end_inset
+
+) where 
+\begin_inset Formula $\vec{x_{T}}$
+\end_inset
+
+ is along the thrust vector and 
+\begin_inset Formula $\vec{z_{T}}$
+\end_inset
+
+ is normal to it and oriented downward.
+ This last frame is obtained by rotating the body frame by an angle of 
+\begin_inset Formula $\theta_{T}$
+\end_inset
+
+ - the nozzle angle - around 
+\begin_inset Formula $\vec{y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Gravity
+\end_layout
+
+\begin_layout Standard
+The gravity is assumed to be uniform during the flight and equal to the
+ standard gravity value 
+\begin_inset Formula $g=9.81\,m.s^{-2}$
+\end_inset
+
+.
+ Gravity is creating a force called weight applied at the center of gravity
+ of the airframe and acting along the z-axis.
+ This force is denoted 
+\begin_inset Formula $\vec{W}$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\vec{W}=m\,g\,\vec{z_{0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Aerodynamic Efforts
+\end_layout
+
+\begin_layout Standard
+The aerodynamic efforts can be divided into a lift force, a drag force and
+ a pitching moment.
+ The moment created by the lift and the drag is gathered into the pitching
+ moment at the center of gravity.
+\end_layout
+
+\begin_layout Paragraph
+Lift
+\end_layout
+
+\begin_layout Standard
+The lift is acting normal to the flight path along 
+\begin_inset Formula $\vec{z_{a}}$
+\end_inset
+
+ of amplitude 
+\begin_inset Formula $L$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=\frac{1}{2}\rho S_{ref}V^{2}C_{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $C_{L}=C_{L0}+C_{L\alpha}\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Drag
+\end_layout
+
+\begin_layout Standard
+The drag is acting along the flight path 
+\begin_inset Formula $\vec{x_{a}}$
+\end_inset
+
+ and oriented opposite to the speed vector and of amplitude 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D=\frac{1}{2}\rho S_{ref}V^{2}C_{D}
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $C_{D}=C_{D0}+k_{D}C_{L}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Pitching Moment
+\end_layout
+
+\begin_layout Standard
+The pitching moment at the center of gravity is acting along the y-axis
+ with an amplitude of 
+\begin_inset Formula $M$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M=\frac{1}{2}\rho S_{ref}V^{2}D_{ref}C_{m}
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $C_{m}=C_{m0}+C_{m\alpha}\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Propulsion Efforts
+\end_layout
+
+\begin_layout Standard
+The thrust is oriented along 
+\begin_inset Formula $\vec{x_{T}}$
+\end_inset
+
+ thanks to the orientable nozzle.
+ The propulsion force is then
+\begin_inset Formula 
+\[
+\vec{T}=T\vec{x_{T}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Equations of Motion
+\end_layout
+
+\begin_layout Standard
+The Equations of Motion are projected in the aerodynamic frame (
+\begin_inset Formula $\vec{z_{a}},\vec{x_{a}}$
+\end_inset
+
+,
+\begin_inset Formula $\vec{y}$
+\end_inset
+
+).
+ This gives three equations: the propulsion equation, the lift equation
+ and the pitching moment equation.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Linear Acceleration
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:linAcc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The linear acceleration of the center of gravity in an inertial frame of
+ reference is linked to the sum of external forces by the mass of the airframe:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+m\,\vec{a}_{CG/\mathcal{R}_{e}}=\sum\vec{F}_{external}\label{eq:EoMAcc}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The acceleration in 
+\begin_inset Formula $\mathcal{R}_{e}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\vec{a}_{CG/\mathcal{R}_{e}}=\left[\frac{d\vec{V}}{dt}\right]_{\mathcal{R}_{e}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The speed vector 
+\begin_inset Formula $\vec{V}$
+\end_inset
+
+ must be differentiated in the aerodynamic frame which is not an inertial
+ frame of reference to link the acceleration with the aerodynamic parameters.
+ The vector 
+\begin_inset Formula $\vec{V}$
+\end_inset
+
+ differentiated in the moving frame 
+\begin_inset Formula $\mathcal{R}_{a}$
+\end_inset
+
+ relative to the frame 
+\begin_inset Formula $\mathcal{R}_{e}$
+\end_inset
+
+ follows the following formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\frac{d\vec{V}}{dt}\right]_{\mathcal{R}_{e}}=\left[\frac{d\vec{V}}{dt}\right]_{\mathcal{R}_{a}}+\vec{\Omega}_{\mathcal{R}_{a}/\mathcal{R}_{e}}\wedge\vec{V}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\frac{d\vec{V}}{dt}\right]_{\mathcal{R}_{e}}=\dot{V}\,\vec{x_{a}}-\dot{\gamma}\,V\,\vec{z_{a}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EoMAcc"
+
+\end_inset
+
+ is then projected in the aerodynamic frame (
+\begin_inset Formula $\vec{z_{a}},\vec{x_{a}}$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+m\,\dot{V} & =\sum\vec{F}_{external}\cdot\vec{x_{a}}\\
+-m\,V\,\dot{\gamma} & =\sum\vec{F}_{external}\cdot\vec{z_{a}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, developping the sum of forces the first equation gives the propulsion
+ equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+m\,\dot{V}=-D+T\,\cos(\theta_{T}+\alpha)-W\,\sin(\gamma)\label{eq:propEq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second equation gives the lift equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+-m\,V\,\dot{\gamma}=-L-T\,\sin(\theta_{T}+\alpha)+W\,\cos(\gamma)\label{eq:liftEq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Pitching Moment Equation
+\end_layout
+
+\begin_layout Standard
+The pitching moment equation at the center of gravity along the y-axis is
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+J_{y}\,\dot{q}=\sum\vec{M}_{external}
+\]
+
+\end_inset
+
+ Thus developping the pitching moment yields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+J_{y}\,\dot{q}=M-T\,\sin(\theta_{T})\,x_{CG}\label{eq:pitchingMoment}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Trim
+\end_layout
+
+\begin_layout Standard
+At the trim state, t
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+he altitude is constant so 
+\begin_inset Formula $\gamma=\gamma_{0}=0\,rad$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+The speed of the missile is chosen to be Mach 2 at sea level and standard
+ temperature, hence 
+\begin_inset Formula $V=V_{0}=M\,a$
+\end_inset
+
+.
+ The speed of sound is 
+\begin_inset Formula 
+\[
+a=\sqrt{\gamma rT}=\sqrt{1.4\cdot287\cdot(273.15+15)}=340\,m.s^{-1}
+\]
+
+\end_inset
+
+Thus 
+\begin_inset Formula $V_{0}=680\,m.s^{-1}(=1322\,kts)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+The acceleration of the missile is said to be about 15g which corresponds
+ to 
+\begin_inset Formula $\dot{V_{0}}=147\,m.s^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+The altitude is said to be sea level then 
+\begin_inset Formula $\rho_{0}=1.21\,kg.m^{-3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+The other derivatives 
+\begin_inset Formula $\dot{\gamma_{0}}$
+\end_inset
+
+, 
+\begin_inset Formula $\dot{q_{0}}$
+\end_inset
+
+, 
+\begin_inset Formula $q_{0}$
+\end_inset
+
+ are zero.
+\end_layout
+
+\begin_layout Standard
+Using the relation 
+\begin_inset Formula $\theta=\alpha+\gamma$
+\end_inset
+
+, the Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:propEq"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:liftEq"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pitchingMoment"
+
+\end_inset
+
+ only unknowns at trim state are 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{T0}$
+\end_inset
+
+.
+ The solving of this system of equation gives the following result:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\alpha_{0} & =0.030\,rad=1.7\text{°}\\
+T_{0} & =71.3\,kN\\
+\theta_{T0} & =-1.3\cdot10^{-3}\,rad=0.072\text{°}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+State Space System
+\end_layout
+
+\begin_layout Standard
+The state vector considered for the state-space model is 
+\begin_inset Formula 
+\[
+x=\left[\begin{array}{c}
+\bar{\alpha}\\
+q
+\end{array}\right]
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $q$
+\end_inset
+
+ is the pitch rate and 
+\begin_inset Formula $\bar{\alpha}$
+\end_inset
+
+ is the deviation of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ from the trim value 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{\alpha}=\alpha-\alpha_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The state vector is only of dimension 2 because it is assumed that all the
+ other variables like 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ , 
+\begin_inset Formula $\dot{\gamma}$
+\end_inset
+
+, 
+\begin_inset Formula $V$
+\end_inset
+
+ or 
+\begin_inset Formula $\rho$
+\end_inset
+
+ have a very slow dynamic.
+ Indeed in study is interested about lateral acceleration generation, which
+ happens faster than a change of navigation variables such as 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ or 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The input vector here is 
+\begin_inset Formula $u=\bar{\theta_{T}}$
+\end_inset
+
+ which is the only parameter that the controller commands.
+ 
+\begin_inset Formula $\bar{\theta_{T}}$
+\end_inset
+
+ is the deviation of 
+\begin_inset Formula $\theta_{T}$
+\end_inset
+
+ from 
+\begin_inset Formula $\theta_{T0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The output vector is 
+\begin_inset Formula 
+\[
+y=\left[\begin{array}{c}
+q\\
+a_{z_{a}CG}\\
+\bar{a_{z_{b}10}}\\
+\bar{a_{z_{b}54}}\\
+\bar{a_{z_{b}83}}\\
+\bar{a_{z_{b}92}}
+\end{array}\right]
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $a_{z_{a}CG}$
+\end_inset
+
+ is the inertial acceleration normal to the speed vector at the center of
+ gravity, is the inertial acceleration normal to the body at node 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{a_{z_{b}i}}$
+\end_inset
+
+ is the deviation of 
+\begin_inset Formula $a_{z_{b}i}$
+\end_inset
+
+ from the trim value 
+\begin_inset Formula $a_{z_{b}i0}$
+\end_inset
+
+.
+ Indeed, 
+\begin_inset Formula $a_{z_{b}i0}$
+\end_inset
+
+ is not zero at all.
+ The missile is in constant acceleration at about 15g and has a trim angle
+ of attack of 
+\begin_inset Formula $\alpha_{0}=0.030\,rad$
+\end_inset
+
+, thus 
+\begin_inset Formula $a_{z_{b}i0}=15\cdot0.030=0.45g$
+\end_inset
+
+.
+ Moreover 
+\begin_inset Formula $a_{z_{b}i}$
+\end_inset
+
+ will vary with a change in angle of attack because of the forward acceleration
+ projected normaly to the body.
+ The missile onboard computer is probably able to substract this component
+ on the lateral acceleration.
+ To simplify this problem that is not the purpose of the study, it will
+ be assumed that 
+\begin_inset Formula $\bar{a_{z_{b}i}}=a_{z_{a}i}$
+\end_inset
+
+.
+ This means that an accelerometer fixed on the body is assumed to measure
+ only the inertial acceleration normal to the speed vector.
+ 
+\begin_inset Formula $a_{z_{a}i}$
+\end_inset
+
+ will now be simply denoted 
+\begin_inset Formula $a_{zi}$
+\end_inset
+
+.
+ Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\left[\begin{array}{c}
+q\\
+a_{zCG}\\
+a_{z10}\\
+a_{z54}\\
+a_{z83}\\
+a_{z92}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The nodes are defined in Subsection 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:discretize"
+
+\end_inset
+
+.
+ The pitch rate 
+\begin_inset Formula $q$
+\end_inset
+
+ and acceleration 
+\begin_inset Formula $a_{z83}$
+\end_inset
+
+ are measured to control the rigid-body states of the missile.
+ These measurements are already integrated in the current version of ASTER-30.
+ The acceleration measurements at nodes 10, 54 and 92 will be used to measure
+ the vibrations due to bending oscillations.
+ The vibration components of these accelerations will be added later.
+ The lateral acceleration of the center of gravity is measured to assess
+ the system.
+ Indeed, the controller will make this output equal to the reference acceleratio
+n.
+\end_layout
+
+\begin_layout Subsubsection
+State Equation
+\end_layout
+
+\begin_layout Standard
+The two equations that governs the dynamic of this state-space system are
+ Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:liftEq"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pitchingMoment"
+
+\end_inset
+
+.
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:liftEq"
+
+\end_inset
+
+ can be rearrange using 
+\begin_inset Formula $\dot{\gamma}=q-\dot{\bar{\alpha}}$
+\end_inset
+
+ to give
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\dot{\bar{\alpha}}=\frac{1}{mV}\left(-\frac{1}{2}\rho S_{ref}V^{2}(C_{L0}+C_{L\alpha}\alpha)-T\,\sin(\theta_{T}+\alpha)+W\,\cos(\gamma)\right)+q\label{eq:alphaDot}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pitchingMoment"
+
+\end_inset
+
+ yields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\dot{q}=\frac{1}{J_{y}}\left(\frac{1}{2}\rho S_{ref}V^{2}L_{ref}(C_{m0}+C_{m\alpha}\alpha)-T\,\sin(\theta_{T})\,x_{CG}\right)\label{eq:qDot}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The linearization of the two last Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:alphaDot"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:qDot"
+
+\end_inset
+
+ about the trim state where [
+\begin_inset Formula $\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $V$
+\end_inset
+
+, 
+\begin_inset Formula $\rho$
+\end_inset
+
+, 
+\begin_inset Formula $\theta_{T}$
+\end_inset
+
+, 
+\begin_inset Formula $T$
+\end_inset
+
+, 
+\begin_inset Formula $\gamma$
+\end_inset
+
+] = [
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\theta_{T0}$
+\end_inset
+
+, 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\gamma_{0}$
+\end_inset
+
+].
+ This bring the following matrix equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\begin{array}{c}
+\dot{\bar{\alpha}}\\
+\dot{q}
+\end{array}\right]=A\,\left[\begin{array}{c}
+\bar{\alpha}\\
+q
+\end{array}\right]+B\,\bar{\theta_{T}}
+\]
+
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\left[\begin{array}{cc}
+A_{11} & A_{12}\\
+A_{21} & A_{22}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+A_{11} & =-\frac{1}{mV_{0}}\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}C_{L\alpha}+T_{0}\,\cos(\theta_{T0}+\alpha_{0})\right)\\
+A_{12} & =1\\
+A_{21} & =\frac{1}{J_{y}}\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}L_{ref}C_{m\alpha}\\
+A_{22} & =0
+\end{cases}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+B=\left[\begin{array}{c}
+-\frac{T_{0}\,\cos(\theta_{T0}+\alpha_{0})}{m\,V_{0}}\\
+-\frac{T_{0}\,\cos(\theta_{T0})\,x_{CG}}{J_{y}}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A numerical computation gives the following results:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\left[\begin{array}{cc}
+-0.498 & 1\\
+-7.22 & 0
+\end{array}\right],\quad B=\left[\begin{array}{c}
+-0.233\\
+-168
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Output Equation
+\end_layout
+
+\begin_layout Standard
+The pitch rate 
+\begin_inset Formula $q$
+\end_inset
+
+ is already a state so adding this signal to the output is done easily.
+\end_layout
+
+\begin_layout Standard
+The inertial acceleration 
+\begin_inset Formula $a_{zCG}$
+\end_inset
+
+ is normal to the speed vector and has been derived in Subsection 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:linAcc"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{zCG}=\frac{1}{m}\left(-L-T\,\sin(\theta_{T}+\alpha)+W\,\cos(\gamma)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus when linearized
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{zCG}=-\frac{1}{m}\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}C_{L\alpha}+T_{0}\,\cos(\theta_{T0}+\alpha_{0})\right)\alpha-\frac{T_{0}\,\cos(\theta_{T0}+\alpha_{0})}{m}\bar{\theta_{T}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given 
+\begin_inset Formula $x$
+\end_inset
+
+ the abscissa of a point on the missile, the lateral acceleration measured
+ at this point will be 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z,x}=a_{z,CG}+(x_{CG}-x)\dot{q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence using Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pitchingMoment"
+
+\end_inset
+
+ and linearizing
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z,x}=a_{z,CG}+\frac{1}{J_{y}}(x_{CG}-x)\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}L_{ref}C_{m\alpha}\alpha-T_{0}\,\cos(\theta_{T0})\,x_{CG}\,\bar{\theta_{T}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For a node 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $x_{i}=(i-1)\,l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This yields the output equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=C\left[\begin{array}{c}
+\bar{\alpha}\\
+q
+\end{array}\right]+D\bar{\theta_{T}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The matrices 
+\begin_inset Formula $C$
+\end_inset
+
+ and 
+\begin_inset Formula $D$
+\end_inset
+
+ will only be given numerically:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\left[\begin{array}{cc}
+0 & 1\\
+\\
+\\
+\\
+\\
+\\
+\end{array}\right]\quad D=\left[\begin{array}{c}
+\\
+\\
+\\
+\\
+\\
+\\
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Structural Model
 \end_layout
 
 \begin_layout Subsection
 From continuous to discrete
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:discretize"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -137,7 +1717,7 @@ Estimated from the natural frequency of the 1st bending mode at 20Hz
 
 \end_inset
 
- of the missile is 2 mm.
+ of the missile is 2.5 mm.
  These dimensions are illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -152,7 +1732,7 @@ reference "fig:ASTER30Dimensions"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -255,8 +1835,8 @@ description "second moment of area of the dart about the neutral axis along the 
 \begin_inset Formula 
 \[
 \begin{cases}
-I_{G,y_{booster}} & =3.60\cdot10^{-5}\,m^{4}\\
-I_{G,y_{dart}} & =4.43\cdot10^{-6}\,m^{4}
+I_{G,y_{booster}} & =4.49\cdot10^{-5}\,m^{4}\\
+I_{G,y_{dart}} & =5.49\cdot10^{-6}\,m^{4}
 \end{cases}
 \]
 
@@ -4952,10 +6532,29 @@ Gyrometers Placement
 \begin_layout Standard
 A gyrometer will measure not only the pitch rate due to the vibrations but
  also the pitch rate of the rigid-body.
+ For instant, at node 
+\begin_inset Formula $i$
+\end_inset
+
+, a gyrometer will measure
+\begin_inset Formula 
+\[
+q_{i}=q_{i,fb}+q
+\]
+
+\end_inset
+
  The isolate the pitch rate of the vibrations, one needs the measurements
  of two gyrometers placed at different locations.
- Hence, the pitch rate of the rigid-body can be removed to keep only the
- vibrations measurement.
+ Hence, the pitch rate of the rigid-body can be removed by substraction
+ to keep only the vibrations measurement:
+\begin_inset Formula 
+\[
+q_{i}-q_{j}=q_{i,fb}-q_{j,fb}
+\]
+
+\end_inset
+
  At least two gyrometers must be used.
 \end_layout
 
@@ -4970,7 +6569,7 @@ A gyrometer is less sensitive to variations of temperature than a strain
 \end_inset
 
  corresponding to 
-\begin_inset Formula $x=\left\llbracket 0.45m,\,1.40m\right\rrbracket $
+\begin_inset Formula $x=\left\llbracket 0.45m,\,4.40m\right\rrbracket $
 \end_inset
 
 .
@@ -5035,7 +6634,7 @@ The nose is a place where the gyrometer would be very sensitive to the
 \end_inset
 
  bending mode.
- Actually, there is already a gyrometer at 
+ Actually, there is already a gyrometer in the sensor pack at 
 \begin_inset Formula $x$
 \end_inset
 
@@ -5055,6 +6654,70 @@ The nose is a place where the gyrometer would be very sensitive to the
 
 \begin_layout Subsubsection
 Accelerometers Placement
+\end_layout
+
+\begin_layout Standard
+Accelerometers measure the lateral acceleration due to vibrations but also
+ the lateral acceleration of the rigid-body.
+ Moreover, the acceleration on the rigid-body depends of where the sensor
+ is placed.
+ At node 
+\begin_inset Formula $i$
+\end_inset
+
+, and accelerometer will measure:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{z,i}=a_{z,rb,CG}+(x_{CG}-x_{i})\,\dot{q}+a_{z,fb,i}
+\]
+
+\end_inset
+
+thus such a measurement contains three unknowns : 
+\begin_inset Formula $a_{z,rb,CG}$
+\end_inset
+
+, 
+\begin_inset Formula $\dot{q}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{z,fb,i}$
+\end_inset
+
+.
+ Therefore a minimum number of three accelerometers are needed at different
+ locations to eleminate the acceleration of the center of gravity and the
+ additional term due to pitch acceleration.
+ This also assumes that the position of the center of gravity is accurately
+ known, which is not correct since its position is moving during the propellant
+ combustion.
+\end_layout
+
+\begin_layout Standard
+Like a gyrometer, an accelerometer is not as sensible to temperature variations
+ as a strain gage.
+ Thus it can be placed within 
+\begin_inset Formula $x=\left\llbracket 0.45m,\,4.40m\right\rrbracket $
+\end_inset
+
+ corresponding to the set 
+\begin_inset Formula $S=\left\llbracket 10,92\right\rrbracket $
+\end_inset
+
+.
+ Once again, the placement indices are calculated all over the body in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:indicesAcc"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -5094,6 +6757,121 @@ name "fig:indicesAcc"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sensor pack of the missile already contains an accelerometer along the
+ z-axis at node 83.
+ This position is not very sensible to the first bending mode lateral accelerati
+ons as its placement index is very low.
+ The sensor pack seems to be placed somewhere next to the vibration acceleration
+ node.
+ Hence this accelerometer cannot be used for bending vibration control.
+\end_layout
+
+\begin_layout Standard
+The three best locations that have a great placement index and are uncorrelated
+ are at nodes 10, 54 and 92.
+\end_layout
+
+\begin_layout Subsubsection
+Outputs Selection
+\end_layout
+
+\begin_layout Standard
+Finally, from the model established in the previous Section, only a few
+ outputs are kept.
+ These outputs are:
+\end_layout
+
+\begin_layout Itemize
+The gyrometer and the accelerometer from the sensor pack at node 83
+\end_layout
+
+\begin_layout Itemize
+The added strain gage at node 49
+\end_layout
+
+\begin_layout Itemize
+The added gyrometer at node 10
+\end_layout
+
+\begin_layout Itemize
+The added accelerometers at nodes 10, 54 and 92
+\end_layout
+
+\begin_layout Standard
+The pitch rate and acceleration outputs at node 83 will be added to the
+ flight dynamics pitch rate and acceleration to simulate the noise created
+ by vibrations in the inertial unit of the missile.
+ The added strain gage at node 49, the gyrometers at nodes 10 and 83 and
+ the three added accelerometers at nodes 10, 54 and 92 will be used to damp
+ the first bending mode.
+\end_layout
+
+\begin_layout Standard
+All of these sensors are summarized in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sensorPlacement"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sensorPlacement.png
+	lyxscale 80
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensors Locations - Strain gages 
+\begin_inset Formula $\varepsilon,$
+\end_inset
+
+ Gyrometers 
+\begin_inset Formula $q$
+\end_inset
+
+ and Accelerometers 
+\begin_inset Formula $a_{z}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sensorPlacement"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
 \end_layout
@@ -5101,6 +6879,10 @@ name "fig:indicesAcc"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Part
+Control
 \end_layout
 
 \begin_layout Standard
