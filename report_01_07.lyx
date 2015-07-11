@@ -390,6 +390,19 @@ key "fleeman2006tactical"
 Fins Aerodynamics
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Summarize data in a table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 External Efforts
 \end_layout
@@ -483,8 +496,8 @@ The third one is the body frame (
 \end_inset
 
  and oriented downward.
- The body frame is obtained by rotating the Earth's frame of an angle of
- 
+ The body frame is obtained by rotating the aerodynamic frame of an angle
+ of 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -1189,7 +1202,17 @@ a_{z_{a}CG}\\
 
 \end_inset
 
-where 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Accelerometer measure gravity too
+\end_layout
+
+\end_inset
+
+ where 
 \begin_inset Formula $a_{z_{a}CG}$
 \end_inset
 
@@ -1648,7 +1671,7 @@ The matrices
 \begin_inset Formula $D$
 \end_inset
 
- will only be given numerically:
+ are
 \end_layout
 
 \begin_layout Standard
@@ -1656,19 +1679,98 @@ The matrices
 \[
 C=\left[\begin{array}{cc}
 0 & 1\\
-\\
-\\
-\\
-\\
-\\
-\end{array}\right]\quad D=\left[\begin{array}{c}
-\\
-\\
-\\
-\\
-\\
-\\
+-\frac{1}{m}\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}C_{L\alpha}+T_{0}\,\cos(\theta_{T0}+\alpha_{0})\right) & 0\\
+-\frac{1}{m}\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}C_{L\alpha}+T_{0}\,\cos(\theta_{T0}+\alpha_{0})\right)+\frac{1}{J_{y}}(x_{CG}-9\,l)\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}L_{ref}C_{m\alpha} & 0\\
+-\frac{1}{m}\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}C_{L\alpha}+T_{0}\,\cos(\theta_{T0}+\alpha_{0})\right)+\frac{1}{J_{y}}(x_{CG}-52\,l)\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}L_{ref}C_{m\alpha} & 0\\
+-\frac{1}{m}\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}C_{L\alpha}+T_{0}\,\cos(\theta_{T0}+\alpha_{0})\right)+\frac{1}{J_{y}}(x_{CG}-82\,l)\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}L_{ref}C_{m\alpha} & 0\\
+-\frac{1}{m}\left(\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}C_{L\alpha}+T_{0}\,\cos(\theta_{T0}+\alpha_{0})\right)+\frac{1}{J_{y}}(x_{CG}-91\,l)\frac{1}{2}\rho_{0}S_{ref}V_{0}^{2}L_{ref}C_{m\alpha} & 0
 \end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D=\left[\begin{array}{c}
+0\\
+-\frac{1}{m}T_{0}\,\cos(\theta_{T0}+\alpha_{0})\\
+-\frac{1}{m}T_{0}\,\cos(\theta_{T0}+\alpha_{0})-\frac{1}{J_{y}}(x_{CG}-9\,l)T_{0}\,\cos(\theta_{T0})\,x_{CG}\\
+-\frac{1}{m}T_{0}\,\cos(\theta_{T0}+\alpha_{0})-\frac{1}{J_{y}}(x_{CG}-52\,l)T_{0}\,\cos(\theta_{T0})\,x_{CG}\\
+-\frac{1}{m}T_{0}\,\cos(\theta_{T0}+\alpha_{0})-\frac{1}{J_{y}}(x_{CG}-82\,l)T_{0}\,\cos(\theta_{T0})\,x_{CG}\\
+-\frac{1}{m}T_{0}\,\cos(\theta_{T0}+\alpha_{0})-\frac{1}{J_{y}}(x_{CG}-91\,l)T_{0}\,\cos(\theta_{T0})\,x_{CG}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Numerically this gives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\left[\begin{array}{cc}
+0 & 1\\
+-339 & 0\\
+-349 & 0\\
+-334 & 0\\
+-323 & 0\\
+-320 & 0
+\end{array}\right]\quad D=\left[\begin{array}{c}
+0\\
+-158\\
+-397\\
+-30.3\\
+211\\
+286
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Actuator Dynamics
+\end_layout
+
+\begin_layout Standard
+The missile is directed with thrust vectoring.
+ The two nozzles at the tail of the missile are mounted with hydraulic cylindres.
+ The nozzles can be oriented to create a lateral component of thrust that
+ will generate a moment.
+ This moment will change the angle of attack of the missile to create a
+ lateral acceleration.
+\end_layout
+
+\begin_layout Standard
+The actuator is the limiting component in the control loop.
+ Its bandwidth is estimated to be up to 
+\begin_inset Formula $25\,Hz$
+\end_inset
+
+.
+ The actuator dynamic is thus represented with a second order of cutoff
+ frequency 
+\begin_inset Formula $25\,Hz$
+\end_inset
+
+ and and damping ratio of 1:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{actuator}(s)=\frac{1}{40.5\cdot10^{-6}s^{2}+12.7\cdot10^{-3}s+1}
 \]
 
 \end_inset
@@ -6513,8 +6615,8 @@ name "fig:indicesEps"
 On the bar plot, the placement indices of locations on the booster are very
  low compared to those on the dart.
  Indeed the booster is very stiff so it bends very few compared to the dart.
- The best location for a strain gage is at node 49 next to the fins at 
-\begin_inset Formula $x=2.38\,m$
+ The best location for a strain gage is at node 46 behind the fins at 
+\begin_inset Formula $x=2.23\,m$
 \end_inset
 
 .
@@ -6647,8 +6749,8 @@ The nose is a place where the gyrometer would be very sensitive to the
 \end_inset
 
  that correspond approximately to node 83.
- The second gyrometer must be place at the other side of the zero pitch
- rate node 54.
+ The second gyrometer must be placed at the other side of the zero pitch
+ rate node 53.
  The second best position is then node 10.
 \end_layout
 
@@ -6774,7 +6876,7 @@ ons as its placement index is very low.
 
 \begin_layout Standard
 The three best locations that have a great placement index and are uncorrelated
- are at nodes 10, 54 and 92.
+ are at nodes 10, 53 and 92.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6792,7 +6894,7 @@ The gyrometer and the accelerometer from the sensor pack at node 83
 \end_layout
 
 \begin_layout Itemize
-The added strain gage at node 49
+The added strain gage at node 46
 \end_layout
 
 \begin_layout Itemize
@@ -6800,15 +6902,15 @@ The added gyrometer at node 10
 \end_layout
 
 \begin_layout Itemize
-The added accelerometers at nodes 10, 54 and 92
+The added accelerometers at nodes 10, 53 and 92
 \end_layout
 
 \begin_layout Standard
 The pitch rate and acceleration outputs at node 83 will be added to the
  flight dynamics pitch rate and acceleration to simulate the noise created
  by vibrations in the inertial unit of the missile.
- The added strain gage at node 49, the gyrometers at nodes 10 and 83 and
- the three added accelerometers at nodes 10, 54 and 92 will be used to damp
+ The added strain gage at node 46, the gyrometers at nodes 10 and 83 and
+ the three added accelerometers at nodes 10, 53 and 92 will be used to damp
  the first bending mode.
 \end_layout
 
@@ -6883,6 +6985,52 @@ name "fig:sensorPlacement"
 
 \begin_layout Part
 Control
+\end_layout
+
+\begin_layout Section
+Conventional Control
+\end_layout
+
+\begin_layout Standard
+There are several strategies to deal with the bending oscillation.
+ The first one is currently used by missile companies and consists in filtering
+ the input command using a low-pass filter to avoid exciting the bending
+ modes.
+ Now that we have added new sensors on the airframe, these outputs can be
+ used to actively damp the bending oscillations.
+ We will investigate feedback architectures based on the strain measurement,
+ on pitch rate measurements and on the accelerometer measurements.
+\end_layout
+
+\begin_layout Subsection
+Low-pass Filtering
+\end_layout
+
+\begin_layout Standard
+A low-pass filter is added at the entry of the system.
+ This filter will remove any command signal that could excitate the bending
+ modes.
+ Its cutoff frequency is set to the first bending mode frequency
+\end_layout
+
+\begin_layout Subsection
+Strain Feedback
+\end_layout
+
+\begin_layout Subsection
+Gyrometer Feedback
+\end_layout
+
+\begin_layout Subsection
+Accelerometer Feedback
+\end_layout
+
+\begin_layout Section
+Robust Control Design
+\end_layout
+
+\begin_layout Part
+Design Enhancement
 \end_layout
 
 \begin_layout Standard
