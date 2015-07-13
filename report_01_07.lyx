@@ -3,6 +3,11 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\usepackage{tikz} 
+\usetikzlibrary{shapes,arrows,positioning,calc}
+\usepackage{schemabloc}
+\end_preamble
 \use_default_options true
 \begin_modules
 customHeadersFooters
@@ -263,7 +268,7 @@ reference "fig:MISL3"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1834,7 +1839,7 @@ reference "fig:ASTER30Dimensions"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2010,7 +2015,7 @@ reference "fig:lumpedElementModel"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2212,7 +2217,7 @@ The method to do so will be explained later.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2371,7 +2376,7 @@ reference "fig:structParamGraph"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2942,12 +2947,13 @@ Case 4
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/LeckieCases.png
+	lyxscale 20
 	width 40page%
 
 \end_inset
@@ -5713,13 +5719,13 @@ a_z,fb correct
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/azRBElimination.png
-	lyxscale 30
+	lyxscale 20
 	width 70page%
 
 \end_inset
@@ -6692,7 +6698,7 @@ reference "fig:indicesGyr"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6929,7 +6935,7 @@ reference "fig:sensorPlacement"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6992,37 +6998,3624 @@ Conventional Control
 \end_layout
 
 \begin_layout Standard
-There are several strategies to deal with the bending oscillation.
- The first one is currently used by missile companies and consists in filtering
- the input command using a low-pass filter to avoid exciting the bending
- modes.
- Now that we have added new sensors on the airframe, these outputs can be
- used to actively damp the bending oscillations.
- We will investigate feedback architectures based on the strain measurement,
- on pitch rate measurements and on the accelerometer measurements.
+A common feedback architecture to control the lateral acceleration generation
+ uses a pitch rate feedback plus a proportional integral controller on the
+ lateral acceleration.
+ In the case of a simple rigid missile, the bending is not considered.
+ To control the lateral acceleration, the closed-loop architecture is described
+ on Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:RBCL}
 \end_layout
 
-\begin_layout Subsection
-Low-pass Filtering
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-A low-pass filter is added at the entry of the system.
- This filter will remove any command signal that could excitate the bending
- modes.
- Its cutoff frequency is set to the first bending mode frequency
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Entry and first sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbEntree{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbComp{errComp}{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zref}$]{azref}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% PI block
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocL{PI}{$K_{PI}
+\backslash
+frac{1+
+\backslash
+tau_{PI}
+\backslash
+,s}{s}$}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sum PI + Kq
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSumb[5]{thetaTref}{PI}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier{PI}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Actuator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBloc[4]{actuator}{Actuator}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+theta_{Tref}$]{thetaTref}{actuator}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% azCG Bloc and exit
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBloc[4]{accCG}{$
+\backslash
+frac{a_{zCG}}{
+\backslash
+theta_T}$}{actuator}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+theta_T$]{actuator}{accCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSortie[3]{azCG}{accCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zCG}$]{accCG}{azCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gyro measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbDecaleNoeudy{actuator-accCG}{cornerQ}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr[2]{gyrometer}{$
+\backslash
+frac{q_{83}}{
+\backslash
+theta_T}$}{cornerQ}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelieryx{actuator-accCG}{gyrometer}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Kq and sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr{dampQ}{$K_q$}{gyrometer}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$q_{83}$]{gyrometer}{dampQ}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelierxy{dampQ}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Acc measurement and loop
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbDecaleNoeudy{cornerQ}{cornerA}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr[2]{accelerometer}{$
+\backslash
+frac{a_{z83}}{
+\backslash
+theta_T}$}{cornerA}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelieryx{actuator-accCG}{accelerometer}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelierxy[$a_{z83}$]{accelerometer}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Closed-Loop for a Rigid Missile}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{fig:RBCL}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The pitch rate feedback gain 
+\begin_inset Formula $K_{q}$
+\end_inset
+
+ is chosen to damp the short period pitch oscillation.
+ The proportional integral corrector on the lateral acceleration 
+\begin_inset Formula $PI(s)=K_{PI}\frac{1+\tau_{PI}s}{s}$
+\end_inset
+
+ is set to make the system as fast as possible with reasonable gain and
+ phase margins.
+ However, the bending cannot be neglected for agile missiles.
+ There are several ways to maintain good performance despite the vibrations.
+\end_layout
+
+\begin_layout Section
+Dealing With Vibrations
+\end_layout
+
+\begin_layout Standard
+For agile missiles such as ASTER, the actuator bandwidth is very large.
+ Thus, if the command signal generated has a non zero component at the bending
+ frequency, the structural mode will start to oscillate.
+ This oscillation is measured by the sensors and fed through the controller
+ which could amplify it.
+ On Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rlocusNoVibeSupp"
+
+\end_inset
+
+ is drawn the root locus for the system open loop from the nozzle orientation
+ reference 
+\begin_inset Formula $\theta_{Tref}$
+\end_inset
+
+ to the pitch rate measured at the sensor pack location, on node 83 
+\begin_inset Formula $q_{83}$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $1^{st}$
+\end_inset
+
+ and the 
+\begin_inset Formula $3^{rd}$
+\end_inset
+
+ bending mode become unstable with this feedback which is supposed to damp
+ the shot period pitch oscillation (SPPO).
+ If nothing is done to get rid of this oscillation, this amplification can
+ lead to irreversible damages of the airframe.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/rlocusNoVibeSupp2.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Root Locus of 
+\begin_inset Formula $\frac{q_{83}}{\theta_{Tref}}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rlocusNoVibeSupp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are several strategies to deal with the bending oscillation.
+ The first one is currently used by missile companies and consists in filtering
+ the input command using a notch filter to avoid exciting the first bending
+ mode.
+ This technique will be developped further in the next subsection.
+ Now that new sensors have been added on the airframe, these measurements
+ they give can be used to actively damp the bending oscillations.
+ Feedback architectures based on the strain measurement, on pitch rate measureme
+nts and on the accelerometer measurements will investigated in the following
+ subsections.
 \end_layout
 
 \begin_layout Subsection
+Notch Filtering
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:notchFilter"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A notch filter is added at the entry of the system.
+ This filter will remove any command signal that could excitate the first
+ bending mode.
+ The first step is to choose the type of filter.
+ A Chebyshev Type II filter suits the problem because there is no ripple
+ in the bandwidth that could create gain distorsion and affect performance
+ at low frequency.
+ However, this type of filter requires a high order denominator to ensure
+ a sharp gain loss.
+ The filter center frequency is set to 20Hz with a stopband bandwith of
+ 
+\begin_inset Formula $\pm10\%$
+\end_inset
+
+.
+ Indeed, the uncertainty on the first bending mode frequency is about 
+\begin_inset Formula $\pm10\%$
+\end_inset
+
+.
+ The gain loss is set to 
+\begin_inset Formula $20dB$
+\end_inset
+
+.
+ The order of the filter is 4.
+\end_layout
+
+\begin_layout Standard
+The Bode diagram of the filter is plotted on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:notchFilter"
+
+\end_inset
+
+.
+ The phase loss brought by this notch filter is already -30° at 
+\begin_inset Formula $70\,rad.s^{-1}$
+\end_inset
+
+ that may bring poorer performance even at low frequencies.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/notchFilter.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode Diagram of the Notch Filter
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:notchFilter"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thanks to this filter, the actuator will excite less the first bending mode.
+ The bode diagram of 
+\begin_inset Formula $\frac{q_{83}(s)}{\theta_{Tref}(s)}$
+\end_inset
+
+ is plotted on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bodeFiltered"
+
+\end_inset
+
+.
+ This shows clearly that the resonance peak of the first bending mode has
+ but cut down by 20dB.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/bodeFiltered.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode Diagram of 
+\begin_inset Formula $\frac{q_{83}(s)}{\theta_{Tref}(s)}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bodeFiltered"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once the filter is plugged to the system input, a conventional pitch rate
+ feedback with a proportional integral controller on the acceleration can
+ be designed.
+ The new feedback architecture is drawn on Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:NFCL}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{footnotesize}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Entry and first sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbEntree{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbComp{errComp}{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zref}$]{azref}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% PI block
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocL{PI}{$K_{PI}
+\backslash
+frac{1+
+\backslash
+tau_{PI}
+\backslash
+,s}{s}$}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sum PI + Kq
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSumb[5]{thetaTref}{PI}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier{PI}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Notch Filter
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBloc{filter}{Notch Filter}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier{thetaTref}{filter}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Actuator
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBloc[4]{actuator}{Actuator}{filter}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+theta_{Tref}$]{filter}{actuator}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% azCG Bloc and exit
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBloc[4]{accCG}{$
+\backslash
+frac{a_{zCG}}{
+\backslash
+theta_T}$}{actuator}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+theta_T$]{actuator}{accCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSortie[3]{azCG}{accCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zCG}$]{accCG}{azCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gyro measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbDecaleNoeudy{actuator-accCG}{cornerQ}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr[2]{gyrometer}{$
+\backslash
+frac{q_{83}}{
+\backslash
+theta_T}$}{cornerQ}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelieryx{actuator-accCG}{gyrometer}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Kq and sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr{dampQ}{$K_q$}{gyrometer}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$q_{83}$]{gyrometer}{dampQ}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelierxy{dampQ}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Acc measurement and loop
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbDecaleNoeudy{cornerQ}{cornerA}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr[2]{accelerometer}{$
+\backslash
+frac{a_{z83}}{
+\backslash
+theta_T}$}{cornerA}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelieryx{actuator-accCG}{accelerometer}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelierxy[$a_{z83}$]{accelerometer}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{footnotesize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Closed-Loop with Notch Filter}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{fig:NFCL}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This filter ensures that the actuator will not excite the bending mode,
+ however other sources like unsteady aerodynamic forces can still excite
+ it.
+\end_layout
+
+\begin_layout Subsection
+Active Structural Damping
+\end_layout
+
+\begin_layout Standard
+The notch filter is a simple solution to deal with vibrations but it sets
+ a limit to the bandwidth of the missile.
+ Another way to overcome bending oscillations is to artificially augment
+ the damping ratio of the bendin modes.
+ This is called active structural damping.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Requierements
+\end_layout
+
+\begin_layout Standard
+The controller must generate a force that is opposite to the vibration speed
+ to damp the bending oscillations.
+ To do so, the controller can either use the thrust vectoring or the central
+ fins.
+ The natural frequency of the first mode is 20Hz.
+ The bandwidth of the thrust vectoring is about 25Hz which is too low.
+ At 20Hz, the thrust vectoring has a phase loss of -70° and a gain loss
+ of -1.5dB as show on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bodeThrustVect"
+
+\end_inset
+
+.
+ This is very close to the cutoff frequency and the real behaviour of the
+ actuator at this frequency is not accurately modeled.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/bodeThrustVect.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode Diagram of 
+\begin_inset Formula $\frac{\theta_{T}(s)}{\theta_{Tref}(s)}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bodeThrustVect"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The fins have a bandwith of 50Hz that is more than the double of the bending
+ mode frequency.
+ The phase loss at 20Hz is only -34° and the gain loss is -0.1dB as shown
+ on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bodeFins"
+
+\end_inset
+
+.
+ Therefore this fast actuator is to be prefered for active damping of the
+ first bending mode.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/bodeFins.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode Diagram of 
+\begin_inset Formula $\frac{\delta_{F}(s)}{\delta_{Fref}(s)}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bodeFins"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Strain Feedback
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+The strain gage is a sensor that is usually not present on a missile airframe.
+ With this extra sensor, it possible to measure the local strain on the
+ skin of the structure to infere on its flexure.
+ This additional information can help to deal with bending oscillation.
+ It has been chosen to damp the first bending mode oscillation with the
+ central fins.
+ At the bending mode frequency, the fins deflection have very little influence
+ on the slow rigid-body dynamics.
+ Moreover, they are located close to the center of gravity so they do not
+ create a big change in the angle of attack.
+ If only the first bending mode is considered, the transfer function of
+ the fins deflection to the strain can be approximated to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\varepsilon_{46}}{\delta_{F}}(s)=K_{\nicefrac{\varepsilon}{\delta_{F}}}\frac{\omega_{1}^{2}}{s^{2}+2\,\zeta_{1}\,\omega_{1}\,s+\omega_{1}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To increase the term 
+\begin_inset Formula $\zeta_{1}$
+\end_inset
+
+ with a simple feedback, the strain measurement needs to be derivated as
+ shown in the block diagram in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:strainFB1"
+
+\end_inset
+
+.
+ The transfer function of the closed-loop would then be 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\varepsilon_{46}}{\delta_{F}}_{CL}(s)=K_{\nicefrac{\varepsilon}{\delta_{F}}}\frac{\omega_{1}^{2}}{s^{2}+2\,(\zeta_{1}+K_{\nicefrac{\varepsilon}{\delta_{F}}}\omega_{1}K)\,\omega_{1}\,s+\omega_{1}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Entry and first sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbEntree{entree}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbComp{errComp}{entree}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier{entree}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Actuator and exit
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBloc{tf}
+\end_layout
+
+\begin_layout Plain Layout
+
+{$K_{
+\backslash
+nicefrac{
+\backslash
+varepsilon_{46}}{
+\backslash
+delta_{F}}}
+\backslash
+frac{
+\backslash
+omega_{1}^{2}}{s^{2}+2
+\backslash
+,
+\backslash
+zeta_{1}
+\backslash
+,
+\backslash
+omega_{1}
+\backslash
+,s+
+\backslash
+omega_{1}^{2}}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+delta_{F}$]{errComp}{tf}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSortie[3]{epsilon}{tf}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+varepsilon_{46}$]{tf}{epsilon}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Strain feedback
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbDecaleNoeudy{tf-epsilon}{corner}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr[4]{corr}{$K
+\backslash
+,s$}{corner}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelieryx{tf-epsilon}{corr}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelierxy{corr}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Block Diagram of Derivative Strain Feedback
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:strainFB1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The feedback gain 
+\begin_inset Formula $K$
+\end_inset
+
+ directly changes the damping ratio of the first bending mode without changing
+ the static gain 
+\begin_inset Formula $K_{\nicefrac{\varepsilon}{\delta_{F}}}$
+\end_inset
+
+ or the natural frequency 
+\begin_inset Formula $\omega_{1}$
+\end_inset
+
+.
+ However this feedback is non causal and a pole needs to be added.
+ This artificial pole can be placed very fast to minimize its influence
+ on the dynamics.
+ The feedback transfer function would then be
+\begin_inset Formula 
+\[
+K\,\frac{s}{1+\nicefrac{s}{\omega_{fast}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This feedback loop would work if the fins deflection dynamics were very
+ fast.
+ This is not the case because even if there bandwith is twice bigger than
+ the bending mode natural frequency, the phase loss is non negligeable.
+\end_layout
+
+\begin_layout Standard
+Fortunately, this phase shift acts slightly like a differentiator and a
+ simple proportional feedback will damp the bending oscillations.
+ On Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rlocusStrain"
+
+\end_inset
+
+, a root locus has been plotted with the full dynamics of all 5 bending
+ modes, flight dynamics and actuator dynamics.
+ With a proportional feedback gain of 600, the damping ratio of the first
+ bending mode has been increased by 10 to 12.5%.
+ This gain is chosen to obtain a gain margin of 6dB and a phase margin of
+ 30°.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/rlocusStrain.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Root Locus of 
+\begin_inset Formula $\frac{\varepsilon_{46}}{\delta_{Fref}}(s)$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rlocusStrain"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With this first loop, the bode diagram of 
+\begin_inset Formula $\frac{q_{83}}{\theta_{Tref}}(s)$
+\end_inset
+
+ on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bodeDampingStrain"
+
+\end_inset
+
+ shows that the first bending mode is clearly damped.
+ Thus, the thrust vectoring will be less likely to excite the first bending
+ mode.
+ The resonance peak at 
+\begin_inset Formula $125\,rad.s^{-1}$
+\end_inset
+
+ has been damped thoroughly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/bodeDampingStrain.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode of 
+\begin_inset Formula $\frac{q_{83}}{\theta_{Tref}}(s)$
+\end_inset
+
+ With and Without Strain Feedback
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bodeDampingStrain"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This active damping is replacing the notch filter seen in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:notchFilter"
+
+\end_inset
+
+.
+ The complete feedback architecture containing the strain feedback, the
+ pitch rate loop and the proportional integrator corrector is on Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:completeStrainFB"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Entry and first sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbEntree{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbComp{errComp}{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zref}$]{azref}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% PI block
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocL{PI}{$K_{PI}
+\backslash
+frac{1+
+\backslash
+tau_{PI}
+\backslash
+,s}{s}$}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sum PI + Kq
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSumb[5]{thetaTref}{PI}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier{PI}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Missile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+def 
+\backslash
+L {6em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MI1) [right=
+\backslash
+L*1.2 of thetaTref] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, on grid, align=center, rectangle, minimum height=
+\backslash
+L, minimum width=
+\backslash
+L] (MIC) [below=
+\backslash
+L/6 of MI1] {Missile
+\backslash
+
+\backslash
+Dynamics};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MI2) [below=
+\backslash
+L/6 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO1) [above=
+\backslash
+L*3/10 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO2) [above=
+\backslash
+L*1/10 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO3) [below=
+\backslash
+L*1/10 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO4) [below=
+\backslash
+L*3/10 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+theta_{Tref}$]{thetaTref}{MI1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% azCG exit
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (azCG) [right=
+\backslash
+L*0.8 of MO1] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zCG}$]{MO1}{azCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Strain measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, rectangle, minimum height=3em, minimum width=3em] (strainController)
+ [below=of MO4] {$-K_{
+\backslash
+varepsilon}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (strainControllergauche) at (strainController.west){};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO4)  --  ++(
+\backslash
+L*0.7,0) |- node {$
+\backslash
+varepsilon_{46}$} (strainController);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (strainController)  --  ++(-
+\backslash
+L*0.7,0) |- node {$
+\backslash
+delta_{Fref}$} (MI2);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gyro measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, rectangle, minimum height=3em, minimum width=3em] (rateController)
+ [below=of strainController] {$K_{q}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (rateControllergauche) at (rateController.west){};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO3)  --  ++(
+\backslash
+L*0.9,0) |- node {$q_{83}$} (rateController);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbRelierxy{rateController}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Acc measurement and loop
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO2) -| node {$a_{z83}$} ++(
+\backslash
+L*1.1,-
+\backslash
+L*2.5) -| (errComp);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbBloc{sys}{System}{entree}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbDecaleNoeudy[0.5]{sys}{a}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbDecaleNoeudy[-0.5]{sys}{b}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbBloc[5]{out1}{out1}{a}
+\end_layout
+
+\begin_layout Plain Layout
+
+%	
+\backslash
+sbRelier[out1]{a}{out1}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbBloc[5]{out2}{out2}{b}
+\end_layout
+
+\begin_layout Plain Layout
+
+%	
+\backslash
+sbRelier[out2]{b}{out2}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbStyleBloc{fill=white}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbBloc{sysbis}{System}{entree}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+sbStyleBlocDefaut
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Feedback Architecture with Strain Gages
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:completeStrainFB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This feedback architecture has some disadvantages though.
+ The strain measured is not only coming from bending deformations.
+ Some longitudinal or twisting modes may create local strains and propagate
+ noise in the system.
+ Moreover, the static bending will create a static deflection of the fins
+ and increase drag.
+\end_layout
+
+\begin_layout Subsubsection
 Gyrometer Feedback
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+Two gyrometers can give information on the flexure.
+ A gyrometer is placed at the rear and the other one is the gyrometer included
+ in the sensor pack next to the nose.
+ The problem with damping bending with gyrometers is that they measure not
+ only the local pitch rate of the bending but also the rigid-body pitch
+ rate.
+ Thus two of them are needed to substract the rigid-body pitch rate.
+ Indeed, a gyro at node 
+\begin_inset Formula $i$
+\end_inset
+
+ will measure 
+\begin_inset Formula $q_{i}=q_{RB}+q_{FBi}$
+\end_inset
+
+.
+ The substraction of the signals coming from the two gyrometers will give:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+q_{10}-q_{83}=q_{FB10}-q_{FB83}=\Delta q
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If only the first bending mode is considered, the transfer function of the
+ fins deflection 
+\begin_inset Formula $\delta_{F}$
+\end_inset
+
+ to the pitch rate difference 
+\begin_inset Formula $\Delta q_{FB}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\Delta q}{\delta_{F}}(s)=K_{\nicefrac{\Delta q}{\delta_{F}}}\frac{\omega_{1}^{2}\,s}{s^{2}+2\,\zeta_{1}\,\omega_{1}\,s+\omega_{1}^{2}}
+\]
+
+\end_inset
+
+thus with a simple proportional feedback gain 
+\begin_inset Formula $K_{\Delta q}$
+\end_inset
+
+ from 
+\begin_inset Formula $\Delta q_{FB}$
+\end_inset
+
+ to 
+\begin_inset Formula $\delta_{F}$
+\end_inset
+
+ would change modify the transfer function to
+\begin_inset Formula 
+\[
+\frac{\Delta q}{\delta_{F}}_{CL}(s)=K_{\nicefrac{\Delta q}{\delta_{F}}}\frac{\omega_{1}^{2}\,s}{s^{2}+2\,(\zeta_{1}+K_{\nicefrac{\Delta q}{\delta_{F}}}\omega_{1}K_{\Delta q})\,\omega_{1}\,s+\omega_{1}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This feedback would damp the first bending mode without modifying the other
+ parameters.
+ Now considering the phase loss of the actuator of about 30°, the natural
+ frequency of the first bending mode will change but damping is still possible.
+ On Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rlocusDGyr"
+
+\end_inset
+
+ the root locus of 
+\begin_inset Formula $\frac{\Delta q}{\delta_{Fref}}(s)$
+\end_inset
+
+ shows that a damping of 12% on the first bending mode can be achieved with
+ a feedback gain 
+\begin_inset Formula $K_{\Delta q}=0.24$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/rlocusDGyr.png
+	lyxscale 30
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Root Locus of 
+\begin_inset Formula $\frac{\Delta q}{\delta_{Fref}}(s)$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rlocusDGyr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The effect of this loop on the resonance peak of the first bending mode
+ can be seen on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bodeDampingGyr"
+
+\end_inset
+
+.
+ The resonance peak is reduced.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/bodeDampingGyr.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode of 
+\begin_inset Formula $\frac{q_{83}}{\theta_{Tref}}(s)$
+\end_inset
+
+ With and Without 
+\begin_inset Formula $\Delta q$
+\end_inset
+
+ Feedback
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bodeDampingGyr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To this damping loop are added the conventional feedbacks on the pitch rate
+ and the lateral acceleration.
+ The complete architecture in this case is draw on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:completeGyrFB"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Entry and first sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbEntree{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbComp{errComp}{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zref}$]{azref}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% PI block
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocL{PI}{$K_{PI}
+\backslash
+frac{1+
+\backslash
+tau_{PI}
+\backslash
+,s}{s}$}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sum PI + Kq
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSumb[5]{thetaTref}{PI}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier{PI}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Missile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+def 
+\backslash
+L {6em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MI1) [right=
+\backslash
+L*1.2 of thetaTref] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, on grid, align=center, rectangle, minimum height=
+\backslash
+L, minimum width=
+\backslash
+L] (MIC) [below=
+\backslash
+L/6 of MI1] {Missile
+\backslash
+
+\backslash
+Dynamics};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MI2) [below=
+\backslash
+L/6 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO1) [above=
+\backslash
+L*1/3 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO2) [above=
+\backslash
+L*1/6 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO4) [below=
+\backslash
+L*1/6 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO5) [below=
+\backslash
+L*1/3 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+theta_{Tref}$]{thetaTref}{MI1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% MO4 & MO5 preparation
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (MO4droite) at (MO4.east){};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (MO5droite) at (MO5.east){};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% azCG exit
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (azCG) [right=
+\backslash
+L*0.8 of MO1] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zCG}$]{MO1}{azCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Delta gyr
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [on grid, draw, circle,minimum size=2em, below right=
+\backslash
+L and 
+\backslash
+L*0.7 of MIC] (sumGyr) {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [on grid, draw, cross out,minimum size=1.414em] at (sumGyr) {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above of=sumGyr,node distance=0.6em] {$-$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below of=sumGyr,node distance=0.6em] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left of=sumGyr,node distance=0.6em] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [right of=sumGyr,node distance=0.6em] {$+$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (symGyrdroite) at (sumGyr.east){};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (sumGyrgauche) at (sumGyr.west){};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelierxy[$q_{83}$]{MO5}{sumGyr};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[sbStyleLien,auto] (MO4)  --  ++(
+\backslash
+L,0) |- node {$q_{10}$} (sumGyr);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Delta gyr controller
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr{dGyrController}{$K_{
+\backslash
+Delta q}$}{sumGyr};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbRelier[$
+\backslash
+Delta q$]{sumGyr}{dGyrController};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (dGyrController)  --  ++(-
+\backslash
+L*0.7,0) |- node {$
+\backslash
+delta_{Fref}$} (MI2);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gyro measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, rectangle, minimum height=3em, minimum width=3em] (rateController)
+ [below=of dGyrController] {$K_{q}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (rateControllergauche) at (rateController.west){};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MIC)  --  ++(
+\backslash
+L*1.2,0) |- node {$q_{83}$} (rateController);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbRelierxy{rateController}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Acc measurement and loop
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO2) -| node {$a_{z83}$} ++(
+\backslash
+L*1.4,-
+\backslash
+L*2.5) -| (errComp);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Feedback Architecture with Gyrometers
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:completeGyrFB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This controller architecture has the disadvantage that the two gyrometers
+ must be similarily calibrated and synchronized to perform the substraction
+ correctly.
+ The great advantage is the absence of fins deflection in static.
+\end_layout
+
+\begin_layout Subsubsection
 Accelerometer Feedback
+\end_layout
+
+\begin_layout Standard
+Using accelerometers for the feedback is more complicated than using gyrometers.
+ At node 
+\begin_inset Formula $i$
+\end_inset
+
+, the accelerometer will measure 
+\begin_inset Formula $a_{z,i}=a_{z,CG}+(x_{CG}-x_{i})\,\dot{q}+a_{zi,fb}$
+\end_inset
+
+.
+ There are three unknowns in this equality: 
+\begin_inset Formula $a_{z,CG}$
+\end_inset
+
+, 
+\begin_inset Formula $\dot{q}$
+\end_inset
+
+, and 
+\begin_inset Formula $a_{zi,fb}$
+\end_inset
+
+ hence three uncorrelated accelerometers are needed to keep only the flexible
+ body component.
+ On the airframe, three accelerometers have been added at node 10, 53 and
+ 92.
+ Considering only the first bending mode, all the 
+\begin_inset Formula $a_{zi,fb}$
+\end_inset
+
+ are proportional to the first bending mode mean acceleration 
+\begin_inset Formula $a_{z,m1}$
+\end_inset
+
+.
+ A linear combination of these three measurements must be found so that
+ it does not depend of 
+\begin_inset Formula $a_{z,CG}$
+\end_inset
+
+ and 
+\begin_inset Formula $\dot{q}$
+\end_inset
+
+.
+ Let (
+\begin_inset Formula $c_{10}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{53}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{92}$
+\end_inset
+
+) be three coefficients so that
+\begin_inset Formula 
+\[
+c_{10}a_{z,10}+c_{53}a_{z,53}+c_{92}a_{z,92}=c\,a_{z,m1}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $c$
+\end_inset
+
+ is a non zero real number.
+ Let say that 
+\begin_inset Formula $c_{10}=1$
+\end_inset
+
+ to make the linear system of Cramer.
+ In a matrix form, this gives 
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+1 & 1 & 1\\
+9 & 52 & 91\\
+1 & 0 & 0
+\end{array}\right]\left[\begin{array}{c}
+c_{10}\\
+c_{53}\\
+c_{92}
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The solution is 
+\begin_inset Formula $\left[\begin{array}{c}
+c_{10}\\
+c_{53}\\
+c_{92}
+\end{array}\right]=\left[\begin{array}{c}
+1\\
+-\nicefrac{82}{39}\\
+\nicefrac{43}{39}
+\end{array}\right].$
+\end_inset
+
+ The linear combination 
+\begin_inset Formula $c_{10}a_{z,10}+c_{53}a_{z,53}+c_{92}a_{z,92}$
+\end_inset
+
+ will be called 
+\begin_inset Formula $\sum a_{z}$
+\end_inset
+
+.
+ The transfer function of the fins deflection to this linear combination
+ of accelerations is of the form
+\begin_inset Formula 
+\[
+\frac{\sum a_{z}}{\delta_{F}}(s)=K_{\nicefrac{\sum a_{z}}{\delta_{F}}}\frac{\omega_{1}^{2}\,s^{2}}{s^{2}+2\,\zeta_{1}\,\omega_{1}\,s+\omega_{1}^{2}}
+\]
+
+\end_inset
+
+hence to damp the first bending mode, the feedback needs an integrator so
+ that the resulting transfer function would be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sum a_{z}}{\delta_{F}}_{CL}(s)=K_{\nicefrac{\sum a_{z}}{\delta_{F}}}\frac{\omega_{1}^{2}\,s^{2}}{s^{2}+2\,(\zeta_{1}+K_{\nicefrac{\sum a_{z}}{\delta_{F}}}\omega_{1}K_{a_{z}})\,\omega_{1}\,s+\omega_{1}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Like for the gyrometers, the phase loss of the fins actuator will generate
+ a change in the bending oscillation natural frequency.
+ The root locus of 
+\begin_inset Formula $\frac{1}{s}\,\frac{\sum a_{z}}{\delta_{F}}$
+\end_inset
+
+ is plotted on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rlocusSAcc"
+
+\end_inset
+
+ and shows that the first bending mode can be damped to 12% with a gain
+ 
+\begin_inset Formula $K_{a_{z}}$
+\end_inset
+
+ of 0.15.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/rlocusSAcc.png
+	lyxscale 30
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Root Locus of 
+\begin_inset Formula $\frac{\Delta q}{\delta_{Fref}}(s)$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rlocusSAcc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A comparative Bode plot shows on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bodeDampingAcc"
+
+\end_inset
+
+ the effect of such a damping architecture.
+ Once again the resonance peak has been cut off.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/bodeDampingAcc.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bode of 
+\begin_inset Formula $\frac{q_{83}}{\theta_{Tref}}(s)$
+\end_inset
+
+ With and Without 
+\begin_inset Formula $\sum a_{z}$
+\end_inset
+
+ Feedback
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bodeDampingAcc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The complete controller architecture is drawn in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:completeAccFB"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Entry and first sum
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbEntree{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbComp{errComp}{azref}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zref}$]{azref}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% PI block
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocL{PI}{$K_{PI}
+\backslash
+frac{1+
+\backslash
+tau_{PI}
+\backslash
+,s}{s}$}{errComp}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sum PI + Kq
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbSumb[5]{thetaTref}{PI}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier{PI}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Missile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+def 
+\backslash
+L {6em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MI1) [right=
+\backslash
+L*1.2 of thetaTref] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, on grid, align=center, rectangle, minimum height=
+\backslash
+L, minimum width=
+\backslash
+L] (MIC) [below=
+\backslash
+L/6 of MI1] {Missile
+\backslash
+
+\backslash
+Dynamics};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MI2) [below=
+\backslash
+L/6 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO1) [above=
+\backslash
+L*5/14 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO2) [above=
+\backslash
+L*3/14 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO3) [above=
+\backslash
+L*1/14 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO4) [below=
+\backslash
+L*1/14 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO5) [below=
+\backslash
+L*3/14 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[on grid, minimum width=
+\backslash
+L] (MO6) [below=
+\backslash
+L*5/14 of MIC] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$
+\backslash
+theta_{Tref}$]{thetaTref}{MI1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% azCG exit
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (azCG) [right=
+\backslash
+L*2 of MO1] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+sbRelier[$a_{zCG}$]{MO1}{azCG}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gains
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gain 92
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, align=center, rectangle, minimum height=2em, minimum width=2em]
+ (k92) [below right=
+\backslash
+L/6 and 
+\backslash
+L/6 of MIC] {$
+\backslash
+frac{43}{39}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO6) -| node {$a_{z92}$} (k92);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gain 53
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, align=center, rectangle, minimum height=2em, minimum width=2em]
+ (k53) [below right=1em and 1em of k92] {$-
+\backslash
+frac{82}{39}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO5) -| node {$a_{z53}$} (k53);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sum Acc
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [draw, circle,minimum size=2em, below =1em of k92] (sumAcc) {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [on grid, draw, cross out,minimum size=1.414em] at (sumAcc) {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above of=sumAcc,node distance=0.6em] {$+$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below of=sumAcc,node distance=0.6em] {$+$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left of=sumAcc,node distance=0.6em] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [right of=sumAcc,node distance=0.6em] {$+$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (symAccdroite) at (sumAcc.east){};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (sumAccgauche) at (sumAcc.west){};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[sbStyleLien,auto] (k92) -- (sumAcc);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[sbStyleLien,auto] (k53) -- (sumAcc);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[sbStyleLien,auto] (MO4)  -|  ++(11em,-10em) -| node {$a_{z10}$} (sumAcc);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sum acc controller
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbBlocr[3]{sAccController}{$K_{
+\backslash
+sum a_z}$}{sumAcc};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbRelier[$
+\backslash
+sum a_z$]{sumAcc}{sAccController};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (sAccController)  --  ++(-
+\backslash
+L*0.7,0) |- node {$
+\backslash
+delta_{Fref}$} (MI2);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Gyro measurement
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[draw, rectangle, minimum height=3em, minimum width=3em] (rateController)
+ [below=1em of sAccController] {$K_{q}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (rateControllergauche) at (rateController.west){};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO3)  --  ++(2*
+\backslash
+L,0) |- node {$q_{83}$} (rateController);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+sbRelierxy{rateController}{thetaTref}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% Acc measurement and loop
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[sbStyleLien,auto] (MO2) -| ++(
+\backslash
+L*2.2,-
+\backslash
+L*2.6) -| node {$a_{z83}$} (errComp);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Feedback Architecture with Accelerometers
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:completeAccFB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using accelerometers for structural damping might bring some problems because
+ the accelerometers must be similarily calibrated and synchronized like
+ the gyrometers.
+ The position of the center of gravity does not need to be known.
+ Indeed when the linear equation system has been solved, the solution do
+ not depend on the center of gravity abscissa.
 \end_layout
 
 \begin_layout Section
