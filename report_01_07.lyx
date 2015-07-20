@@ -2,7 +2,7 @@
 \lyxformat 474
 \begin_document
 \begin_header
-\textclass article
+\textclass report
 \begin_preamble
 \usepackage{tikz} 
 \usetikzlibrary{shapes,arrows,positioning,calc}
@@ -81,17 +81,638 @@ customHeadersFooters
 
 \begin_body
 
-\begin_layout Title
-Thesis Progression Report
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Cranfield University (MSc) thesis cover and title page.
 \end_layout
 
-\begin_layout Author
-Anatole Verhaegen
+\begin_layout Plain Layout
+
+% For a PhD thesis (or other research degree), the references to MSc thesis
+ should be changed to PhD (or MPhil, EngD as % appropriate).
+  Research degrees do not need the statement about "partial submission"
+ for the degree.
+  The dates used in % this template should also be corrected.
+\end_layout
+
+\begin_layout Plain Layout
+
+% 10 Apr 2006
+\end_layout
+
+\begin_layout Plain Layout
+
+%%%%%%%%%%  Cover page  %%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Large 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+% putting the university logo at top right of the page is not required in
+ the standard format
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushright} %    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=6.0cm]{./figures/logo.JPG}     %
+\backslash
+includegraphics[width=6.0cm]{CUlogo_blue1.eps} % this is the more compact
+ vectorized version of the logo 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{10mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+CRANFIELD UNIVERSITY
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{40mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+LARGE 
+\backslash
+textbf{ANATOLE VERHAEGEN}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{25mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{ACTIVE DAMPING OF MISSILE BENDING VIBRATIONS}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{45mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Large 
+\end_layout
+
+\begin_layout Plain Layout
+
+SCHOOL OF AEROSPACE, TRANSPORT 
+\backslash
+
+\backslash
+SYSTEMS AND MANUFACTURING
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{20mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+MSc THESIS
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+normalsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagebreak
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%%%%%%%%%%  Blank page  %%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%%%%%%%%%%  Title page  %%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+large 
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{30mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+CRANFIELD UNIVERSITY
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{15mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SCHOOL OF AEROSPACE, TRANSPORT 
+\backslash
+
+\backslash
+SYSTEMS AND MANUFACTURING
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{15mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MSc THESIS
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{15mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Academic Year 2014-15
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{15mm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Large
+\end_layout
+
+\begin_layout Plain Layout
+
+ANATOLE VERHAEGEN
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{15mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Active Damping of Missile Bending Vibrations
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{15mm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+large
+\end_layout
+
+\begin_layout Plain Layout
+
+Supervisor: 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{30mm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Dr Rafal Zbikowski
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{10mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+August 2015
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{10mm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+normalsize
+\end_layout
+
+\begin_layout Plain Layout
+
+% The following statement is only needed for a degree, e.g.
+ taught MSc, where the thesis is not the only work counting 
+\end_layout
+
+\begin_layout Plain Layout
+
+% towards the degree.
+  Research degree theses should omit this statement.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+This thesis is submitted in partial (50
+\backslash
+%) fulfillment of the requirements for the degree of Master of Science
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{10mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+copyright Cranfield University 2006.
+  All rights reserved.
+  No part of this publication may be reproduced without the written permission
+ of the copyright owner.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagebreak
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+normalsize
+\end_layout
+
+\begin_layout Plain Layout
+
+%%%%%%%%%%  Blank page  %%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Abstract
+\end_layout
+
+\begin_layout Standard
+Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Ackowledgments
+\end_layout
+
+\begin_layout Standard
+Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
+ wesh ! Zbla ! Hunhun ! Big up à toute la famille, wesh ! Zbla ! Hunhun
+ ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
+ wesh ! Zbla ! Hunhun ! Big up à toute la famille, wesh ! Zbla ! Hunhun
+ ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
+ wesh ! Zbla ! Hunhun ! Big up à toute la famille, wesh ! Zbla ! Hunhun
+ ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! 
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
 
 \end_inset
 
@@ -108,7 +729,30 @@ set_width "auto"
 
 \end_layout
 
-\begin_layout Part
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
 Modeling
 \end_layout
 
@@ -117,17 +761,43 @@ Characteristics
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ASTER-30 characteristic.
- Booster/dart link hard to make very stiff.
+ASTER is the name of a family of missiles designed by Eurosam, a consortium
+ between MBDA France, MBDA Italy and Thales Group.
+ The family comprises ASTER 15 for short to medium range and ASTER 30 for
+ short to long range in service since 2001.
+ These missiles are composed of two parts: the booster and the terminal
+ dart.
+ The booster will bring the missile to the final altitude and close to the
+ final speed of Mach 4.5, this phase is called the acceleration phase.
+ When the solid propellant of the booster is completely burnt, the two stages
+ separate and the dart will continue its way to the target.
 \end_layout
 
-\end_inset
+\begin_layout Standard
+ASTER 30 weights 450 kg for 4.9 m.
+ The longitudinal acceleration is about 15 g.
+ It can reach an altitude of 30 km and fly to up to Mach 4.5.
+\end_layout
 
+\begin_layout Standard
+These missiles can generate lateral forces with two elements.
+ The first being the thrust vectoring at the tail.
+ Two nozzles are actuated with hydraulic cylinders and can orientate the
+ thrust to generate pitching and yawing moments.
+ The second element are fins at the tail of the dart.
+ These fins are generally not used during the acceleration phase but will
+ be in this study.
+ The deflection of the fins can create a lateral force or a rolling moment.
+ They also create little pitching and yawing moments because of their distance
+ from the centre of gravity.
+\end_layout
 
+\begin_layout Standard
+ASTER 30 is exceptionally slender and subject to bending.
+ The link that binds the booster and the dart is thus very stiff and complex
+ to maintain the two parts together under extreme bending moments.
+ The study will investigate how to relax constraints on this link by damping
+ bending oscillations that can damage the missile.
 \end_layout
 
 \begin_layout Section
@@ -921,6 +1591,13 @@ J_{y}\,\dot{q}=M-T\,\sin(\theta_{T})\,x_{CG}\label{eq:pitchingMoment}
 
 \begin_layout Subsection
 Trim
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Trim"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1105,6 +1782,30 @@ T_{0} & =71.3\,kN\\
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+At this trim state, the lift is only 
+\begin_inset Formula $L=2.4\,kN$
+\end_inset
+
+ and the weight of the missile is 
+\begin_inset Formula $W=4.4\,kN$
+\end_inset
+
+ thus approximately half of it is lifted with the vertical component of
+ the thrust which is 
+\begin_inset Formula $T_{0}\,\sin(\theta_{T0}+\alpha_{0})=2.0\,kN$
+\end_inset
+
+.
+ The drag is only 
+\begin_inset Formula $D=5.0\,kN$
+\end_inset
+
+ which corresponds to 7% of the thrust.
+ The great majority of the thrust is generated for the acceleration.
+ This gives an insight on the efforts magnitude applied on the airframe.
 \end_layout
 
 \begin_layout Subsection
@@ -7021,7 +7722,162 @@ name "fig:sensorPlacement"
 
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
+Flexible Missile Model
+\end_layout
+
+\begin_layout Standard
+Now that the flight dynamics and the structural model have been derived,
+ they need to be fused into a servo-aeroelastic model where actuators, flight
+ dynamics and structure interact.
+ Servo-aeroelastic models can be very complicated to establish therefore
+ assumptions will be made on the interactions between the structure and
+ the flight dynamics.
+ These assumptions being made, the two models will be put together and inputs
+ and outputs will be defined.
+\end_layout
+
+\begin_layout Subsection
+Structural and Flight Dynamics Interactions
+\end_layout
+
+\begin_layout Standard
+In Subsection 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Trim"
+
+\end_inset
+
+, it has been shown that lift and drag represent less than 10% of the efforts
+ on the airframe.
+ The rocket engine thrust produces the greatest force.
+ Thus, it is assumed that the aerodynamics will not create any structural
+ deformation.
+ Since only bending is considered only the lateral component of the thrust
+ is kept for the structural model input.
+ Indeed, the longitudinal component of the thrust will create local bending
+ moments only when the beam is bent and since the bending deflection is
+ only about a few millimeters, this component is neglected.
+ The lateral component of the thrust is applied at the tail, on node 1 of
+ the structural model.
+\end_layout
+
+\begin_layout Standard
+The second input to the structural model is the lateral force generated
+ by the fins deflection.
+ Later, the fins will be used to generate an active damping of the bending
+ modes.
+ The lateral force generated by these fins is inserted at node 50 of the
+ structural model.
+ The lift they generate is 
+\begin_inset Formula 
+\[
+L_{fins}=\frac{1}{2}\rho SV_{0}^{2}C_{L\alpha fins}\delta_{F}
+\]
+
+\end_inset
+
+The lift generated by the angle of attack 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is not considered since it is assumed that the body aerodynamics do not
+ generate bending.
+\end_layout
+
+\begin_layout Standard
+The inputs to the flight dynamics are the thrust vectoring and the fins
+ deflection.
+ These two angles are generated by second-order actuators of bandwidth of
+ 25Hz and 50Hz before the flight dynamics block.
+\end_layout
+
+\begin_layout Standard
+The last assumption is that the bending will not change the aerodynamic
+ of the missile.
+ Indeed the deformation is very little.
+ The bending deflection is about a few millimeters that will not change
+ the aerodynamic coefficients significantly.
+ Therefore the structural model outputs will not be inputs of the flight
+ dynamics.
+\end_layout
+
+\begin_layout Subsection
+Servo-Aeroelastic Model Inputs and Outputs
+\end_layout
+
+\begin_layout Standard
+The flexible missile inputs and outputs can be classified of 5 types:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Control inputs
+\series default
+: These inputs will be used by the controller to generate a lateral acceleration
+ or to damp the bending modes.
+ There are two: the thrust vectoring reference orientation 
+\begin_inset Formula $\theta_{Tref}$
+\end_inset
+
+ which commands the orientation of the nozzles with a second-order actuator
+ and the fins reference deflection 
+\begin_inset Formula $\delta_{Fref}$
+\end_inset
+
+ that is the input of a second-order actuator controlling the fins.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sensors outputs
+\series default
+: There are several sensors providing information on the system.
+ They can be accelerometers, gyrometers or strain gages.
+ The accelerometers and gyrometers have a component from the flight dynamics
+ model also called the rigid-body component and another from the structural
+ model called the flexible-body component or vibration component.
+ The strain gage only measures strain at node 46 from the structural model.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Perturbation inputs
+\series default
+: Some signals are perturbated by inputs.
+ These inputs can either be sensor noise like for the accelerometers or
+ gyrometers or perturbation forces from the rocket engine or the fins.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Acceleration reference
+\series default
+: This input signal is generated by the navigation manager that often follow
+ a proportional navigation.
+ This is the reference to follow for the lateral acceleration controller.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Performance outputs
+\series default
+: They are additional outputs like the acceleration at centre of gravity,
+ the actuators position or the vibration components of sensors that are
+ not measured but will be used to design or assess the controllers.
+\end_layout
+
+\begin_layout Standard
+This is on this model that the controllers will be designed.
+\end_layout
+
+\begin_layout Chapter
 Control
 \end_layout
 
@@ -11248,8 +12104,25 @@ reference "tab:HinfstructParam"
 \end_inset
 
  between 1.01 and 1.04 for all of them.
- The controller number 1 has no vibration alleviation device.
- The controller number 2 utilizes a notch filter.
+ The controller number 1 has no vibration alleviation device and the closed-loop
+ will be named 
+\begin_inset Quotes eld
+\end_inset
+
+Raw
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The controller number 2 utilizes a notch filter so will be called 
+\begin_inset Quotes eld
+\end_inset
+
+Notch
+\begin_inset Quotes erd
+\end_inset
+
+.
  The controllers 3, 4 and 5 and actively damping vibrations with: 
 \end_layout
 
@@ -11266,6 +12139,35 @@ reference "tab:HinfstructParam"
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 (5) 3 accelerometers.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+These 3 last closed-loop will be called 
+\begin_inset Quotes eld
+\end_inset
+
+Strain
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Gyro
+\begin_inset Quotes erd
+\end_inset
+
+, and 
+\begin_inset Quotes eld
+\end_inset
+
+Acc
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -11663,7 +12565,7 @@ reference "fig:uncertaintyPoles"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -11851,28 +12753,647 @@ Tracking
 \end_layout
 
 \begin_layout Standard
-The first criteria to assess is tracking performance.
- 
+The tracking performance of these 5 closed-loop is their ability to generate
+ a lateral acceleration equal to the reference acceleration.
+ Step responses give a good insight to assess the tracking performance.
+ These responses are plotted on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:stepErr"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/step.png
+	lyxscale 10
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Step Reponse of 
+\begin_inset Formula $a_{zref}$
+\end_inset
+
+ to 
+\begin_inset Formula $(a_{zref}-a_{zCG})$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:stepErr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another index for tracking performance is the singular values of the transfer
+ function from the reference acceleration 
+\begin_inset Formula $a_{zref}$
+\end_inset
+
+ and the error 
+\begin_inset Formula $a_{zref}-a_{zCG}$
+\end_inset
+
+ which is on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sigmaErr"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sigmaErr.png
+	lyxscale 10
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sigma Plot of 
+\begin_inset Formula $a_{zref}$
+\end_inset
+
+ to 
+\begin_inset Formula $(a_{zref}-a_{zCG})$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sigmaErr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at these too figures, the five different closed-loop architectures
+ yield very similar tracking performance.
+ The rise time from 10 to 90% following a step demand is between 0.741 and
+ 0.765s and the 2% settling time is between 4 and 4.13 s.
+ These responses are rather slow for a missile but the double loop architecture
+ presented cannot create dynamics faster than the SPPO.
+ Moreover, during the acceleration phase, ASTER-30 does not need to be highly
+ manoeuvrable.
+ A high manoeuvrability would be required during the target tracking phase.
+ The sigma plots provide information about tracking performance over all
+ frequencies.
+ The presence of an integrator in the loop gives makes the error converge
+ to zero at low frequencies.
+ The bandwidth at -3dB is between 1.09 and 1.17 
+\begin_inset Formula $rad.s^{-1}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
 Actuators Demand
 \end_layout
 
+\begin_layout Standard
+The thrust nozzles cylinders and the fins actuators have second order dynamics
+ and actuators demand must be limited at high frequency.
+ These demands must also be limited over the whole range of frequencies
+ to save energy and to avoid actuators heating and damage.
+\end_layout
+
 \begin_layout Subsubsection
 Demand for Lateral Acceleration
+\end_layout
+
+\begin_layout Standard
+The actuators demand following a lateral acceleration command must be appropriat
+ely bounded.
+ The weight 
+\begin_inset Formula $W_{\theta_{T}}$
+\end_inset
+
+ ensures that the position and rate of the thrust vectoring stays bounded
+ under a reasonable threshold.
+ The thrust vectoring demand is plotted on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sigmaThrust"
+
+\end_inset
+
+ with respect to frequency.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sigThetaDemand.png
+	lyxscale 10
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Singular Values of 
+\begin_inset Formula $a_{zref}$
+\end_inset
+
+ to 
+\begin_inset Formula $\theta_{T}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sigmaThrust"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+None of these five architectures cross the threshold imposed by 
+\begin_inset Formula $\nicefrac{1}{W_{\theta_{T}}}$
+\end_inset
+
+.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+Notch
+\begin_inset Quotes erd
+\end_inset
+
+ architecture has a thourough stop-band around the 1st bending mode natural
+ frequency of 125 rad/s.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+Raw
+\begin_inset Quotes erd
+\end_inset
+
+ architecture tangents this threshold without crossing it.
+ The three active damping architectures keep a satisfactory margin.
+ Similarily for the fins actuator, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sigmaFins"
+
+\end_inset
+
+ shows the fins deflection for the closed-loops performing active damping.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sigDeltaDemand.png
+	lyxscale 10
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Singular Values of 
+\begin_inset Formula $a_{zref}$
+\end_inset
+
+ to 
+\begin_inset Formula $\delta_{F}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sigmaFins"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Strain
+\begin_inset Quotes erd
+\end_inset
+
+ and the 
+\begin_inset Quotes eld
+\end_inset
+
+Acc
+\begin_inset Quotes erd
+\end_inset
+
+ architectures generate greater commands on the fins deflection at frequencies
+ under 100 rad/s compared to the 
+\begin_inset Quotes eld
+\end_inset
+
+Gyro
+\begin_inset Quotes erd
+\end_inset
+
+ architecture.
+ These closed-loop do not generate fins deflection at high frequencies.
 \end_layout
 
 \begin_layout Subsubsection
 Parasitic Effects
 \end_layout
 
+\begin_layout Standard
+Bending vibrations are a source of parasitic actuations on the thrust vectoring.
+ Indeed, the vibrations will generate parasitic signals in the sensors measureme
+nts then propagated through the controller and to the thrust vectoring.
+ The bending vibrations are mostly generated by the rocket engine which
+ thrust magnitude and orientation is very noisy.
+ The parasitic actuations can be observed on the singular values from a
+ perturbation on the thrust orientation to the actuated nozzles orientation
+ on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sigmaParasitic"
+
+\end_inset
+
+.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+Raw
+\begin_inset Quotes erd
+\end_inset
+
+ architecture with no vibration alleviation device is very sensitive to
+ that kind of perturbation.
+ Indeed, the vibration noise can proliferate to the thrust vectoring actuation.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+Notch
+\begin_inset Quotes erd
+\end_inset
+
+ architecture suppresses this noise with the notch filter without removing
+ the vibrations.
+ The active damping architectures 
+\begin_inset Quotes eld
+\end_inset
+
+Strain
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Gyro
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Acc
+\begin_inset Quotes erd
+\end_inset
+
+ suppress the vibrations directly.
+ This parasitic actuation is significant for the 
+\begin_inset Quotes eld
+\end_inset
+
+Raw
+\begin_inset Quotes erd
+\end_inset
+
+ architecture.
+ Indeed a perturbation on the thrust orientation of 1° at 125 rad/s brings
+ a thrust vectoring parasitic actuation of 1.3°.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sigParasites.png
+	lyxscale 10
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Singular Values of 
+\begin_inset Formula $\theta_{Tpert}$
+\end_inset
+
+ to 
+\begin_inset Formula $\theta_{T}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sigmaParasitic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Bending Reduction
 \end_layout
 
+\begin_layout Standard
+In the previous section, it has been seen that an architecture with a notch
+ filter or with active damping have similar tracking performance, and a
+ good rocket engine noise rejection.
+ The difference between them appears when it comes to dynamic bending reduction.
+\end_layout
+
 \begin_layout Subsubsection
 Vibrations Allevation
+\end_layout
+
+\begin_layout Standard
+The active damping architectures have the advantage of reducing bending
+ vibrations.
+ ASTER-30 sensors pack is equipped with several tracking and attitude control
+ sensors.
+ They are greatly sensitive to vibrations and filtering always brings delays.
+ The active damping will thoroughly reduce vibrations and hence improve
+ tracking and attitude control.
+\end_layout
+
+\begin_layout Standard
+The rocket engine creating a noisy thrust is the main source of bending
+ vibrations.
+ The singular values of this propagation is shown on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sigmaVibesAcc"
+
+\end_inset
+
+ where 
+\begin_inset Formula $\theta_{Tpert}$
+\end_inset
+
+ is the noisy thrust deflection and 
+\begin_inset Formula $a_{z83v}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{83v}$
+\end_inset
+
+ are the vibration component of acceleration and pitch rate at sensors pack
+ location.
+ Indeed the two first architectures 
+\begin_inset Quotes eld
+\end_inset
+
+Raw
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Notch
+\begin_inset Quotes erd
+\end_inset
+
+ do nothing to reduce these vibrations whereas the other three 
+\begin_inset Quotes eld
+\end_inset
+
+Strain
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Gyro
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Acc
+\begin_inset Quotes erd
+\end_inset
+
+ cut them down strongly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sigVibes.png
+	lyxscale 10
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Singular Values of 
+\begin_inset Formula $\theta_{Tpert}$
+\end_inset
+
+ to 
+\begin_inset Formula $a_{z83v}$
+\end_inset
+
+ (left) and 
+\begin_inset Formula $q_{83v}$
+\end_inset
+
+ (right) 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sigmaVibesAcc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -11880,53 +13401,72 @@ Dynamic Stress Alleviation
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+By reducing bending oscillations, the active damping will also reduce stress
+ due to dynamic deformations.
+ The junction between the booster and the dart is located where the flexure
+ due to the first bending mode is maximum.
+ Therefore this link must be very stiff and resistant to flexure.
+ With active damping, this link can be lighten and simplified.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sigmaFlexure"
+
+\end_inset
+
+ shows the strain reduction with active damping compared to non active damping
+ next to the link.
+ The source of vibrations is again the rocket engine thrust orientation
+ noise.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Structured form where w, z = [azref], [azCG-azref,thetaTdemand].
+\align center
+\begin_inset Graphics
+	filename figures/sigStress.png
+	lyxscale 10
+	width 60page%
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
-azref = reference
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Singular Values of 
+\begin_inset Formula $\theta_{Tpert}$
+\end_inset
+
+ to 
+\begin_inset Formula $\varepsilon_{46}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sigmaFlexure"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
-azCG-azref = acceleration error to minimize
-\end_layout
 
-\begin_layout Plain Layout
-thetaT = pitch rate threshold
-\end_layout
-
-\begin_layout Plain Layout
-sensors noise = very little
-\end_layout
-
-\begin_layout Plain Layout
-gust perturbation = 0 at M 2.0
-\end_layout
-
-\begin_layout Plain Layout
-actuator pert : fins very precise, thrust vectoring very bad.
-\end_layout
-
-\begin_layout Plain Layout
-Results : similar performance for error with command
-\end_layout
-
-\begin_layout Plain Layout
-However : thetaTpert -> thetaT huge for raw archi
-\end_layout
-
-\begin_layout Plain Layout
-thetaTpert -> vibes huge for raw archi and notch filter : Vibes are not
- damped (just not excited by the actuator reference)
-\end_layout
-
-\begin_layout Plain Layout
-stress alleviation with active damping -> reduction of mass/ complexity
- of link
 \end_layout
 
 \end_inset
@@ -11935,80 +13475,6 @@ stress alleviation with active damping -> reduction of mass/ complexity
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-SPPO limits missile dynamics with this architecture
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-System I/O : Conventional : thrust vec + IMU
-\end_layout
-
-\begin_layout Plain Layout
-New : thust vec/fins + IMU/added sensors
-\end_layout
-
-\begin_layout Plain Layout
-Latax acceleration control -> Kq, Ki and Kp, how to tune etc...
-\end_layout
-
-\begin_layout Plain Layout
-Due to vibrations : Notch filter/ active damping
-\end_layout
-
-\begin_layout Plain Layout
-Latax acceleration optimal tuning
-\end_layout
-
-\begin_layout Plain Layout
-- Weights
-\end_layout
-
-\begin_layout Plain Layout
-- Uncertainty <- Beginning of Control Part
-\end_layout
-
-\begin_layout Plain Layout
-Architectures comparisons:
-\end_layout
-
-\begin_layout Plain Layout
-- error : identical
-\end_layout
-
-\begin_layout Plain Layout
-- actuators demand : similar
-\end_layout
-
-\begin_layout Plain Layout
-- thetaTpert -> thetaT : resonance at 1st bending mode for raw
-\end_layout
-
-\begin_layout Plain Layout
-- thetaTpert -> vibes : resonance for notch filter and raw
-\end_layout
-
-\begin_layout Plain Layout
-- thetaTpert -> link stress : resonance for notch filter and raw
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
