@@ -7,6 +7,8 @@
 \usepackage{tikz} 
 \usetikzlibrary{shapes,arrows,positioning,calc}
 \usepackage{schemabloc}
+\usepackage[nottoc]{tocbibind}
+\def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -83,7 +85,7 @@ customHeadersFooters
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -132,39 +134,6 @@ begin{center}
 
 \begin_layout Plain Layout
 
-% putting the university logo at top right of the page is not required in
- the standard format
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{flushright} %    
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-includegraphics[width=6.0cm]{./figures/logo.JPG}     %
-\backslash
-includegraphics[width=6.0cm]{CUlogo_blue1.eps} % this is the more compact
- vectorized version of the logo 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{flushright}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{10mm}
 \end_layout
 
 \begin_layout Plain Layout
@@ -180,7 +149,7 @@ CRANFIELD UNIVERSITY
 
 
 \backslash
-vspace{40mm}
+vspace{55mm}
 \end_layout
 
 \begin_layout Plain Layout
@@ -191,9 +160,7 @@ vspace{40mm}
 
 
 \backslash
-LARGE 
-\backslash
-textbf{ANATOLE VERHAEGEN}
+LARGE ANATOLE VERHAEGEN
 \end_layout
 
 \begin_layout Plain Layout
@@ -211,14 +178,20 @@ vspace{25mm}
 
 
 \backslash
-textbf{ACTIVE DAMPING OF MISSILE BENDING VIBRATIONS}
+textbf{
+\backslash
+textsc{Active Damping of Missile 
+\backslash
+
+\backslash
+Bending Vibrations}}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-vspace{45mm}
+vspace{55mm}
 \end_layout
 
 \begin_layout Plain Layout
@@ -362,11 +335,9 @@ vspace{15mm}
 
 \begin_layout Plain Layout
 
-SCHOOL OF AEROSPACE, TRANSPORT 
-\backslash
 
 \backslash
-SYSTEMS AND MANUFACTURING
+textsc{School of Aerospace, Transport Systems and Manufacturing}
 \end_layout
 
 \begin_layout Plain Layout
@@ -398,7 +369,7 @@ vspace{15mm}
 
 \begin_layout Plain Layout
 
-Academic Year 2014-15
+Academic Year 2014-2015
 \end_layout
 
 \begin_layout Plain Layout
@@ -421,7 +392,7 @@ Large
 
 \begin_layout Plain Layout
 
-ANATOLE VERHAEGEN
+Anatole Verhaegen
 \end_layout
 
 \begin_layout Plain Layout
@@ -437,7 +408,9 @@ vspace{15mm}
 
 \begin_layout Plain Layout
 
-Active Damping of Missile Bending Vibrations
+
+\backslash
+textsc{Active Damping of Missile Bending Vibrations}
 \end_layout
 
 \begin_layout Plain Layout
@@ -472,7 +445,10 @@ hspace{30mm}
 
 \begin_layout Plain Layout
 
-Dr Rafal Zbikowski
+Dr R.
+ 
+\backslash
+.Zbikowski
 \end_layout
 
 \begin_layout Plain Layout
@@ -529,7 +505,11 @@ normalsize
 
 This thesis is submitted in partial (50
 \backslash
-%) fulfillment of the requirements for the degree of Master of Science
+%) fulfillment of the 
+\backslash
+
+\backslash
+requirements for the degree of Master of Science
 \end_layout
 
 \begin_layout Plain Layout
@@ -549,8 +529,11 @@ vspace{10mm}
 \backslash
 copyright Cranfield University 2006.
   All rights reserved.
-  No part of this publication may be reproduced without the written permission
- of the copyright owner.
+  No part of this publication
+\backslash
+
+\backslash
+may be reproduced without the written permission of the copyright owner.
 \end_layout
 
 \begin_layout Plain Layout
@@ -626,43 +609,39 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- Dans cette étude vous allez voir plein de trucs super cool sur les missiles.
- 
+To face increasing performance of aerial threats, defense missiles must
+ be designed evermore agile.
+ Bending vibrations have become a growing issue with slender missile airframes
+ and are a primary source of low frequency noise for seekers.
+ In the mean time, miniaturisation and cost reduction of sensors like gyroscopes
+ and accelerometers make sensor-rich systems affordable.
+ The study investigates how active damping of bending vibrations can be
+ performed using multiple sensors on ASTER 30, an anti-missile missile.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+A longitudinal servo-aeroelastic model for ASTER 30 is derived using flight
+ dynamics equations and Euler-Bernoulli beam theory.
+ A strain gauge, gyroscopes and accelerometers are placed at optimal locations
+ to measure the missile bending state.
+ These additional sensors are used to design three new autopilot architectures
+ actively damping vibrations while controlling the lateral acceleration.
+ These autopilots are tested on the model derived previously and compared
+ with conventional non damping autopilots.
+\end_layout
+
+\begin_layout Standard
+Additionally to giving a new look at vibrations alleviation on slender airframes
+, this thesis demonstrates a method to remove the structural filter in conventio
+nal autopilots and constructs a discussion around different types of low
+ cost sensors that can be used for active structural damping.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -681,7 +660,7 @@ Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
  ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
  wesh ! Zbla ! Hunhun ! Big up à toute la famille, wesh ! Zbla ! Hunhun
  ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! 
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -704,6 +683,17 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "custom"
+width "4cm"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset FloatList figure
 
 \end_inset
@@ -713,16 +703,6 @@ LatexCommand tableofcontents
 
 \begin_layout Standard
 \begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomencl_print
-LatexCommand printnomenclature
-set_width "auto"
 
 \end_inset
 
@@ -753,7 +733,51 @@ pagenumbering{arabic}
 \end_layout
 
 \begin_layout Chapter
-Modeling
+Introduction
+\end_layout
+
+\begin_layout Section
+Motivations for Active Damping
+\end_layout
+
+\begin_layout Section
+Contributions to Knowledge
+\end_layout
+
+\begin_layout Section
+Thesis Structure
+\end_layout
+
+\begin_layout Chapter
+Literature Review and Preliminary Study
+\end_layout
+
+\begin_layout Section
+Literature Review
+\end_layout
+
+\begin_layout Subsection
+Structure Active Damping
+\end_layout
+
+\begin_layout Subsection
+Sensors for Structure Monitoring
+\end_layout
+
+\begin_layout Subsection
+Missile Actuations Systems
+\end_layout
+
+\begin_layout Subsection
+Sensors and Actuators Placement
+\end_layout
+
+\begin_layout Section
+Preliminary Study
+\end_layout
+
+\begin_layout Chapter
+Flexible Missile Modeling
 \end_layout
 
 \begin_layout Section
@@ -5461,7 +5485,7 @@ Output equation
 
 \begin_layout Standard
 Three types of sensors are investigated in this paper to measure vibrations:
- strain gages, gyrometers and accelerometers.
+ strain gages, gyroscopes and accelerometers.
  Their measurement can be represented by the output equation:
 \end_layout
 
@@ -5498,11 +5522,11 @@ It means that the signal measured by the sensors are a linear combination
 \end_layout
 
 \begin_layout Paragraph
-Gyrometer
+Gyroscope
 \end_layout
 
 \begin_layout Standard
-A gyrometer on node 
+A gyroscope on node 
 \begin_inset Formula $i$
 \end_inset
 
@@ -5514,13 +5538,13 @@ A gyrometer on node
 \begin_inset Formula $n$
 \end_inset
 
- gyrometers can be placed.
+ gyroscopes can be placed.
  Since 
 \begin_inset Formula $q$
 \end_inset
 
  is often used to represent the pitch rate, this letter will be used for
- gyrometer output matrices.
+ gyroscope output matrices.
  According to Equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6635,7 +6659,7 @@ This final state-space realization (
 \begin_inset Formula $n$
 \end_inset
 
- gyrometer measurements 
+ gyroscope measurements 
 \begin_inset Formula $q_{i}$
 \end_inset
 
@@ -6708,7 +6732,7 @@ q_{moi}
 \begin_inset Formula $1^{st}$
 \end_inset
 
- mode for the strain gages, less than 1% for the gyrometers and 5% for the
+ mode for the strain gages, less than 1% for the gyroscopes and 5% for the
  accelerometers.
 \end_layout
 
@@ -6780,7 +6804,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hankel Singular Values Decomposition - Gyrometers Output
+Hankel Singular Values Decomposition - Gyroscopes Output
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:hsvdGyr"
@@ -7034,7 +7058,7 @@ name "sub:sensorPlacement"
 
 \begin_layout Standard
 The state space model developped in the previous section outputs three different
- types of sensors : strain gages, gyrometers and accelerometers on all possible
+ types of sensors : strain gages, gyroscopes and accelerometers on all possible
  node
 \begin_inset Foot
 status collapsed
@@ -7047,7 +7071,7 @@ status collapsed
 \begin_inset Formula $n$
 \end_inset
 
- for the gyrometers and the accelerometers
+ for the gyroscopes and the accelerometers
 \end_layout
 
 \end_inset
@@ -7248,7 +7272,7 @@ The bigger is
 .
  Thanks to this method, the locations can be ranked to determine the optimal
  position to place the sensors.
- For each type of sensor - strain gages, gyrometers and accelerometers -
+ For each type of sensor - strain gages, gyroscopes and accelerometers -
  this technique will be used.
 \end_layout
 
@@ -7367,17 +7391,17 @@ On the bar plot, the placement indices of locations on the booster are very
 \end_layout
 
 \begin_layout Subsubsection
-Gyrometers Placement
+Gyroscopes Placement
 \end_layout
 
 \begin_layout Standard
-A gyrometer will measure not only the pitch rate due to the vibrations but
+A gyroscope will measure not only the pitch rate due to the vibrations but
  also the pitch rate of the rigid-body.
  For instant, at node 
 \begin_inset Formula $i$
 \end_inset
 
-, a gyrometer will measure
+, a gyroscope will measure
 \begin_inset Formula 
 \[
 q_{i}=q_{i,fb}+q
@@ -7386,7 +7410,7 @@ q_{i}=q_{i,fb}+q
 \end_inset
 
  The isolate the pitch rate of the vibrations, one needs the measurements
- of two gyrometers placed at different locations.
+ of two gyroscopes placed at different locations.
  Hence, the pitch rate of the rigid-body can be removed by substraction
  to keep only the vibrations measurement:
 \begin_inset Formula 
@@ -7396,16 +7420,16 @@ q_{i}-q_{j}=q_{i,fb}-q_{j,fb}
 
 \end_inset
 
- At least two gyrometers must be used.
+ At least two gyroscopes must be used.
 \end_layout
 
 \begin_layout Standard
-A gyrometer is less sensitive to variations of temperature than a strain
+A gyroscope is less sensitive to variations of temperature than a strain
  gage and can be placed on the booster.
  However a margin is kept with the two extremities of the missile because
  the tail is probably dense in technology because of the nozzle and the
  nose contains a radar.
- For the gyrometers, the set of locations available is then 
+ For the gyroscopes, the set of locations available is then 
 \begin_inset Formula $S=\left\llbracket 10,92\right\rrbracket $
 \end_inset
 
@@ -7424,7 +7448,7 @@ reference "fig:indicesGyr"
 
 \end_inset
 
- shows the placement indices for gyrometers.
+ shows the placement indices for gyroscopes.
 \end_layout
 
 \begin_layout Standard
@@ -7449,7 +7473,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Placements Indices - Gyrometers
+Placements Indices - Gyroscopes
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:indicesGyr"
@@ -7470,12 +7494,12 @@ name "fig:indicesGyr"
 \end_layout
 
 \begin_layout Standard
-The nose is a place where the gyrometer would be very sensitive to the 
+The nose is a place where the gyroscope would be very sensitive to the 
 \begin_inset Formula $1^{st}$
 \end_inset
 
  bending mode.
- Actually, there is already a gyrometer in the sensor pack at 
+ Actually, there is already a gyroscope in the sensor pack at 
 \begin_inset Formula $x$
 \end_inset
 
@@ -7488,7 +7512,7 @@ The nose is a place where the gyrometer would be very sensitive to the
 \end_inset
 
  that correspond approximately to node 83.
- The second gyrometer must be placed at the other side of the zero pitch
+ The second gyroscope must be placed at the other side of the zero pitch
  rate node 53.
  The second best position is then node 10.
 \end_layout
@@ -7539,7 +7563,7 @@ thus such a measurement contains three unknowns :
 \end_layout
 
 \begin_layout Standard
-Like a gyrometer, an accelerometer is not as sensible to temperature variations
+Like a gyroscope, an accelerometer is not as sensible to temperature variations
  as a strain gage.
  Thus it can be placed within 
 \begin_inset Formula $x=\left\llbracket 0.45m,\,4.40m\right\rrbracket $
@@ -7629,7 +7653,7 @@ Finally, from the model established in the previous Section, only a few
 \end_layout
 
 \begin_layout Itemize
-The gyrometer and the accelerometer from the sensor pack at node 83
+The gyroscope and the accelerometer from the sensor pack at node 83
 \end_layout
 
 \begin_layout Itemize
@@ -7637,7 +7661,7 @@ The added strain gage at node 46
 \end_layout
 
 \begin_layout Itemize
-The added gyrometer at node 10
+The added gyroscope at node 10
 \end_layout
 
 \begin_layout Itemize
@@ -7648,7 +7672,7 @@ The added accelerometers at nodes 10, 53 and 92
 The pitch rate and acceleration outputs at node 83 will be added to the
  flight dynamics pitch rate and acceleration to simulate the noise created
  by vibrations in the inertial unit of the missile.
- The added strain gage at node 46, the gyrometers at nodes 10 and 83 and
+ The added strain gage at node 46, the gyroscopes at nodes 10 and 83 and
  the three added accelerometers at nodes 10, 53 and 92 will be used to damp
  the first bending mode.
 \end_layout
@@ -7690,7 +7714,7 @@ Sensors Locations - Strain gages
 \begin_inset Formula $\varepsilon,$
 \end_inset
 
- Gyrometers 
+ Gyroscopes 
 \begin_inset Formula $q$
 \end_inset
 
@@ -7836,8 +7860,8 @@ Control inputs
 Sensors outputs
 \series default
 : There are several sensors providing information on the system.
- They can be accelerometers, gyrometers or strain gages.
- The accelerometers and gyrometers have a component from the flight dynamics
+ They can be accelerometers, gyroscopes or strain gages.
+ The accelerometers and gyroscopes have a component from the flight dynamics
  model also called the rigid-body component and another from the structural
  model called the flexible-body component or vibration component.
  The strain gage only measures strain at node 46 from the structural model.
@@ -7850,7 +7874,7 @@ Perturbation inputs
 \series default
 : Some signals are perturbated by inputs.
  These inputs can either be sensor noise like for the accelerometers or
- gyrometers or perturbation forces from the rocket engine or the fins.
+ gyroscopes or perturbation forces from the rocket engine or the fins.
 \end_layout
 
 \begin_layout Itemize
@@ -7878,7 +7902,7 @@ This is on this model that the controllers will be designed.
 \end_layout
 
 \begin_layout Chapter
-Control
+Active Damping Autopilots
 \end_layout
 
 \begin_layout Section
@@ -7931,7 +7955,7 @@ Sensors
 
 \begin_layout Standard
 The sensors pack included in the original version of ASTER-30 contains an
- accelerometer and a gyrometer in the nose.
+ accelerometer and a gyroscope in the nose.
  These sensors are the only two needed for the lateral acceleration control.
  With the missile modification presented in 
 \begin_inset CommandInset ref
@@ -7940,7 +7964,7 @@ reference "sub:sensorPlacement"
 
 \end_inset
 
-, several sensors have been added including a strain gage, gyrometers and
+, several sensors have been added including a strain gage, gyroscopes and
  accelerometers.
  These additional sensors will be used for the structural active damping.
 \end_layout
@@ -8145,7 +8169,7 @@ sbDecaleNoeudy{actuator-accCG}{cornerQ}
 
 
 \backslash
-sbBlocr[2]{gyrometer}{$
+sbBlocr[2]{gyroscope}{$
 \backslash
 frac{q_{83}}{
 \backslash
@@ -8156,7 +8180,7 @@ theta_T}$}{cornerQ}
 
 	
 \backslash
-sbRelieryx{actuator-accCG}{gyrometer}
+sbRelieryx{actuator-accCG}{gyroscope}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8172,14 +8196,14 @@ sbRelieryx{actuator-accCG}{gyrometer}
 
 
 \backslash
-sbBlocr{dampQ}{$K_q$}{gyrometer}
+sbBlocr{dampQ}{$K_q$}{gyroscope}
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-sbRelier[$q_{83}$]{gyrometer}{dampQ}
+sbRelier[$q_{83}$]{gyroscope}{dampQ}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8889,7 +8913,7 @@ sbDecaleNoeudy{actuator-accCG}{cornerQ}
 
 
 \backslash
-sbBlocr[2]{gyrometer}{$
+sbBlocr[2]{gyroscope}{$
 \backslash
 frac{q_{83}}{
 \backslash
@@ -8900,7 +8924,7 @@ theta_T}$}{cornerQ}
 
 	
 \backslash
-sbRelieryx{actuator-accCG}{gyrometer}
+sbRelieryx{actuator-accCG}{gyroscope}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8916,14 +8940,14 @@ sbRelieryx{actuator-accCG}{gyrometer}
 
 
 \backslash
-sbBlocr{dampQ}{$K_q$}{gyrometer}
+sbBlocr{dampQ}{$K_q$}{gyroscope}
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-sbRelier[$q_{83}$]{gyrometer}{dampQ}
+sbRelier[$q_{83}$]{gyroscope}{dampQ}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10106,14 +10130,14 @@ This feedback architecture has some disadvantages though.
 \end_layout
 
 \begin_layout Subsubsection
-Gyrometer Feedback
+Gyroscope Feedback
 \end_layout
 
 \begin_layout Standard
-Two gyrometers can give information on the flexure.
- A gyrometer is placed at the rear and the other one is the gyrometer included
+Two gyroscopes can give information on the flexure.
+ A gyroscope is placed at the rear and the other one is the gyroscope included
  in the sensor pack next to the nose.
- The problem with damping bending with gyrometers is that they measure not
+ The problem with damping bending with gyroscopes is that they measure not
  only the local pitch rate of the bending but also the rigid-body pitch
  rate.
  Thus two of them are needed to substract the rigid-body pitch rate.
@@ -10126,7 +10150,7 @@ Two gyrometers can give information on the flexure.
 \end_inset
 
 .
- The substraction of the signals coming from the two gyrometers will give:
+ The substraction of the signals coming from the two gyroscopes will give:
 \end_layout
 
 \begin_layout Standard
@@ -10788,7 +10812,7 @@ end{tikzpicture}
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Feedback Architecture with Gyrometers
+Feedback Architecture with Gyroscopes
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:completeGyrFB"
@@ -10809,7 +10833,7 @@ name "fig:completeGyrFB"
 \end_layout
 
 \begin_layout Standard
-This controller architecture has the disadvantage that the two gyrometers
+This controller architecture has the disadvantage that the two gyroscopes
  must be similarily calibrated and synchronized to perform the substraction
  correctly.
  The great advantage is the absence of fins deflection in static.
@@ -10820,7 +10844,7 @@ Accelerometer Feedback
 \end_layout
 
 \begin_layout Standard
-Using accelerometers for the feedback is more complicated than using gyrometers.
+Using accelerometers for the feedback is more complicated than using gyroscopes.
  At node 
 \begin_inset Formula $i$
 \end_inset
@@ -10965,7 +10989,7 @@ hence to damp the first bending mode, the feedback needs an integrator so
 \end_layout
 
 \begin_layout Standard
-Like for the gyrometers, the phase loss of the fins actuator will generate
+Like for the gyroscopes, the phase loss of the fins actuator will generate
  a change in the bending oscillation natural frequency.
  The root locus of 
 \begin_inset Formula $\frac{1}{s}\,\frac{\sum a_{z}}{\delta_{F}}$
@@ -11643,7 +11667,7 @@ name "fig:completeAccFB"
 \begin_layout Standard
 Using accelerometers for structural damping might bring some problems because
  the accelerometers must be similarily calibrated and synchronized like
- the gyrometers.
+ the gyroscopes.
  The position of the center of gravity does not need to be known.
  Indeed when the linear equation system has been solved, the solution do
  not depend on the center of gravity abscissa.
@@ -11672,7 +11696,7 @@ the strain gage feedback,
 \end_layout
 
 \begin_layout Itemize
-the 2 gyrometers feedback,
+the 2 gyroscopes feedback,
 \end_layout
 
 \begin_layout Itemize
@@ -11918,7 +11942,7 @@ The parameters subject to tuning are
 \end_inset
 
 .
- The notch filter, the strain feedback, the gyrometers feedback or the accelerom
+ The notch filter, the strain feedback, the gyroscopes feedback or the accelerom
 eters feedback are not tunable.
  They are defined in 
 \begin_inset CommandInset ref
@@ -12133,7 +12157,7 @@ Notch
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-(4) 2 gyrometers,
+(4) 2 gyroscopes,
 \end_layout
 
 \begin_layout Labeling
@@ -12141,8 +12165,7 @@ Notch
 (5) 3 accelerometers.
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Standard
 These 3 last closed-loop will be called 
 \begin_inset Quotes eld
 \end_inset
@@ -13474,7 +13497,29 @@ name "fig:sigmaFlexure"
 
 \end_layout
 
+\begin_layout Chapter
+Results and Discussions
+\end_layout
+
+\begin_layout Chapter
+Conclusions
+\end_layout
+
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+bibname{References}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
