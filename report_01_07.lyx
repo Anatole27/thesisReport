@@ -740,16 +740,232 @@ Introduction
 Motivations for Active Damping
 \end_layout
 
+\begin_layout Standard
+As ballistic missiles or last generation fighters capabilities grow, countermeas
+ure technology must developp at a faster pace to ensure national safety.
+ This encourages missile manufacturers to design defense missiles with a
+ miss distance always smaller and faster interceptions.
+ New missiles concepts require hypersonic speeds - more thrust and less
+ drag - needing multistage rocket engines and a reduced cross-section.
+ These extremely slender shapes encounter low frequency vibrations created
+ by bending oscillations.
+ The structural interaction with aerodynamics is a source of noise for the
+ seeker and other critical sensors.
+ Filtering this noise add an additive delay to the system reaction time
+ and must be avoided.
+ In this context, active damping of structural vibrations is a solution.
+\end_layout
+
+\begin_layout Standard
+Recently, sensors industries have made a great step in miniaturisation accompagn
+ied with a fast reduction of costs.
+ Microelectromechanical gyroscopes and accelerometers offer a satisfactory
+ accuracy at reduced sizes and affordable prices.
+ This evolution makes active damping possible since it requires additional
+ sensors which intrusivity must be reduced as possible.
+\end_layout
+
+\begin_layout Standard
+This thesis investigates how active damping can be conducted on an existing
+ anti-missile missile.
+ The airframe dynamics will be modeled and several sensors will be placed
+ in order to design and assess active damping controllers.
+\end_layout
+
 \begin_layout Section
 Contributions to Knowledge
+\end_layout
+
+\begin_layout Standard
+The study contributes to knowledge in active damping on different points
+ listed as follows:
+\end_layout
+
+\begin_layout Itemize
+Elaboration of a servo-aeroelastic model for slender missiles
+\end_layout
+
+\begin_layout Itemize
+Discretized Euler-Bernoulli beam dynamics model for the free-free case with
+ variable cross-section
+\end_layout
+
+\begin_layout Itemize
+Multiple sensors placement applied to missiles for bending sensitivity
+\end_layout
+
+\begin_layout Itemize
+Design of three active damping and latax controllers
+\end_layout
+
+\begin_layout Standard
+The servo-aeroelastic model is derived using a linear time invariant longitudina
+l aerodynamic model having interactions with a dynamic bending beam model
+ of the missile.
+ The flight dynamics consider only the longitudinal short period pitch oscillati
+ons (SPPO) mode since other modes like the phugoïd have a time scale which
+ belongs to the navigation dynamics.
+ The servo-aeroelastic model can thus be used to simulate lateral acceleration
+ generation with benging oscillations for slender missiles.
+\end_layout
+
+\begin_layout Standard
+The discretized Euler-Bernoulli beam dynamics model is based on the work
+ of 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "prentis1963leckie"
+
+\end_inset
+
+ and applied to a frame which extremities are free.
+ The bending stiffness and linear mass density is non uniform along the
+ beam.
+ This structural dynamic model has the advantage of being simple and computation
+aly efficient for bending.
+\end_layout
+
+\begin_layout Standard
+Sensors placement is investigated using the method from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gawronski2004modal"
+
+\end_inset
+
+ and adapted to strain gauges, gyroscopes and accelerometers for the first
+ bending mode.
+ From a set of possible locations for a sensor, the method consists in finding
+ optimal locations to sense the first bending mode state using the H
+\begin_inset Formula $_{\infty}$
+\end_inset
+
+ norm.
+\end_layout
+
+\begin_layout Standard
+Based on the results of the previous points, three controllers have been
+ designed to both damping bending vibrations and control lateral acceleration
+ at the mean time.
+ These controllers use simple SISO feedbacks but are optimaly set with an
+ H
+\begin_inset Formula $_{\infty}$
+\end_inset
+
+ structured tuning.
+ Following this, these controllers are assessed with several criterias like
+ robustness, tracking, actuators demand and parasitic propagation of vibrations.
 \end_layout
 
 \begin_layout Section
 Thesis Structure
 \end_layout
 
+\begin_layout Standard
+The thesis is divided in four main Chapters.
+ 
+\end_layout
+
+\begin_layout Standard
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:literatureReview"
+
+\end_inset
+
+ gives an insight to the problem of active damping in structures with a
+ literature survey followed by a preliminary study on a simple 2-part missile
+ model.
+ Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:flexiMissileModel"
+
+\end_inset
+
+ explains the modeling process in details to obtain the servo-aeroelastic
+ model which will be used in Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:autopilots"
+
+\end_inset
+
+ where several autopilots are designed and assessed.
+ Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:results"
+
+\end_inset
+
+ summarizes the findings and discuss further assumptions made and results
+ obtained.
+ Finally Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:conclusions"
+
+\end_inset
+
+ gives conclusions on the feasibility of active damping for missile systems
+ and presents further studies arising from this thesis.
+\end_layout
+
+\begin_layout Standard
+It is advised to read the first Section of Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:flexiMissileModel"
+
+\end_inset
+
+ to understand the missile on which this study is based.
+ However, a reader familiar with flight dynamics can skip the section dealing
+ with them which is detailed and tutorial.
+ The three last Sections of Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:flexiMissileModel"
+
+\end_inset
+
+ gives important assumptions on which the model is based.
+ Chapters 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:autopilots"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:results"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:conclusions"
+
+\end_inset
+
+ mainly deal with the control part of active damping that is the main concern
+ of this study.
+\end_layout
+
 \begin_layout Chapter
 Literature Review and Preliminary Study
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:literatureReview"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -778,6 +994,13 @@ Preliminary Study
 
 \begin_layout Chapter
 Flexible Missile Modeling
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:flexiMissileModel"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -6973,11 +7196,13 @@ Actuator Placement
 \end_layout
 
 \begin_layout Standard
-The goal of this paper is to enhance the global performance of ASTER-30
- by adding sensors.
- No actuators from the original model will be added hence the only actuators
- available are the thrust vectoring by nozzle orientation at the very rear
- of the missile and the fins at the tail of the dart.
+The goal of this paper is to enhance the performance of ASTER-30 by adding
+ sensors.
+ No actuators from the original model will be added.
+ Indeed adding actuators to an existing missile already in service can be
+ very cumbersome and costly.
+ The only actuators available are the thrust vectoring by nozzle orientation
+ at the very rear of the missile and the fins at the tail of the dart.
  The position of these two actuators on the airframe are 
 \begin_inset Formula $x_{nozzle}=0\,m$
 \end_inset
@@ -7903,6 +8128,13 @@ This is on this model that the controllers will be designed.
 
 \begin_layout Chapter
 Active Damping Autopilots
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:autopilots"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -13499,10 +13731,742 @@ name "fig:sigmaFlexure"
 
 \begin_layout Chapter
 Results and Discussions
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:results"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The thesis has investigated structural damping on a slender missile ASTER
+ 30.
+ A flight dynamics model has been derived coupled with a structural model.
+ This flexible missile model is the foundation on which sensors have been
+ placed at optimal locations for structural damping purposes.
+ Several lateral acceleration controllers were created and assessed which
+ three of them use active damping.
+ These steps will be discussed recalling the assumptions made, the results
+ obtained and their scope of validity.
+\end_layout
+
+\begin_layout Paragraph
+Flight Dynamics
+\end_layout
+
+\begin_layout Standard
+The flight dynamics are based on a simple longitudinal model at Mach 2 and
+ sea level.
+ The aerodynamics modeling uses global linear aerodynamic coefficients that
+ have been obtained from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lesieutre2002MISL3"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "fleeman2006tactical"
+
+\end_inset
+
+ with slight changes.
+ Flight of slender bodies is generally highly nonlinear but for simplification
+ purposes, it has been assumed linear.
+ This might create inconsistancies at high angle of attack.
+ The equations are therefore valid within very small variations from the
+ trim state.
+ However, the purpose of the study is to demonstrate the feasability of
+ active damping and not to accurately design a functional controller.
+\end_layout
+
+\begin_layout Standard
+Only the SPPO is considered as a mode in this model.
+ The reason for this is that slower dynamics like the phugoïd have a time
+ scale which belongs to navigation issue and not lateral acceleration generation.
+ The SPPO natural frequency was calculated at ???Hz with a damping ratio
+ of ??? which is realistic.
+ The SPPO dynamics set a limit to the fastest reponse to generate latax
+ with the proposed feedback architecture.
+\end_layout
+
+\begin_layout Paragraph
+Actuators
+\end_layout
+
+\begin_layout Standard
+ASTER 30 has two actuators to control the flight, thrust vectoring nozzles
+ and fins.
+ The transfer functions from the demanded angles of deflection of these
+ actuators and the realised angles have been assumed to be of second order.
+ This assumption might be a little extreme especially for the thrust vectoring
+ which dynamic is very complex and non linear.
+ Indeed the thrust magnitude is so intense that the nozzles might bend due
+ to backlash.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Structural Modeling
+\end_layout
+
+\begin_layout Standard
+The missile has been modeled using a discretized method using point masses
+ and massless beams.
+ This structural stiffness of the beam has been estimated assuming that
+ the missile skin is in carbon fibre and divided in two pipes of similar
+ thickness but different diameters.
+ The real structural composition of the missile is probably very different
+ with anisotropic materials, variable thickness.
+ The mass is not uniformly distributed as assumed.
+ Of course knowing the exact mass distribution and structural stiffness,
+ the model can be adapted to be more accurate.
+ Also one assumption was that pur moments and rotational inertias are negligeabl
+e which might be false especially at the fins location or about the missile
+ warhead.
+\end_layout
+
+\begin_layout Paragraph
+Servo-aeroelastic Model
+\end_layout
+
+\begin_layout Standard
+The final model of the missile takes account of the longitudinal flight
+ dynamics, the actuators dynamics and the bending.
+ Interactions between these three models are very limited since the structure
+ deformation is only influenced by thrust vectoring and fins forces.
+ The aerodynamics are supposed to bring no bending since the thrust is the
+ main force.
+ However, the source of vibrations is not important to be clearly identified
+ as long as these vibrations are damped thoroughly.
+ The controllers designed react to bending oscillations no matter where
+ they come from.
+ To model bending due to aerodynamics, it would have require to use data
+ on local pressure coefficients all along the body which vary with angle
+ of attack, pitch rate and are time varying.
+ This would bring additional complexity that is not needed in this study.
+\end_layout
+
+\begin_layout Standard
+On the other hand, the bending deformation is supposed to have no influence
+ on the aerodynamics.
+ Since the bending deflection is very limited, the shape of the missile
+ does not change significantly and its flight characteristics remain unchanged.
+\end_layout
+
+\begin_layout Paragraph
+Sensors Placement
+\end_layout
+
+\begin_layout Standard
+Additional sensors where placed all along the body.
+ These sensors add information about the flexure of the missile to allow
+ active damping.
+ They were of three types: strain gauge, gyroscopes and accelerometers.
+ Using the H
+\begin_inset Formula $_{\infty}$
+\end_inset
+
+-norm, an index has been defined to locate the best positions to place each
+ sensor.
+ It has been proved that one strain gauge is necessary but two gyroscopes
+ and three accelerometers are need to have enough information on the missile
+ bending.
+ The optimal location for the strain gauge is in the middle of the missile.
+ The gyroscopes must be placed at each extremity.
+ Since a gyroscope is already present in the sensors pack, only one has
+ been added on the tail.
+ Finally, the accelerometers were placed at the tail, the middle and the
+ nose.
+ The accelerometer from the sensors pack of ASTER is located at an acceleration
+ node of the first bending mode and has a very limited sensitivity of this
+ state.
+\end_layout
+
+\begin_layout Paragraph
+Damping controllers
+\end_layout
+
+\begin_layout Standard
+Three controllers have been designed with the measurements provided by the
+ additional sensors.
+ One uses the strain gauge, the second one uses the gyroscopes and the last
+ one uses three accelerometers.
+ 
+\end_layout
+
+\begin_layout Standard
+The first architecture is based on the phase loss of the fins actuator and
+ can be faulty if the actuator is not properly modelled.
+ Indeed if the actuator has a faster reaction time and the phase loss is
+ close to 0°, the loop would increase the natural frequency of the bending
+ mode and not damp it.
+ The feedback uses the measurement from a single strain gauge.
+ Since strain gauge are resistors, they are very sensitive to temperature
+ and are not reliable.
+ Moreover, they measure the local strain that can be due to other structural
+ modes like twisting or longitudinal stretch and compression.
+ The advantage is that they are very cost effective.
+\end_layout
+
+\begin_layout Standard
+The second architecture requires the substraction of two pitch rate measurements
+ whereas the third one needs three accelerometers.
+ The performance from both architectures is very similar however the gyroscopes
+ feedback uses less the fins at low frequencies.
+ The advantage of the accelerometers feedback is the use of an integrator
+ that will minimize high frequency noise sent to the actuator.
+ The use of gyroscopes must be prefered though because only one additional
+ gyrometer is need whereas it is three for the accelerometers.
+ Accelerometers also measure gravity and it must be removed using the attitude
+ and gravity magnitude estimations which is a disadvantage compared to gyroscope
+s.
+\end_layout
+
+\begin_layout Standard
+It has been shown that these three architectures actively damp bending oscillati
+ons generated by the rocket engine whereas the conventional architecture
+ using a notch filter do not.
+ Tracking performance is identical for all of the architectures tested.
+ The criterias used to asses each controller are summarized in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:perfControllers"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle">
+<column alignment="center" valignment="middle">
+<column alignment="center" valignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="left" valignment="middle" width="2cm">
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Feedback Type
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tracking
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actuators Demand
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parasitic Actuation
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vibrations Damping
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stress Alleviation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nozzles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fins
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No notch filter / No damping
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Correct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Severe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Notch Filter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Correct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Strain Gauge Feedback
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Correct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Increased
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Increased
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gyroscopes Feedback
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Correct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Increased
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Increased
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Accelero- meters Feedback
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Correct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limited
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Increased
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Increased
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary of Controllers Performance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:perfControllers"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
+Conclusions and Further Developments
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:conclusions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Conclusions
+\end_layout
+
+\begin_layout Section
+Further Developments
 \end_layout
 
 \begin_layout Standard
