@@ -2,14 +2,21 @@
 \lyxformat 474
 \begin_document
 \begin_header
-\textclass report
+\textclass book
 \begin_preamble
 \usepackage{tikz} 
 \usetikzlibrary{shapes,arrows,positioning,calc}
 \usepackage{schemabloc}
+\usepackage{emptypage}
+\usepackage{layout}
 \usepackage[nottoc]{tocbibind}
 \def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
+
+\fancyhead{}% Clear all fancy headers
+\fancyhead[LE]{\rightmark}% Thesis title in Left Even header
+\fancyhead[RO]{\leftmark}% Chapter mark in Right Odd header
 \end_preamble
+\options twoside, openright
 \use_default_options true
 \begin_modules
 customHeadersFooters
@@ -62,7 +69,7 @@ customHeadersFooters
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3cm
+\leftmargin 4cm
 \topmargin 3cm
 \rightmargin 3cm
 \bottommargin 3cm
@@ -596,7 +603,7 @@ status open
 
 
 \backslash
-pagenumbering{roman}
+frontmatter
 \end_layout
 
 \end_inset
@@ -635,17 +642,6 @@ Additionally to giving a new look at vibrations alleviation on slender airframes
 , this thesis demonstrates a method to remove the structural filter in conventio
 nal autopilots and constructs a discussion around different types of low
  cost sensors that can be used for active structural damping.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter*
@@ -722,7 +718,7 @@ status open
 
 
 \backslash
-pagenumbering{arabic}
+mainmatter
 \end_layout
 
 \end_inset
@@ -970,12 +966,264 @@ name "chap:literatureReview"
 Literature Review
 \end_layout
 
+\begin_layout Standard
+Active damping of structures involves different fields from flight dynamics,
+ structure dynamics but also sensors and actuators technology for missiles
+ and optimal sensors and actuators placement.
+ A literature survey will be made to give an insight in these domains.
+\end_layout
+
 \begin_layout Subsection
 Structure Active Damping
 \end_layout
 
+\begin_layout Standard
+Large structures often present issues with oscillations.
+ The main structural modes have very low damping ratio and the oscillation
+ energy do not dissipate fast enough.
+ In some cases, it is preferable to damp actively these oscillations using
+ actuators instead of passive damping using dampers.
+ Indeed active damping can turn to be light than passive damping and to
+ adapt thoughout the structure life whereas passive dampers might be heavy
+ and inefficient if the mass or stiffness of the structure change.
+\end_layout
+
+\begin_layout Standard
+Active damping is encountered in civil engineering for tall skycrapers.
+ These structures are exceptionally slender and excited by winds and sometimes
+ seisms.
+ The elastic and cinetic energy stored must be dissipated with active systems.
+ Civil engineers use tuned mass dampers (TMD) - huge masses mounted on cylinders
+ - to counter oscillations.
+ Kourakis conducts a study on the particular case of Taipei 101 in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kourakis2007TMDTaipei"
+
+\end_inset
+
+, the fourth tallest tower in the world at the time of writing of this thesis.
+ The mass used is 730 tons and decreases the building oscillations magnitude
+ by 40%.
+ Taipei 101 and its TMD system appear on Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Taipei-101"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TMDTaipei101"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Taipei_101.jpg
+	lyxscale 10
+	width 20page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Taipei 101
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Taipei-101"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/taipeiTMD.jpg
+	lyxscale 40
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TMD system of Taipei 101
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TMDTaipei101"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Large space structures have the same issue.
+ On Earth, air in which structures evolve is a major actor in damping however
+ in space vacuum, large satellites lattice like the ISS on Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ISS"
+
+\end_inset
+
+ are very lightly damped.
+ The source of excitation in this case is not the environment but the system
+ itself.
+ The attitude control creates structural deformations and oscillations that
+ must be damped.
+ For such structures, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "joshi1991spaceStructures"
+
+\end_inset
+
+ considers the spacecraft attitude control and structural damping as a whole.
+ Indeed structural modes and rigid-body modes are highly coupled and must
+ be controlled in the same MIMO loop.
+ The method consists in establishing a state space model that comprises
+ both rigid-body modes and flexible modes.
+ For smaller systems like defense missiles, the interaction between the
+ structure and the attitude is also probable but at a higher speed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ISS.jpg
+	lyxscale 20
+	width 40page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The International Space Station
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ISS"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On a system closer to what this thesis is about, Meirovitch derives a model
+ for a UAV executing time-dependant manoeuvres in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "meirovitch2005timeDependantManeuvers"
+
+\end_inset
+
+.
+ The model is divided in two submodels where the first one is a classical
+ non linear flight dynamics model along a pre-defineds trajectory for a
+ conventional aircraft while the second one receiving inputs from the first
+ contains small perturbations from the nominal trajectory in which structural
+ deformations are accounted.
+ This yields a very complex time-varying model.
+\end_layout
+
+\begin_layout Standard
+Applications of active damping for missiles or rockets are very limited
+ in the public domain.
+ Manufacturers are used to design aiframes very stiff and use a structural
+ filter to remove parasitic actuations due to vibrations.
+ These constraints lead to heavy structures and the controller fastest speed
+ is limited by the structural filter which cuts every high frequency signals
+ off.
+\end_layout
+
 \begin_layout Subsection
 Sensors for Structure Monitoring
+\end_layout
+
+\begin_layout Standard
+The first step in active damping is sensing.
+ Appropriate sensors must be chosen for this function.
+ They should be non intrusive to ease their integration in the airframe.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2716,7 +2964,7 @@ C=\left[\begin{array}{cc}
 \end_layout
 
 \begin_layout Section
-Actuator Dynamics
+Actuators Dynamics
 \end_layout
 
 \begin_layout Standard
@@ -7186,7 +7434,7 @@ From now on, (
 \end_layout
 
 \begin_layout Section
-Actuator & Sensor Placement
+Actuators & Sensors Placement
 \end_layout
 
 \begin_layout Subsection
@@ -7269,7 +7517,7 @@ Only columns 1 and 50 of
 \end_layout
 
 \begin_layout Subsection
-Sensor Placement
+Sensors Placement
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:sensorPlacement"
@@ -8189,7 +8437,7 @@ The sensors pack included in the original version of ASTER-30 contains an
  These sensors are the only two needed for the lateral acceleration control.
  With the missile modification presented in 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand ref
 reference "sub:sensorPlacement"
 
 \end_inset
@@ -14576,6 +14824,22 @@ Finally an approach can be tracking performance enhancing.
  A notch filter would be unusable in such a case.
  Thus, considering the flexible missile as a whole, an optimal controller
  could be designed to maximize lateral acceleration settling time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+backmatter
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
