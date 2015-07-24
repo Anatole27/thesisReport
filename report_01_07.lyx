@@ -653,13 +653,11 @@ Ackowledgments
 \end_layout
 
 \begin_layout Standard
-Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
- wesh ! Zbla ! Hunhun ! Big up à toute la famille, wesh ! Zbla ! Hunhun
- ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
- wesh ! Zbla ! Hunhun ! Big up à toute la famille, wesh ! Zbla ! Hunhun
- ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! Big up à toute la famille,
- wesh ! Zbla ! Hunhun ! Big up à toute la famille, wesh ! Zbla ! Hunhun
- ! Big up à toute la famille, wesh ! Zbla ! Hunhun ! 
+I could not have done this thesis without the help of Cafe Comet who has
+ provided me decalitres of coffee.
+ A great thanks to the british weather that has convinced me to stay working
+ in the library for days and nights.
+ 
 \begin_inset Newpage newpage
 \end_inset
 
@@ -14465,8 +14463,119 @@ name "chap:conclusions"
 Conclusions
 \end_layout
 
+\begin_layout Standard
+Active structural damping on a tactical missile has been investigated.
+ A linear time-invariant model of the flexible missile has been derived
+ using classical flight dynamics coupled with a discretized dynamic Euler
+ Bernoulli beam.
+ To measure the missile flexure, additional sensors - a strain gauge, two
+ gyroscopes and three accelerometers - have been placed at optimal locations
+ on the airframe.
+ Several active damping controllers have been designed and assessed according
+ to multiples criterias.
+ The feedback loop using gyroscopes being prefered for the robustness of
+ these sensors, the low number required and its low control power consumption
+ compared to other architectures.
+\end_layout
+
+\begin_layout Standard
+Active structural damping is feasible on ASTER 30 for the first bending
+ mode.
+ The prior limiting factor being often the slow actuator dynamics.
+ ASTER 30 slenderness makes the bending mode natural frequency low and the
+ fins have a bandwidth large enough to perform active damping.
+ The benefits of such a control are principaly vibrations alleviation for
+ the seeker leading to an enhanced tracking of the target.
+\end_layout
+
 \begin_layout Section
 Further Developments
+\end_layout
+
+\begin_layout Standard
+From this study arises several possible further developments.
+ 
+\end_layout
+
+\begin_layout Standard
+Only a limited number of sensors have been added on the airframe.
+ However, some of these sensors are not only sensitive to the first bending
+ mode but also to other bending modes, twisting modes, compression modes
+ and so forth.
+ Augmenting the number of sensors might reinforce confidence in the flexure
+ prediction.
+ Furthermore, the sensors have been placed at peaks of placement indices
+ which might not be the best considering several sensors.
+ For instance the accelerometers must be three and have been placed at the
+ three peaks of the placement index.
+ Once placed, a linear combination of their signal has been done to remove
+ rigid-body components.
+ What can be done is finding the linear combination with respect to the
+ position of each sensor named 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+ then compute the placement index for the triple (
+\begin_inset Formula $i$
+\end_inset
+
+,
+\begin_inset Formula $j$
+\end_inset
+
+,
+\begin_inset Formula $k$
+\end_inset
+
+).
+ This will give a three dimensional array of placement indices and will
+ find the optimal location for the three sensors.
+\end_layout
+
+\begin_layout Standard
+With the additional sensors, estimation of the missile state can be reinforced
+ using Kalman filtering.
+ Moreover, the array of accelerometers provide information on CG acceleration
+ but also on pitch rate acceleration.
+ The pitch rate acceleration measurement can be used to anticipate on pitching
+ moments.
+\end_layout
+
+\begin_layout Standard
+The three architectures proposed use simple SISO loops and the feedback
+ is generally a static gain.
+ It might be useful to add a band-pass filter centered on the first bending
+ mode frequency to avoid using the fins outside of this band.
+ Indeed the strain gauge feedback and the accelerometers feedback use the
+ fins even at frequencies that do not correspond to the bending oscillation.
+ This would save control energy and diminish interactions between lateral
+ acceleration control and active structural damping.
+\end_layout
+
+\begin_layout Standard
+The study has been focused on bending but it could be enlarged to a 3D model
+ to consider all structural modes such as twisting.
+ The fins are able to generate lateral forces but also twisting moments
+ to damp twisting modes.
+\end_layout
+
+\begin_layout Standard
+Finally an approach can be tracking performance enhancing.
+ The missile can be made more slender and the SPPO can be faster by augmenting
+ the static margin.
+ These two modifications would bring the bending natural frequency and short
+ period frequency closer.
+ A notch filter would be unusable in such a case.
+ Thus, considering the flexible missile as a whole, an optimal controller
+ could be designed to maximize lateral acceleration settling time.
 \end_layout
 
 \begin_layout Standard
