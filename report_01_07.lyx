@@ -12,9 +12,12 @@
 \usepackage[nottoc]{tocbibind}
 \def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
 
+
 \fancyhead{}% Clear all fancy headers
 \fancyhead[LE]{\rightmark}% Thesis title in Left Even header
 \fancyhead[RO]{\leftmark}% Chapter mark in Right Odd header
+
+\renewcommand{\arraystretch}{1.5}
 \end_preamble
 \options twoside, openright
 \use_default_options true
@@ -92,7 +95,7 @@ customHeadersFooters
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -103,14 +106,20 @@ status collapsed
 
 % For a PhD thesis (or other research degree), the references to MSc thesis
  should be changed to PhD (or MPhil, EngD as % appropriate).
-  Research degrees do not need the statement about "partial submission"
- for the degree.
+  Research
+\backslash
+def degrees do not need the statement about "partial submission" for the
+ degree.
   The dates used in % this template should also be corrected.
 \end_layout
 
 \begin_layout Plain Layout
 
 % 10 Apr 2006
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -156,7 +165,7 @@ CRANFIELD UNIVERSITY
 
 
 \backslash
-vspace{55mm}
+vspace{40mm}
 \end_layout
 
 \begin_layout Plain Layout
@@ -178,7 +187,7 @@ LARGE ANATOLE VERHAEGEN
 
 
 \backslash
-vspace{25mm}
+vspace{10mm}
 \end_layout
 
 \begin_layout Plain Layout
@@ -198,7 +207,7 @@ Bending Vibrations}}
 
 
 \backslash
-vspace{55mm}
+vspace{40mm}
 \end_layout
 
 \begin_layout Plain Layout
@@ -214,11 +223,20 @@ Large
 
 \begin_layout Plain Layout
 
-SCHOOL OF AEROSPACE, TRANSPORT 
+SCHOOL OF AEROSPACE, 
 \backslash
 
 \backslash
-SYSTEMS AND MANUFACTURING
+TRANSPORT AND MANUFACTURING
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MSc Autonomous Vehicle Dynamics and Control
 \end_layout
 
 \begin_layout Plain Layout
@@ -229,12 +247,65 @@ SYSTEMS AND MANUFACTURING
 
 
 \backslash
-vspace{20mm}
+vspace{13mm}
 \end_layout
 
 \begin_layout Plain Layout
 
 MSc THESIS
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Academic Year 2014 - 2015
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{13mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+Supervisor: Dr R.
+ W.
+ 
+\backslash
+.Zbikowski
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{13mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+August 2015
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -242,6 +313,42 @@ MSc THESIS
 
 \backslash
 end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -344,7 +451,12 @@ vspace{15mm}
 
 
 \backslash
-textsc{School of Aerospace, Transport Systems and Manufacturing}
+textsc{School of Aerospace, Transport and Manufacturing}
+\end_layout
+
+\begin_layout Plain Layout
+
+MSc Autonomous Vehicle Dynamics and Control
 \end_layout
 
 \begin_layout Plain Layout
@@ -376,7 +488,7 @@ vspace{15mm}
 
 \begin_layout Plain Layout
 
-Academic Year 2014-2015
+Academic Year 2014 - 2015
 \end_layout
 
 \begin_layout Plain Layout
@@ -510,13 +622,11 @@ normalsize
 
 \begin_layout Plain Layout
 
-This thesis is submitted in partial (50
-\backslash
-%) fulfillment of the 
+This thesis is submitted in partial fulfillment of the 
 \backslash
 
 \backslash
-requirements for the degree of Master of Science
+requirements for the degree of Master of Science.
 \end_layout
 
 \begin_layout Plain Layout
@@ -534,7 +644,7 @@ vspace{10mm}
 
 
 \backslash
-copyright Cranfield University 2006.
+copyright Cranfield University 2015.
   All rights reserved.
   No part of this publication
 \backslash
@@ -616,66 +726,44 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-This work looks into active structural damping for tactical missiles.
- It investigates how conventional structural filters can be replaced by
- active damping of the bending oscillations.
+This master's thesis investigates active structural damping for tactical
+ missiles.
+ The study is based on the case of ASTER 30 - a defense missile - in longitudina
+l bending.
+ The aim is to replace the structural filter of the autopilot by an active
+ damping loop to reduce the bending oscillations, the seeker noise and the
+ parasitic actuations.
 \end_layout
 
 \begin_layout Standard
-To face increasing performance of aerial threats, defense missiles must
- be designed evermore agile.
- Bending vibrations have become a growing issue with slender missile airframes
- and are a primary source of low frequency noise for seekers.
- In the mean time, miniaturisation and cost reduction of sensors like gyroscopes
- and accelerometers make sensor-rich systems affordable.
- In this context active damping is attractive can be performed using multiple
- sensors on ASTER 30, an anti-missile missile.
+The body of research for active damping is very weak concerning missiles.
+ In this work, a new aero-servoelastic model is derived based on an hybrid
+ actuated airframe comprising thrust vectoring and fins.
+ The structural model is derived on an original bending Euler Bernoulli
+ beam discretized in the free-free case.
+ The flexible-body modes are extracted and integrated into the longitudinal
+ rigid-body flight dynamics model.
+ A strain gauge, gyroscopes and accelerometers are optimally placed on the
+ aiframe with an adapted method.
+ Finally, three active damping and latax controllers are designed with a
+ H
+\begin_inset Formula $_{\infty}$
+\end_inset
+
+ structured tuning to replace the structural filter.
+ The active damping is performed using the additional sensors and the central
+ fins.
+ The work concludes on the feasibility of active damping based on tracking,
+ actuators demand, vibrations damping, parasitic actuations and stress alleviati
+on.
 \end_layout
 
 \begin_layout Standard
-A longitudinal servo-aeroelastic model for ASTER 30 is derived using flight
- dynamics equations and Euler-Bernoulli beam theory.
- A strain gauge, gyroscopes and accelerometers are placed at optimal locations
- to measure the missile bending state.
- These additional sensors are used to design three new autopilot architectures
- actively damping vibrations while controlling the lateral acceleration.
- These autopilots are tested on the model derived previously and compared
- with the conventional non damping autopilot.
-\end_layout
 
-\begin_layout Standard
-Additionally to giving a new look at vibrations alleviation on slender airframes
-, this thesis demonstrates a method to remove the structural filter in conventio
-nal autopilots and constructs a discussion around different types of low
- cost sensors that can be used for active structural damping.
-\end_layout
-
-\begin_layout Standard
-%% Another try
-\end_layout
-
-\begin_layout Standard
-This work looks into active structural damping for tactical missiles.
- It investigates how conventional structural filters can be replaced by
- active damping of the bending oscillations.
-\end_layout
-
-\begin_layout Standard
-A longitudinal servo-aeroelastic model for ASTER 30 is derived using flight
- dynamics equations and Euler-Bernoulli beam theory.
- A strain gauge, gyroscopes and accelerometers are placed at optimal locations
- to measure the missile bending state.
- These additional sensors are used to design three new autopilot architectures
- actively damping vibrations while controlling the lateral acceleration.
- These autopilots are tested on the model derived previously and compared
- with the conventional non damping autopilot.
-\end_layout
-
-\begin_layout Standard
-Additionally to giving a new look at vibrations alleviation on slender airframes
-, this thesis demonstrates a method to remove the structural filter in conventio
-nal autopilots and constructs a discussion around different types of low
- cost sensors that can be used for active structural damping.
+\emph on
+Keywords: 
+\emph default
+aero-servoelasticity, sensors placement, flexible structures control
 \end_layout
 
 \begin_layout Chapter*
@@ -683,11 +771,36 @@ Ackowledgments
 \end_layout
 
 \begin_layout Standard
-I could not have done this thesis without the help of Cafe Comet who has
- provided me decalitres of coffee.
- A great thanks to the british weather that has convinced me to stay working
- in the library for days and nights.
+This master's thesis was sponsored by MBDA UK.
+ I wish to thank my supervisor Prof.
+ R.
+ W.
  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+.Z
+\end_layout
+
+\end_inset
+
+bikowski for his generous advice.
+ I would also like to express my sincere gratitude to Mr G.
+ Wallis for his belief in this work and support.
+ I am indepted to Mr S.
+ Hodgson for providing me precious knowledge.
+ Credit must also be given to Mr J.
+ P.
+ Harcaut and his team for their helpful discussion.
+ Finally I wish to record my appreciation for MBDA UK and MBDA France for
+ giving me the opportunity to work on this inspiring topic.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -795,7 +908,7 @@ reference "fig:Bending-Effects"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -835,10 +948,10 @@ name "fig:Bending-Effects"
 
 \begin_layout Standard
 To deal with these issues, structural filters are usually used to remove
- structural noise for the sensors measurements and to avoid parasitic actuation.
+ structural noise from the sensors measurements and to avoid parasitic actuation.
  However this add a significant phase loss for the control and it curbs
  the missile fastest dynamics by cutting off high frequency signals.
- These structural filters do not remove the dynamic structural deformation
+ These structural filters do not remove the dynamic structural deformations
  neither.
 \end_layout
 
@@ -854,9 +967,9 @@ Another solution which is not used yet is active damping.
  In the mean time, actuators used to control missiles have now larger bandwidths
  but are often curbed by structural filters.
  The extra bandwidth gained by removing the filters could be used to actively
- damp structural vibrations.
- Active damping has also the advantage of directly reducing bending oscillations
- which can remove constraints on the airframe structural stiffness.
+ damp the structural vibrations.
+ Active damping has also the advantage of directly reducing the bending
+ oscillations which can remove constraints on the airframe structural stiffness.
 \end_layout
 
 \begin_layout Standard
@@ -1549,11 +1662,12 @@ name "fig:InvenSense-IMU"
 
 \end_layout
 
-\begin_layout Subsection
-Sensors Placement
-\end_layout
-
 \begin_layout Standard
+To sense the missile bending state, the sensors must be fixed at appropriate
+ locations.
+ The goal is to minimize the signal to noise ratio by placing the sensors
+ where the physical quantity they measure is maximum.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gawronski2004modal"
@@ -1572,6 +1686,144 @@ key "gawronski2004modal"
 -norm or the Hankel norm.
  Indices are created for each potential location for all structural modes
  considered.
+ For each mode, a few locations with the biggest index are selected.
+ Finally, only some of these locations are kept to minimize the correlation
+ between measurements.
+\end_layout
+
+\begin_layout Subsection
+Actuators of ASTER
+\end_layout
+
+\begin_layout Standard
+ASTER is featured with three types of propulsion mechanisms.
+ During the acceleration phase, the booster controls the trajectory using
+ thrust vectoring.
+ After the separation, an hybrid system called PIF PAF takes over.
+\end_layout
+
+\begin_layout Standard
+The thrust vectoring is a propulsion and control technique using thrust
+ to accelerate but also to steer.
+ The nozzles from which the flames arise are orientable with cylinders.
+ The deflection of the flames can generate pitching moments, yaw moments
+ and roll moments.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lugo2010thrustVectoring"
+
+\end_inset
+
+ gives a summary of advantages and disadvantages of thrust vectoring for
+ all kind of manned aircraft.
+ For missiles flying at 
+\begin_inset Formula $30\,km$
+\end_inset
+
+ of altitude, thrust vectoring becomes indispensable because the dynamic
+ pressure is too weak for conventional control surfaces.
+ The advantage of thrust vectoring is also the possibility of high angle
+ of attack manoeuvres.
+ The main disadvantages however are the slowness of this actuator, its weight,
+ its complexity and also its inaccuracy in magnitude and orientation.
+ Indeed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "knauber1996thrustMisalignments"
+
+\end_inset
+
+ estimates the thrust misalignment of about 
+\begin_inset Formula $0.25\,deg$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The PIF PAF system consists of two control actuators as explained in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "selince1984PIFPAF"
+
+\end_inset
+
+ published in 1984.
+ The PIF part means in french 
+\begin_inset Quotes eld
+\end_inset
+
+Pilotage en Force
+\begin_inset Quotes erd
+\end_inset
+
+ (forced steering) and consists in a lateral force generator next to the
+ center of gravity.
+ This force is created by impulsions of hot gas as shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PIF-concept"
+
+\end_inset
+
+.
+ This system is very powerful and can generate several dozens of g's.
+ However its accuracy is poor.
+ The attitude correction is done with the PAF system (
+\begin_inset Quotes eld
+\end_inset
+
+Pilotage Aerodynamique Fort
+\begin_inset Quotes erd
+\end_inset
+
+ - strong aerodynamic steering) using the fins.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/PIF.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PIF concept
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PIF-concept"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1579,30 +1831,544 @@ Preliminary Study
 \end_layout
 
 \begin_layout Standard
-Preliminary model : ASTER = 2 parts and thin link -> 2 rods with a rotational
- spring linking them.
+A preliminary model of a two stage rocket has been derived to understand
+ the mechanisms of interaction between the structure, the aerodynamics and
+ the actuators.
+ 
 \end_layout
 
 \begin_layout Standard
-2 rods of m = ?? and ?? and J = ?? and ??.
- Aerodynamics = Applied at CG of each rod.
- String stiffness : piece of pipe using Euler Bernoulli -> stiffness
+The stages of the rocket are represented by two rigid uniform rods of masses
+ 
+\begin_inset Formula $m_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $m_{2}$
+\end_inset
+
+, of lengths 
+\begin_inset Formula $l_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $l_{2}$
+\end_inset
+
+ and of rotational inertia at CG 
+\begin_inset Formula $J_{y1}$
+\end_inset
+
+ and 
+\begin_inset Formula $J_{y2}$
+\end_inset
+
+.
+ These rods are linked with a torsion spring of stiffness 
+\begin_inset Formula $k$
+\end_inset
+
+ determined from a portion of Euler Bernoulli beam.
+ The aerodynamics are considered linear and global thus the rods have the
+ lift coefficients 
+\begin_inset Formula $C_{L\alpha1}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{L\alpha2}$
+\end_inset
+
+.
+ The aerodynamic center of each rod is located at their centers of gravity.
+ The model is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Two-Part-Model"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Outcomes : Even with no stabilization delta_theta very low -> consideration
- of aerodynamics for a complete rod.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2partRocket.eps
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Two Part Model
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Two-Part-Model"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Dynamics that could be assimilated to a first bending mode.
- No other modes -> Unrealistic.
- No problems due to unstability of 2nd or 3d mode.
- Bending frequency probably very wrong.
+The spring stiffness is calculated using a Euler Bernoulli beam model.
+ The link between the two parts of the missile is assimilated to a pipe
+ of diameter 
+\begin_inset Formula $0.18\,m$
+\end_inset
+
+, of a thickness 
+\begin_inset Formula $2.5\,mm$
+\end_inset
+
+ and of length 
+\begin_inset Formula $l_{link}=0.5\,m$
+\end_inset
+
+ giving a second moment of area about the y-axis of 
+\begin_inset Formula $I=5.5\cdot10^{-6}m^{4}$
+\end_inset
+
+.
+ The geometery of this link is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bending-Link-Geometry"
+
+\end_inset
+
+.
+ The material is assumed to be carbon fibre of Young modulus 
+\begin_inset Formula $E=170\,GPa$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
--> need to create a model more accurate with
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/linkGeometry.eps
+	width 30line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bending Link Geometry
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bending-Link-Geometry"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For such a part, the bending stiffness is 
+\begin_inset Formula 
+\[
+k=\frac{E\,I}{l_{link}}=2\cdot10^{6}\,N.m.rad^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Based on ASTER 30, the parameters chosen are summarized in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:2-rods-Model-Parameters"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $310\,kg$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $m_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $140\,kg$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.2\,m$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.7\,m$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $J_{y1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $375\,kg.m^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $J_{y2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $255\,kg.m^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2\cdot10^{6}\,N.m.rad^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{L\alpha1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $25\,rad^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{L\alpha2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6\,rad^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2-rods Model Parameters
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:2-rods-Model-Parameters"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This model has provided information about the amplitude of deformation of
+ the missile.
+ The angles 
+\begin_inset Formula $\alpha_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{2}$
+\end_inset
+
+ stay very close.
+ The bending deflection is less than a millimeter.
+ This will be usefull to make assumptions on the magnitude of deformation
+ and and interactions between the aerodynamics and the structure.
+ In particular, it will be assumed that the aerodynamics do not have to
+ take account of the deformation of the missile and the structure is not
+ deformed by aerodynamic forces along the body but only by the lateral forces
+ generated using the thrust vectoring or the fins.
+ This preliminary study of extreme simplicity only accounts for one bending
+ mode.
+ The 
+\begin_inset Formula $2^{nd}$
+\end_inset
+
+ and 
+\begin_inset Formula $3^{rd}$
+\end_inset
+
+ bending mode perturbation cannot be seen.
+ The structural model that will be elaborated will consider the missile
+ as a bending beam to encounter higher order modes.
 \end_layout
 
 \begin_layout Chapter
@@ -1617,16 +2383,10 @@ name "chap:flexiMissileModel"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-INTRODUCTION
-\end_layout
-
-\end_inset
-
-
+The Chapter aims at modelling a flexible missile in longitudinal flight.
+ Flight dynamics, structures and actuators and sensors systems will be discussed.
+ These models will eventually be fused to create a servo-aeroelastic model
+ suitable for control design.
 \end_layout
 
 \begin_layout Section
@@ -1650,6 +2410,9 @@ reference "fig:ASTER-30-Launch"
 
 .
  
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1692,6 +2455,10 @@ name "fig:ASTER-30-Launch"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 The booster will bring the missile to the final altitude and close to the
  final speed of Mach 4.5 for ASTER 30, this phase is called the acceleration
  phase.
@@ -3058,9 +3825,9 @@ The linear acceleration of the center of gravity in an inertial frame of
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-m\,\vec{a}_{CG/\mathcal{R}_{e}}=\sum\vec{F}_{external}
-\]
+\begin{equation}
+m\,\vec{a}_{CG/\mathcal{R}_{e}}=\sum\vec{F}_{external}\label{eq:EoMAcc}
+\end{equation}
 
 \end_inset
 
@@ -4007,17 +4774,6 @@ n.
 
 \begin_layout Subsubsection
 State Equation
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ADD FINS INPUT & PITCH MOMENT OF FINS.
- LINEARIZATION MISSING CONSTANT TERM
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4669,7 +5425,7 @@ reference "fig:ASTER30Dimensions"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4809,7 +5565,7 @@ reference "fig:lumpedElementModel"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -5167,9 +5923,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/beamStructDimGraph.png
-	lyxscale 20
-	width 60page%
+	filename figures/beamStructDimGraph.eps
+	height 45text%
 
 \end_inset
 
@@ -6563,8 +7318,8 @@ Now considering the complete missile, as the element beams are linked in
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename figures/matrixCat.png
-	width 40page%
+	filename figures/matrixCat.eps
+	width 80line%
 
 \end_inset
 
@@ -10060,7 +10815,7 @@ reference "fig:Flexible-Missile-Model"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -10243,7 +10998,7 @@ name "chap:autopilots"
 \begin_layout Standard
 A flexible missile model has been established in the previous chapter.
  Based on this model, several active damping autopilots will be designed
- and compared to non damping autopilots.
+ and compared to the conventional non damping autopilot.
 \end_layout
 
 \begin_layout Section
@@ -10634,11 +11389,11 @@ reference "fig:pitchRateFB"
  frequency.
  This inner loop must be as fast as possible thus a damping ratio of 0.7
  might be appropriate.
- It yields a pitch rate feedback gain 
+ For a rigid ASTER 30, it yields a pitch rate feedback gain 
 \begin_inset Formula $K_{q}$
 \end_inset
 
- of 0.022.
+ of 0.074.
 \end_layout
 
 \begin_layout Standard
@@ -10699,12 +11454,16 @@ The proportional integral corrector on the lateral acceleration
 \begin_layout Standard
 \begin_inset Formula 
 \[
-PI(s)=0.00016\frac{1+0.093\,s}{s}
+PI(s)=0.009\,\frac{1+0.1\,s}{s}
 \]
 
 \end_inset
 
-giving a gain margin of 18dB and a phase margin of 68deg.
+giving a phase margin of 
+\begin_inset Formula $74\text{°}$
+\end_inset
+
+ for a rigid ASTER 30.
  The proportional integral corrector will only make the SPPO natural frequency
  lower.
  Thus, this double loop architecture cannot control the lateral acceleration
@@ -10724,7 +11483,7 @@ name "sec:vibesAlleviation"
 \end_layout
 
 \begin_layout Standard
-For agile missiles such as ASTER, the actuator bandwidth is very large.
+For agile missiles such as ASTER, the actuators bandwidths are wide.
  Thus, if the command signal generated has a non zero component at the bending
  frequency, the structural mode will start to oscillate.
  This oscillation is measured by the sensors and fed through the controller
@@ -10741,11 +11500,11 @@ reference "fig:rlocusNoVibeSupp"
 \begin_inset Formula $\theta_{Tref}$
 \end_inset
 
- to the pitch rate measured at the sensor pack location, on node 83 
+ to the pitch rate 
 \begin_inset Formula $q_{83}$
 \end_inset
 
-.
+ measured at the sensor pack location, on node 83.
  The 
 \begin_inset Formula $1^{st}$
 \end_inset
@@ -10755,7 +11514,7 @@ reference "fig:rlocusNoVibeSupp"
 \end_inset
 
  bending mode can become unstable with this feedback which is supposed to
- damp the shot period pitch oscillation (SPPO) if the gain is too big.
+ damp the short period pitch oscillation (SPPO) if the gain is too big.
 \end_layout
 
 \begin_layout Standard
@@ -10817,10 +11576,10 @@ There are several strategies to deal with the bending oscillation.
  The first one is currently used by missile manufacturers and consists in
  filtering the input command to the actuator using a notch filter.
  This technique will be developped further in the next subsection.
- Now that new sensors have been added on the airframe, these measurements
+ Now that new sensors have been added on the airframe, the measurements
  they provide can be used to actively damp the bending oscillations.
  Feedback architectures based on the strain measurement, on pitch rate measureme
-nts and on the accelerometer measurements will investigated in the following
+nts and on the accelerometer measurements will be investigated in the following
  subsections.
 \end_layout
 
@@ -10838,7 +11597,7 @@ name "sub:notchFilter"
 \begin_layout Standard
 A notch filter is applied to the command of the thrust vectoring.
  This filter will remove any signal of the bending mode frequency.
- The first step is to choose the type of filter.
+ The first step is to choose an appropriate type of filter.
  A Chebyshev Type II filter suits the problem because there is no ripple
  in the bandwidth that could create gain distorsion and affect performance
  at low frequency.
@@ -10856,7 +11615,7 @@ A notch filter is applied to the command of the thrust vectoring.
 
 .
  The gain loss is set to 
-\begin_inset Formula $20dB$
+\begin_inset Formula $40\,dB$
 \end_inset
 
 .
@@ -10867,7 +11626,7 @@ A notch filter is applied to the command of the thrust vectoring.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-N(s)=\frac{s^{4}+\left(3.55\cdot10^{-15}\right)\,s^{3}+\left(3.19\cdot10^{4}\right)\,s^{2}+\left(1.71\cdot10^{-10}\right)\,s+2.49\cdot10^{8}}{s^{4}+72.0\,s^{3}+\left(3.45\cdot10^{4}\right)\,s^{2}+\left(1.14\cdot10^{6}\right)\,s+2.49\cdot10^{8}}
+N(s)=\frac{s^{4}+\left(3.19\cdot10^{4}\right)\,s^{2}+2.49\cdot10^{8}}{s^{4}+239.0\,s^{3}+\left(6.04\cdot10^{4}\right)\,s^{2}+\left(3.77\cdot10^{6}\right)\,s+2.49\cdot10^{8}}
 \]
 
 \end_inset
@@ -10884,11 +11643,16 @@ reference "fig:notchFilter"
 \end_inset
 
 .
- The phase loss brought by this notch filter is already -30° at 
+ The phase loss brought by this notch filter is already 
+\begin_inset Formula $-100°$
+\end_inset
+
+ at 
 \begin_inset Formula $70\,rad.s^{-1}$
 \end_inset
 
  that may bring poorer performance even at low frequencies.
+ A higher order notch filter could also be chosen to obtain a sharper band-stop.
 \end_layout
 
 \begin_layout Standard
@@ -10900,8 +11664,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/notchFilter.png
-	lyxscale 20
+	filename figures/notchFilter.eps
 	width 60page%
 
 \end_inset
@@ -10934,7 +11697,8 @@ name "fig:notchFilter"
 \end_layout
 
 \begin_layout Standard
-Thanks to this filter, the actuator will excite less the first bending mode.
+Thanks to this filter, the actuator avoids exciting the first bending mode
+ and bending oscillations will not generate parasitic actuations.
  The bode diagram of 
 \begin_inset Formula $\frac{q_{83}(s)}{\theta_{Tref}(s)}$
 \end_inset
@@ -10948,7 +11712,11 @@ reference "fig:bodeFiltered"
 
 .
  This shows clearly that the resonance peak of the first bending mode has
- but cut down by 20dB.
+ but cut down by 
+\begin_inset Formula $40\,dB$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -11354,6 +12122,13 @@ The notch filter is a simple solution to deal with vibrations but it does
 
 \begin_layout Subsubsection
 Requirements
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Requirements"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11436,6 +12211,13 @@ reference "fig:bodeFins"
 .
  Therefore this fast actuator is to be prefered for active damping of the
  first bending mode.
+ Moreover, the fins are located in the middle where the flexure is important
+ therefore they have an important controllability of the first bending mode.
+ Also, at the first bending mode frequency, the fins deflection have very
+ little influence on the slow rigid-body dynamics.
+ Moreover, they are located close to the center of gravity so they do not
+ create a big change in the angle of attack.
+ The fins will be used to actively damp the bending vibrations.
 \end_layout
 
 \begin_layout Standard
@@ -11497,12 +12279,6 @@ The strain gauge is a sensor that is usually not present on a missile airframe.
  With this extra sensor, it possible to measure the local strain on the
  skin of the structure to infere on its flexure.
  This additional information can help to deal with bending oscillation.
- It has been chosen to damp the first bending mode oscillation with the
- central fins.
- At the bending mode frequency, the fins deflection have very little influence
- on the slow rigid-body dynamics.
- Moreover, they are located close to the center of gravity so they do not
- create a big change in the angle of attack.
  If only the first bending mode is considered, the transfer function of
  the fins deflection to the strain can be approximated to:
 \end_layout
@@ -11538,7 +12314,7 @@ reference "fig:strainFB1"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\varepsilon_{46}}{\delta_{F}}_{CL}(s)=K_{\nicefrac{\varepsilon}{\delta_{F}}}\frac{\omega_{1}^{2}}{s^{2}+2\,(\zeta_{1}+K_{\nicefrac{\varepsilon}{\delta_{F}}}\omega_{1}K)\,\omega_{1}\,s+\omega_{1}^{2}}
+\left(\frac{\varepsilon_{46}}{\delta_{F}}\right)_{CL}(s)=K_{\nicefrac{\varepsilon}{\delta_{F}}}\frac{\omega_{1}^{2}}{s^{2}+2\,(\zeta_{1}+\frac{1}{2}K_{\nicefrac{\varepsilon}{\delta_{F}}}\omega_{1}K_{\varepsilon})\,\omega_{1}\,s+\omega_{1}^{2}}
 \]
 
 \end_inset
@@ -11550,7 +12326,7 @@ reference "fig:strainFB1"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -11687,7 +12463,9 @@ sbDecaleNoeudy{tf-epsilon}{corner}
 
 
 \backslash
-sbBlocr[4]{corr}{$K
+sbBlocr[4]{corr}{$K_{
+\backslash
+varepsilon}
 \backslash
 ,s$}{corner}
 \end_layout
@@ -11748,7 +12526,7 @@ name "fig:strainFB1"
 
 \begin_layout Standard
 The feedback gain 
-\begin_inset Formula $K$
+\begin_inset Formula $K_{\varepsilon}$
 \end_inset
 
  directly changes the damping ratio of the first bending mode without changing
@@ -11776,15 +12554,22 @@ K\,\frac{s}{1+\nicefrac{s}{\omega_{fast}}}
 \end_layout
 
 \begin_layout Standard
-This feedback loop would work if the fins deflection dynamics were very
- fast.
- This is not the case because even if there bandwith is twice bigger than
- the bending mode natural frequency, the phase loss is non negligeable.
+This feedback loop would work if the fins actuator was very fast.
+ This is not the case because even if its bandwith is twice bigger than
+ the bending mode natural frequency, the phase loss is non negligeable as
+ shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Requirements"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Fortunately, this phase shift acts slightly like a differentiator and a
- simple proportional feedback will damp the bending oscillations.
+Fortunately with this phase shift a simple proportional feedback will damp
+ the bending oscillations.
  On Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -11867,7 +12652,11 @@ reference "fig:bodeDampingStrain"
 \begin_inset Formula $125\,rad.s^{-1}$
 \end_inset
 
- has been cut down thoroughly.
+ has been cut down thoroughly by 
+\begin_inset Formula $20\,dB$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -11944,7 +12733,7 @@ reference "fig:completeStrainFB"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -12182,7 +12971,7 @@ sbRelier[$a_{zCG}$]{MO1}{azCG}
 
 \backslash
 node[draw, rectangle, minimum height=3em, minimum width=3em] (strainController)
- [below=of MO4] {$-K_{
+ [below=of MO4] {$K_{
 \backslash
 varepsilon}$};
 \end_layout
@@ -12407,8 +13196,8 @@ This feedback architecture has some disadvantages though.
  The strain measured is not only coming from bending deformations.
  Some longitudinal or twisting modes may create local strains and propagate
  noise in the system.
- Moreover, the static bending will create a static deflection of the fins
- and increase drag.
+ Moreover, without an appropriate band-pass filter, the static bending will
+ create a static deflection of the fins and increase drag.
 \end_layout
 
 \begin_layout Subsubsection
@@ -12438,7 +13227,7 @@ Two gyroscopes can give information on the flexure.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-q_{10}-q_{83}=q_{FB10}-q_{FB83}=\Delta q
+q_{10}-q_{83}=q_{fb,10}-q_{fb,83}=\Delta q
 \]
 
 \end_inset
@@ -12453,7 +13242,7 @@ If only the first bending mode is considered, the transfer function of the
 \end_inset
 
  to the pitch rate difference 
-\begin_inset Formula $\Delta q_{FB}$
+\begin_inset Formula $\Delta q$
 \end_inset
 
  is
@@ -12472,17 +13261,17 @@ thus with a simple proportional feedback gain
 \end_inset
 
  from 
-\begin_inset Formula $\Delta q_{FB}$
+\begin_inset Formula $\Delta q$
 \end_inset
 
  to 
 \begin_inset Formula $\delta_{F}$
 \end_inset
 
- would change modify the transfer function to
+ would modify the transfer function to
 \begin_inset Formula 
 \[
-\frac{\Delta q}{\delta_{F}}_{CL}(s)=K_{\nicefrac{\Delta q}{\delta_{F}}}\frac{\omega_{1}^{2}\,s}{s^{2}+2\,(\zeta_{1}+K_{\nicefrac{\Delta q}{\delta_{F}}}\omega_{1}K_{\Delta q})\,\omega_{1}\,s+\omega_{1}^{2}}
+\left(\frac{\Delta q}{\delta_{F}}\right)_{CL}(s)=K_{\nicefrac{\Delta q}{\delta_{F}}}\frac{\omega_{1}^{2}\,s}{s^{2}+2\,(\zeta_{1}+\frac{1}{2}\,K_{\nicefrac{\Delta q}{\delta_{F}}}\omega_{1}K_{\Delta q})\,\omega_{1}\,s+\omega_{1}^{2}}
 \]
 
 \end_inset
@@ -12570,14 +13359,18 @@ reference "fig:bodeDampingGyr"
 \end_inset
 
 .
- The resonance peak is reduced.
+ The resonance peak is reduced by 
+\begin_inset Formula $20\,dB$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -13425,7 +14218,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -13826,7 +14619,11 @@ draw[sbStyleLien,auto] (MO4)  -|  ++(11em,-10em) -| node {$a_{z10}$} (sumAcc);
 
 
 \backslash
-sbBlocr[3]{sAccController}{$K_{
+sbBlocr[3]{sAccController}{$
+\backslash
+frac{1}{s}
+\backslash
+,K_{
 \backslash
 sum a_z}$}{sumAcc};
 \end_layout
@@ -13957,7 +14754,9 @@ Using accelerometers for structural damping might bring some problems because
  the gyroscopes.
  The position of the center of gravity does not need to be known.
  Indeed when the linear equation system has been solved, the solution do
- not depend on the center of gravity abscissa.
+ not depend on the center of gravity location.
+ The integration will reduce parasitic actuation of the fins due to noise
+ at high frequency.
 \end_layout
 
 \begin_layout Section
@@ -13974,7 +14773,7 @@ Four controller architectures will be assesed.
  pitch rate feedback and a proportional integral controller on the lateral
  acceleration.
  The first architecture has a notch filter.
- The controller number 2 to 4 use active damping using respectively:
+ The controller number 2 to 4 use active damping with respectively:
 \end_layout
 
 \begin_layout Itemize
@@ -14056,7 +14855,7 @@ reference "fig:HinfForm"
 \begin_inset Formula $w$
 \end_inset
 
- which contains all the input having requirements.
+ which contains all the inputs like noises, perturbations or references.
  The output is the performance vector 
 \begin_inset Formula $z$
 \end_inset
@@ -14287,16 +15086,15 @@ The exogenous vector
 
 .
  The corresponding weight is set to 1.
- Thus, the other signals weights will be chosen for a reference acceleration
- of 
+ Thus, the other signals weights will be chosen according to a reference
+ acceleration of 
 \begin_inset Formula $1\,m.s^{-1}$
 \end_inset
 
 .
- Additional inputs are not needed.
- First of all because the tuning needs to be simply made but also because
- other inputs like noise, actuators perturbations or gust perturbations
- are neglected.
+ Additional inputs are not needed, first of all because the tuning needs
+ to be simple but also because other inputs like noise, actuators perturbations
+ or gust perturbations are neglected.
  The sensors noise is very low compared to signals generated by vibrations.
  The fins actuator perturbations is assumed to be very few compared to the
  thrust vectoring perturbations which will not be considered for tuning
@@ -14366,21 +15164,74 @@ W_{err} & 0\\
 \begin_layout Standard
 \begin_inset Formula 
 \[
-W_{err}(s)=\frac{1.5}{s}
+W_{err}(s)=\frac{5}{s}\,\left(\frac{s}{10}+1\right)
 \]
 
 \end_inset
 
-which will force the bandwidth to be 1.5 rad/s.
+which will force the bandwidth to be 5 rad/s.
+ And the maximum error will be 2 times the reference acceleration.
  The target shape of 
-\begin_inset Formula $H_{a_{zref}\rightarrow a_{zref}-a_{zCG}}(s)$
+\begin_inset Formula $H_{a_{zref}\rightarrow\left(a_{zref}-a_{zCG}\right)}(s)$
 \end_inset
 
  will be the inverse of 
 \begin_inset Formula $W_{err}(s)$
 \end_inset
 
+ and is plotted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:weights"
+
+\end_inset
+
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/weights.eps
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Singular Values of 
+\begin_inset Formula $\nicefrac{1}{W_{err}(s)}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:weights"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14391,7 +15242,7 @@ which will force the bandwidth to be 1.5 rad/s.
  A simple way to do this is to chose 
 \begin_inset Formula 
 \[
-W_{\theta_{T}}(s)=\nicefrac{1}{5\cdot10^{-3}\left(\frac{\omega_{T}}{s}\right)^{2}}
+W_{\theta_{T}}(s)=2\cdot10^{-3}\left(\frac{s}{\omega_{T}}\right)^{2}\left(\frac{1}{1+10^{-5}s}\right)^{2}
 \]
 
 \end_inset
@@ -14400,12 +15251,13 @@ W_{\theta_{T}}(s)=\nicefrac{1}{5\cdot10^{-3}\left(\frac{\omega_{T}}{s}\right)^{2
 \begin_inset Formula $\omega_{T}$
 \end_inset
 
- is the actuator cutoff frequency of 25Hz (157 rad/s).
+ is the thrust vectoring cutoff frequency of 25Hz (157 rad/s).
  The coefficient 
-\begin_inset Formula $5\cdot10^{-3}$
+\begin_inset Formula $2\cdot10^{-3}$
 \end_inset
 
  is empirically set.
+ To have a causal weight, two fast poles are added.
  Once again, the target shape of 
 \begin_inset Formula $H_{a_{zref}\rightarrow\theta_{T}}(s)$
 \end_inset
@@ -14416,7 +15268,7 @@ W_{\theta_{T}}(s)=\nicefrac{1}{5\cdot10^{-3}\left(\frac{\omega_{T}}{s}\right)^{2
 
 .
  The rotation speed of the thrust vectoring must also be bounded.
- The system being representated as linear, trying to minimize 
+ The system being linear, trying to minimize 
 \begin_inset Formula $\theta_{T}$
 \end_inset
 
@@ -14528,7 +15380,7 @@ Notch
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $1.69\cdot10^{-2}$
+\begin_inset Formula $9.47\cdot10^{-2}$
 \end_inset
 
 
@@ -14540,7 +15392,7 @@ Notch
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $23.0\cdot10^{-5}$
+\begin_inset Formula $9.46\cdot10^{-3}$
 \end_inset
 
 
@@ -14552,7 +15404,7 @@ Notch
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.140$
+\begin_inset Formula $0.171$
 \end_inset
 
 
@@ -14575,7 +15427,7 @@ Strain
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $2.02\cdot10^{-2}$
+\begin_inset Formula $9.98\cdot10^{-2}$
 \end_inset
 
 
@@ -14587,7 +15439,7 @@ Strain
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $27.3\cdot10^{-5}$
+\begin_inset Formula $13.0\cdot10^{-3}$
 \end_inset
 
 
@@ -14622,7 +15474,7 @@ Gyro
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $1.69\cdot10^{-2}$
+\begin_inset Formula $8.40\cdot10^{-2}$
 \end_inset
 
 
@@ -14634,7 +15486,7 @@ Gyro
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $23.0\cdot10^{-5}$
+\begin_inset Formula $9.11\cdot10^{-3}$
 \end_inset
 
 
@@ -14646,7 +15498,7 @@ Gyro
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.140$
+\begin_inset Formula $0.149$
 \end_inset
 
 
@@ -14669,7 +15521,7 @@ Acc
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $1.60\cdot10^{-2}$
+\begin_inset Formula $8.38\cdot10^{-2}$
 \end_inset
 
 
@@ -14681,7 +15533,7 @@ Acc
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $23.0\cdot10^{-5}$
+\begin_inset Formula $9.05\cdot10^{-3}$
 \end_inset
 
 
@@ -14693,7 +15545,7 @@ Acc
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.141$
+\begin_inset Formula $0.151$
 \end_inset
 
 
@@ -14738,8 +15590,14 @@ name "tab:HinfstructParam"
 \end_layout
 
 \begin_layout Standard
-These settings are very similar especially for controllers alleviating vibration
-s.
+These settings in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:HinfstructParam"
+
+\end_inset
+
+ are very similar especially for the controllers alleviating vibrations.
  These controllers will be assessed and compared in the Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -14771,19 +15629,220 @@ The first criteria to assess is robustness to uncertainty.
 \begin_inset Formula $_{\infty}$
 \end_inset
 
- algorithm has found stable solutions for the five architectures but they
- can turn unstable with some parameters variation.
+ algorithm found stable solutions for the five architectures but they can
+ turn unstable with some parameters variation.
  
 \end_layout
 
 \begin_layout Standard
-The uncertainty has been derived considering the thrust, the center of gravity,
+The uncertainty has been defined considering the thrust, the center of gravity,
  the bending modes natural frequencies and their damping ratios as uncertain
  parameters.
- To assess robustness, gain margin and phase margin are of little help for
+ The thrust is generated by the rocket engine and is then very uncertain.
+ The center of gravity moves along the flight because of the propellant
+ combustion.
+ Finally the bending modes natural frequency and espacially damping are
+ often poorly identified and they vary.
+ These parameters uncertainties are summarized in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Parameters-Uncertainty"
+
+\end_inset
+
+.
+ Other parameters could also be defined as uncertain like the actuators
+ bandwidth, the modes shapes, the aerodynamic coefficients and so on but
+ this should require a specific study.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uncertainty
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Thrust magnitude 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\pm10\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Center of gravity location 
+\begin_inset Formula $x_{CG}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\text{ to }+10\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $i^{th}$
+\end_inset
+
+ bending mode frequency 
+\begin_inset Formula $\omega_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\pm10\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $i^{th}$
+\end_inset
+
+ bending mode damping ratio 
+\begin_inset Formula $\zeta_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\pm20\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parameters Uncertainty
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Parameters-Uncertainty"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To assess robustness, gain margin and phase margin are of little help for
  such a MIMO system.
  Each uncertain system is an infinite set of possible realization.
- A finite subset of systems are created from this uncertain system and their
+ A finite subset of systems is created from this uncertain system and their
  poles are plotted on Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -14793,19 +15852,19 @@ reference "fig:uncertaintyPoles"
 
 .
  The poles keep a reasonable margin with the imaginary axis.
- These closed-loop system are robust to the designed uncertainty.
+ These closed-loop systems are robust to the designed uncertainty.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="3" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -14817,7 +15876,7 @@ status collapsed
 \begin_inset Graphics
 	filename figures/pznotch.eps
 	lyxscale 10
-	width 35page%
+	width 45text%
 
 \end_inset
 
@@ -14833,7 +15892,7 @@ status collapsed
 \begin_inset Graphics
 	filename figures/pzstrain.eps
 	lyxscale 10
-	width 35page%
+	width 45text%
 
 \end_inset
 
@@ -14863,6 +15922,26 @@ Architecture Strain
 \end_inset
 </cell>
 </row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
 </lyxtabular>
 
 \end_inset
@@ -14885,7 +15964,7 @@ Architecture Strain
 \begin_inset Graphics
 	filename figures/pzgyr.eps
 	lyxscale 10
-	width 35page%
+	width 45text%
 
 \end_inset
 
@@ -14901,7 +15980,7 @@ Architecture Strain
 \begin_inset Graphics
 	filename figures/pzacc.eps
 	lyxscale 10
-	width 35page%
+	width 45text%
 
 \end_inset
 
@@ -14994,7 +16073,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/step.eps
-	width 60page%
+	height 40theight%
 
 \end_inset
 
@@ -15067,7 +16146,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/sigmaErr.eps
-	width 60page%
+	height 40theight%
 
 \end_inset
 
@@ -15113,18 +16192,28 @@ name "fig:sigmaErr"
 \begin_layout Standard
 Looking at these too figures, the four different closed-loop architectures
  yield very similar tracking performance.
- The rise time from 10 to 90% following a step demand is between 0.741 and
- 0.765s and the 2% settling time is between 4 and 4.13 s.
- These responses are rather slow for a missile but the double loop architecture
- presented cannot create dynamics faster than the SPPO.
- Moreover, during the acceleration phase, ASTER 30 does not need to be highly
- manoeuvrable.
- A high manoeuvrability would be required during the target tracking phase.
+ The rise time from 10 to 90% following a step demand is between 
+\begin_inset Formula $0.214$
+\end_inset
+
+ and 
+\begin_inset Formula $0.227\,s$
+\end_inset
+
+ and the 2% settling time is between 
+\begin_inset Formula $0.400$
+\end_inset
+
+ and 
+\begin_inset Formula $0.406\,s$
+\end_inset
+
+.
  The sigma plots provide information about tracking performance over all
  frequencies.
  The presence of an integrator in the loop gives makes the error converge
  to zero at low frequencies.
- The bandwidth at -3dB is between 1.09 and 1.17 
+ The bandwidth at -3dB is between 3.2 and 3.7 
 \begin_inset Formula $rad.s^{-1}$
 \end_inset
 
@@ -15169,13 +16258,13 @@ reference "fig:sigmaThrust"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/sigThetaDemand.eps
-	width 60page%
+	height 40theight%
 
 \end_inset
 
@@ -15246,13 +16335,13 @@ reference "fig:sigmaFins"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/sigDeltaDemand.eps
-	width 60page%
+	height 40theight%
 
 \end_inset
 
@@ -15382,13 +16471,13 @@ Acc
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/sigParasites.eps
-	width 60page%
+	height 40theight%
 
 \end_inset
 
@@ -15525,7 +16614,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/sigVibes.eps
-	width 60page%
+	height 40theight%
 
 \end_inset
 
@@ -15602,7 +16691,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/sigStress.eps
-	width 60page%
+	height 45theight%
 
 \end_inset
 
@@ -15865,19 +16954,39 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="7">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="middle" width="2cm">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="middle">
 <column alignment="center" valignment="middle">
-<column alignment="center" valignment="middle">
-<column alignment="center" valignment="middle" width="2cm">
-<column alignment="center" valignment="middle" width="2cm">
-<column alignment="left" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="0pt">
+<column alignment="center" valignment="middle" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
 <row>
-<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15886,7 +16995,7 @@ Feedback Type
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15931,7 +17040,7 @@ Vibrations Damping
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15942,7 +17051,7 @@ Stress Alleviation
 </cell>
 </row>
 <row>
-<cell multirow="4" alignment="left" valignment="middle" bottomline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="center" valignment="middle" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15996,7 +17105,7 @@ Fins
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16007,7 +17116,7 @@ Fins
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16061,7 +17170,7 @@ None
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16072,7 +17181,7 @@ None
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16126,7 +17235,7 @@ Increased
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16137,7 +17246,7 @@ Increased
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16191,7 +17300,7 @@ Increased
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16202,7 +17311,7 @@ Increased
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16256,7 +17365,7 @@ Increased
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -16267,6 +17376,20 @@ Increased
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -16469,7 +17592,7 @@ bibname{References}
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "bibliography"
-options "plain"
+options "ieeetr"
 
 \end_inset
 
