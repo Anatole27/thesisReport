@@ -737,14 +737,14 @@ l bending.
 
 \begin_layout Standard
 The body of research for active damping is very weak concerning missiles.
- In this work, a new aero-servoelastic model is derived based on an hybrid
+ In this work, a new servo-aeroelastic model is derived based on an hybrid
  actuated airframe comprising thrust vectoring and fins.
  The structural model is derived on an original bending Euler Bernoulli
- beam discretized in the free-free case.
+ beam discretised in the free-free case.
  The flexible-body modes are extracted and integrated into the longitudinal
  rigid-body flight dynamics model.
  A strain gauge, gyroscopes and accelerometers are optimally placed on the
- aiframe with an adapted method.
+ airframe with an adapted method.
  Finally, three active damping and latax controllers are designed with a
  H
 \begin_inset Formula $_{\infty}$
@@ -763,11 +763,11 @@ on.
 \emph on
 Keywords: 
 \emph default
-aero-servoelasticity, sensors placement, flexible structures control
+servo-aeroelasticity, sensors placement, flexible structures control
 \end_layout
 
 \begin_layout Chapter*
-Ackowledgments
+Acknowledgments
 \end_layout
 
 \begin_layout Standard
@@ -791,7 +791,7 @@ status open
 bikowski for his generous advice.
  I would also like to express my sincere gratitude to Mr G.
  Wallis for his belief in this work and support.
- I am indepted to Mr S.
+ I am indebted to Mr S.
  Hodgson for providing me precious knowledge.
  Credit must also be given to Mr J.
  P.
@@ -882,7 +882,7 @@ Motivations for Active Damping
 \end_layout
 
 \begin_layout Standard
-As aerial threats capabilities improve, countermeasure technology must developp
+As aerial threats capabilities improve, countermeasure technology must develop
  at a faster pace to ensure national safety.
  This encourages missile manufacturers to design defense missiles with a
  miss distance always smaller and faster interceptions.
@@ -959,11 +959,12 @@ To deal with these issues, structural filters are usually used to remove
 Another solution which is not used yet is active damping.
  With recent sensors and actuators technology enhancement, this technique
  has become attractive.
- Sensors industries have made a great step in miniaturisation accompagnied
+ Sensors industries have made a great step in miniaturisation accompanied
  with a fast reduction of costs.
- Microelectromechanical gyroscopes and accelerometers offer a satisfactory
+ Micro electromechanical gyroscopes and accelerometers offer a satisfactory
  accuracy at reduced sizes and affordable prices.
- Active damping requires several sensors and their intrusivity must be limited.
+ Active damping requires several sensors and their intrusiveness must be
+ limited.
  In the mean time, actuators used to control missiles have now larger bandwidths
  but are often curbed by structural filters.
  The extra bandwidth gained by removing the filters could be used to actively
@@ -993,7 +994,7 @@ Elaboration of a servo-aeroelastic model for slender missiles
 \end_layout
 
 \begin_layout Itemize
-Discretized Euler-Bernoulli beam dynamics model for the free-free case with
+discretised Euler-Bernoulli beam dynamics model for the free-free case with
  variable cross-section
 \end_layout
 
@@ -1013,11 +1014,11 @@ l aerodynamic model having interactions with a dynamic bending beam model
 ons (SPPO) mode since other modes like the phugoïd have a time scale which
  belongs to the navigation dynamics.
  The servo-aeroelastic model can thus be used to simulate lateral acceleration
- generation with benging oscillations for slender missiles.
+ generation with bending oscillations for slender missiles.
 \end_layout
 
 \begin_layout Standard
-The discretized Euler-Bernoulli beam dynamics model is based on the work
+The discretised Euler-Bernoulli beam dynamics model is based on the work
  of 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1029,7 +1030,7 @@ key "prentis1963leckie"
  The bending stiffness and linear mass density is non uniform along the
  beam.
  This structural dynamic model has the advantage of being simple and computation
-aly efficient for bending.
+ally efficient for bending.
 \end_layout
 
 \begin_layout Standard
@@ -1059,7 +1060,7 @@ Based on the results of the previous points, three controllers have been
 \end_inset
 
  structured tuning.
- They are then assessed with several criterias like robustness, tracking,
+ They are then assessed with several criterion like robustness, tracking,
  actuators demand and parasitic propagation of vibrations.
 \end_layout
 
@@ -1196,15 +1197,15 @@ Large structures often present issues with oscillations.
  In some cases, it is preferable to damp actively these oscillations using
  actuators instead of passive damping using dampers.
  Indeed active damping can turn to be light than passive damping and to
- adapt thoughout the structure life whereas passive dampers might be heavy
+ adapt throughout the structure life whereas passive dampers might be heavy
  and inefficient if the mass or stiffness of the structure change.
 \end_layout
 
 \begin_layout Standard
-Active damping is encountered in civil engineering for tall skycrapers.
+Active damping is encountered in civil engineering for tall skyscrapers.
  These structures are exceptionally slender and excited by winds and sometimes
- seisms.
- The elastic and cinetic energy stored must be dissipated with active systems.
+ earthquakes.
+ The elastic and kinetic energy stored must be dissipated with active systems.
  Civil engineers use tuned mass dampers (TMD) - huge masses mounted on cylinders
  - to counter oscillations.
  Kourakis conducts a study on the particular case of Taipei 101 in 
@@ -1485,10 +1486,10 @@ name "fig:AFW"
 \end_layout
 
 \begin_layout Standard
-This previous study designed two independant controllers, one to generate
+This previous study designed two independent controllers, one to generate
  the roll and another one to suppress flutter.
  However these controllers might interact and spoil each others performance.
- In this context, Meirovitch derives a model for a UAV executing time-dependant
+ In this context, Meirovitch derives a model for a UAV executing time-dependent
  manoeuvres in 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1498,18 +1499,18 @@ key "meirovitch2005timeDependantManeuvers"
 
 .
  The model is divided in two submodels where the first one is a classical
- non linear flight dynamics model along a pre-defineds trajectory for a
- conventional aircraft while the second one receiving inputs from the first
- contains small perturbations from the nominal trajectory in which structural
- deformations are accounted.
+ non linear flight dynamics model along a preset trajectory for a conventional
+ aircraft while the second one receiving inputs from the first contains
+ small perturbations from the nominal trajectory in which structural deformation
+s are accounted.
  This yields a very complex time-varying model.
 \end_layout
 
 \begin_layout Standard
-If space structures active damping, builind tuned-mass damper and flutter
+If space structures active damping, building tuned-mass damper and flutter
  suppression have been thoroughly studied, applications of active damping
  for missiles or rockets are very limited in the public domain.
- Manufacturers are used to design aiframes very stiff and use a structural
+ Manufacturers are used to design airframes very stiff and use a structural
  filter to remove parasitic actuations due to vibrations.
  These constraints lead to heavy structures and the controller fastest speed
  is limited by the structural filter which cuts every high frequency signals
@@ -1536,8 +1537,8 @@ Strain gauge is a widespread device to measure local strains on the surface
  When it is stretched or compressed, its electrical resistance changes.
  This electrical resistance variation is measured using a Weathstone bridge
  and gives information on the local strain.
- With this strain measurement and a resonably accurate model of the structure,
- one can infere on the global structure shape.
+ With this strain measurement and a reasonably accurate model of the structure,
+ one can infer on the global structure shape.
  Last generations of these sensors can be very tiny as shown on Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1600,8 +1601,8 @@ Gyroscopes and accelerometers are also very widespread and exist under a
  In this study, a gyroscope is considered as a sensor give a rotation rate
  and not an attitude angle.
  This distinction is important to make when a controller will be derived.
- The smallest and cheapest gyroscopes and accelerometers use microelectromechani
-cal systems (MEMS).
+ The smallest and cheapest gyroscopes and accelerometers use micro electromechan
+ical systems (MEMS).
  A 6 degrees of freedom (DOF) inertial measurement unit (IMU) can measure
  rotation rates and inertial accelerations in all 3 axes and is not bigger
  than a centimetre squared.
@@ -1750,7 +1751,7 @@ key "selince1984PIFPAF"
 \end_inset
 
  published in 1984.
- The PIF part means in french 
+ The PIF part means in French 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1955,7 +1956,7 @@ The spring stiffness is calculated using a Euler Bernoulli beam model.
 \end_inset
 
 .
- The geometery of this link is illustrated in Figure 
+ The geometry of this link is illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Bending-Link-Geometry"
@@ -2350,7 +2351,7 @@ This model has provided information about the amplitude of deformation of
 
  stay very close.
  The bending deflection is less than a millimeter.
- This will be usefull to make assumptions on the magnitude of deformation
+ This will be useful to make assumptions on the magnitude of deformation
  and and interactions between the aerodynamics and the structure.
  In particular, it will be assumed that the aerodynamics do not have to
  take account of the deformation of the missile and the structure is not
@@ -2383,7 +2384,7 @@ name "chap:flexiMissileModel"
 \end_layout
 
 \begin_layout Standard
-The Chapter aims at modelling a flexible missile in longitudinal flight.
+The Chapter aims at modeling a flexible missile in longitudinal flight.
  Flight dynamics, structures and actuators and sensors systems will be discussed.
  These models will eventually be fused to create a servo-aeroelastic model
  suitable for control design.
@@ -2539,7 +2540,7 @@ key "boiffier1998flightDynamics"
 \end_inset
 
 .
- This part is particularily detailed to show all the conventions chosen.
+ This part is particularly detailed to show all the conventions chosen.
 \end_layout
 
 \begin_layout Subsection
@@ -3199,7 +3200,7 @@ The lift coefficient slope in this paper is
 \end_inset
 
 .
- Similarily, the zero angle of attack pitching moment coefficient 
+ Similarly, the zero angle of attack pitching moment coefficient 
 \begin_inset Formula $C_{m0}=0\,rad^{-1}$
 \end_inset
 
@@ -3931,7 +3932,7 @@ m\,\dot{V} & =\sum\vec{F}_{external}\cdot\vec{x_{a}}\\
 \end_layout
 
 \begin_layout Standard
-Finally, developping the sum of forces the first equation gives the propulsion
+Finally, developing the sum of forces the first equation gives the propulsion
  equation:
 \end_layout
 
@@ -3978,7 +3979,7 @@ J_{y}\,\dot{q}=\sum\vec{M}_{external}
 
 \end_inset
 
- Thus developping the pitching moment yields
+ Thus developing the pitching moment yields
 \end_layout
 
 \begin_layout Standard
@@ -4710,8 +4711,8 @@ reference "sec:Structural-Model"
 \end_inset
 
  will vary with a change in angle of attack because of the forward acceleration
- projected normaly to the body.
- The missile onboard computer is able to substract this component on the
+ projected normally to the body.
+ The missile inboard computer is able to subtract this component on the
  lateral acceleration.
  Signal processing is not the purpose of this study thus it will be assumed
  that 
@@ -5304,7 +5305,7 @@ Actuators Dynamics
 
 \begin_layout Standard
 The missile is directed with thrust vectoring.
- The two nozzles at the tail of the missile are mounted with hydraulic cylindres.
+ The two nozzles at the tail of the missile are mounted with hydraulic cylinders.
  The nozzles can be oriented to create a lateral component of thrust that
  will generate a moment at the center of gravity.
  This moment will change the angle of attack of the missile to create a
@@ -5547,7 +5548,7 @@ description "linear mass density"
 \end_layout
 
 \begin_layout Standard
-It is necessary to discretize the body in order be able to conduct a state-space
+It is necessary to discretise the body in order be able to conduct a state-space
  representation and simulations.
  To reach this goal, the mathematical model of the structure is designed
  using a lumped element model illustrated in Figure 
@@ -5607,7 +5608,7 @@ Geometry
 \end_layout
 
 \begin_layout Standard
-The missile is longitudinaly discretized in 
+The missile is longitudinally discretised in 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "$n$"
@@ -5889,7 +5890,7 @@ description "second moment of area of beam $i$"
 \begin_inset Formula $I_{i}$
 \end_inset
 
- but the reader must be carefull not to confuse it with a rotational inertia,
+ but the reader must be careful not to confuse it with a rotational inertia,
  generally noted 
 \begin_inset Formula $J$
 \end_inset
@@ -7276,7 +7277,7 @@ K_{22,i} & =\frac{2\:EI_{i}}{l}\left[\begin{array}{cc}
 
 \begin_layout Standard
 Now considering the complete missile, as the element beams are linked in
- serie, the matrices 
+ series, the matrices 
 \begin_inset Formula $K_{11}$
 \end_inset
 
@@ -7398,7 +7399,7 @@ In this study, we assume that the pure external moments
 \begin_inset Formula $M_{y,i}$
 \end_inset
 
- are negligeable when compared to moments created by the forces 
+ are negligible when compared to moments created by the forces 
 \begin_inset Formula $F_{i}$
 \end_inset
 
@@ -7512,7 +7513,7 @@ The stiffness matrix is then
 \end_layout
 
 \begin_layout Standard
-The damping matrix is chosen proportionnal to 
+The damping matrix is chosen proportional to 
 \begin_inset Formula $K$
 \end_inset
 
@@ -8449,7 +8450,7 @@ Strain gauge
 \end_layout
 
 \begin_layout Standard
-For a strain gauge, a first order Taylor developpement to approximate the
+For a strain gauge, a first order Taylor development to approximate the
  spatial derivative of 
 \begin_inset Formula $\theta(x)$
 \end_inset
@@ -8516,7 +8517,7 @@ The partial derivative of
 \begin_inset Formula $x$
 \end_inset
 
- is approximated using a first order Taylor developpement at node 
+ is approximated using a first order Taylor development at node 
 \begin_inset Formula $i\in\llbracket2,n-1\rrbracket$
 \end_inset
 
@@ -8998,7 +8999,7 @@ reference "fig:F2azBode"
 
 \end_inset
 
-, with this first rigid-body substraction technique, at 
+, with this first rigid-body subtraction technique, at 
 \begin_inset Formula $\omega=0$
 \end_inset
 
@@ -9019,7 +9020,7 @@ a_z,fb imperfect
 \begin_inset Formula $\omega=0$
 \end_inset
 
-, the vibrations are not excited and should be inexistant and 
+, the vibrations are not excited and should be inexistent and 
 \begin_inset Formula $a_{z,75}=0$
 \end_inset
 
@@ -9114,7 +9115,7 @@ z_{m}\\
 \end_inset
 
 .
- The ouput vector is 
+ The output vector is 
 \begin_inset Formula $y=\left[\begin{array}{c}
 \varepsilon\\
 q\\
@@ -9536,7 +9537,7 @@ q_{moi}
 \begin_inset Formula $6^{th}$
 \end_inset
 
- bending mode (bar 11 and 12) and higher (13 and above) is negligeable.
+ bending mode (bar 11 and 12) and higher (13 and above) is negligible.
  These modes correspond to less than 0.5% of the singular value of the 
 \begin_inset Formula $1^{st}$
 \end_inset
@@ -9868,7 +9869,7 @@ name "sub:sensorPlacement"
 \end_layout
 
 \begin_layout Standard
-The state space model developped in the previous section outputs three different
+The state space model developed in the previous section outputs three different
  types of sensors : strain gages, gyroscopes and accelerometers on all possible
  nodes
 \begin_inset Foot
@@ -10257,7 +10258,7 @@ reference "fig:sensorPlacement"
 \end_inset
 
 .
- This location corresponds to the strain antinode of the 
+ This location corresponds to the strain anti-node of the 
 \begin_inset Formula $1^{st}$
 \end_inset
 
@@ -10285,8 +10286,8 @@ q_{i}=q_{i,fb}+q
 
  The isolate the vibrations pitch rate, one needs the measurements of two
  gyroscopes placed at different locations.
- Hence, the pitch rate of the rigid-body can be removed by substraction
- to keep only the vibrations measurement:
+ Hence, the pitch rate of the rigid-body can be removed by subtraction to
+ keep only the vibrations measurement:
 \begin_inset Formula 
 \[
 q_{i}-q_{j}=q_{i,fb}-q_{j,fb}
@@ -10436,7 +10437,7 @@ thus such a measurement contains three unknowns :
 
 .
  Therefore a minimum number of three accelerometers are needed at different
- locations to eleminate the acceleration of the center of gravity and the
+ locations to eliminate the acceleration of the center of gravity and the
  additional term due to pitch acceleration.
  It will be shown in 
 \begin_inset CommandInset ref
@@ -10730,7 +10731,7 @@ The last assumption is that the bending will not change the aerodynamic
 \end_layout
 
 \begin_layout Subsection
-Servo-Aeroelastic Model Inputs and Outputs
+Servo-aeroelastic Model Inputs and Outputs
 \end_layout
 
 \begin_layout Standard
@@ -10775,7 +10776,7 @@ Sensors outputs
 \series bold
 Perturbation inputs
 \series default
-: Some signals are perturbated by inputs.
+: Some signals are perturbed by inputs.
  These inputs can either be sensor noise like for the accelerometers or
  gyroscopes or perturbation forces from the rocket engine or on the fins.
 \end_layout
@@ -11016,13 +11017,13 @@ Actuators
 \end_layout
 
 \begin_layout Standard
-The original ASTER 30 uses the orientatable nozzles to control the missile
+The original ASTER 30 uses the orientable nozzles to control the missile
  lateral acceleration.
  The nozzles are actuated with hydraulic cylinders.
  The thrust deflection creates a lateral force on the tail of the missile
  creating a pitching moment at the missile centre of gravity.
  This will change its angle of attack and generate a lateral acceleration.
- Because of the hydraulic system and the great force requiered to actuate
+ Because of the hydraulic system and the great force required to actuate
  the nozzles, this actuator is relatively slow.
  Its bandwidth is about 25Hz which is fast enough to control the lateral
  acceleration and will be used for the lateral acceleration control.
@@ -11567,7 +11568,7 @@ name "fig:rlocusNoVibeSupp"
 Even if the feedback gains are kept little to avoid a structural instability,
  the vibrations created by the rocket engine are amplified through the structure
  and measured by the sensors.
- This amplified signal will generate parasistic actuations of the thrust
+ This amplified signal will generate parasitic actuations of the thrust
  vectoring.
 \end_layout
 
@@ -11575,7 +11576,7 @@ Even if the feedback gains are kept little to avoid a structural instability,
 There are several strategies to deal with the bending oscillation.
  The first one is currently used by missile manufacturers and consists in
  filtering the input command to the actuator using a notch filter.
- This technique will be developped further in the next subsection.
+ This technique will be developed further in the next subsection.
  Now that new sensors have been added on the airframe, the measurements
  they provide can be used to actively damp the bending oscillations.
  Feedback architectures based on the strain measurement, on pitch rate measureme
@@ -11599,11 +11600,11 @@ A notch filter is applied to the command of the thrust vectoring.
  This filter will remove any signal of the bending mode frequency.
  The first step is to choose an appropriate type of filter.
  A Chebyshev Type II filter suits the problem because there is no ripple
- in the bandwidth that could create gain distorsion and affect performance
+ in the bandwidth that could create gain distortion and affect performance
  at low frequency.
  However, this type of filter requires a high order denominator to ensure
  a sharp gain loss.
- The filter center frequency is set to 20Hz with a stopband bandwith of
+ The filter center frequency is set to 20Hz with a stop-band bandwidth of
  
 \begin_inset Formula $\pm10\%$
 \end_inset
@@ -11620,7 +11621,7 @@ A notch filter is applied to the command of the thrust vectoring.
 
 .
  The order of the filter is 4.
- With these criterias, the corresponding Chebyshev Type II filter is
+ With these criterion, the corresponding Chebyshev Type II filter is
 \end_layout
 
 \begin_layout Standard
@@ -12198,7 +12199,7 @@ name "fig:bodeThrustVect"
 \end_layout
 
 \begin_layout Standard
-The fins have a bandwith of 50Hz that is more than the double of the bending
+The fins have a bandwidth of 50Hz that is more than the double of the bending
  mode frequency.
  The phase loss at 20Hz is only -34° and the gain loss is -0.1dB as shown
  on Figure 
@@ -12209,7 +12210,7 @@ reference "fig:bodeFins"
 \end_inset
 
 .
- Therefore this fast actuator is to be prefered for active damping of the
+ Therefore this fast actuator is to be preferred for active damping of the
  first bending mode.
  Moreover, the fins are located in the middle where the flexure is important
  therefore they have an important controllability of the first bending mode.
@@ -12277,7 +12278,7 @@ Strain Feedback
 \begin_layout Standard
 The strain gauge is a sensor that is usually not present on a missile airframe.
  With this extra sensor, it possible to measure the local strain on the
- skin of the structure to infere on its flexure.
+ skin of the structure to infer on its flexure.
  This additional information can help to deal with bending oscillation.
  If only the first bending mode is considered, the transfer function of
  the fins deflection to the strain can be approximated to:
@@ -12555,8 +12556,8 @@ K\,\frac{s}{1+\nicefrac{s}{\omega_{fast}}}
 
 \begin_layout Standard
 This feedback loop would work if the fins actuator was very fast.
- This is not the case because even if its bandwith is twice bigger than
- the bending mode natural frequency, the phase loss is non negligeable as
+ This is not the case because even if its bandwidth is twice bigger than
+ the bending mode natural frequency, the phase loss is non negligible as
  shown in 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -13211,7 +13212,7 @@ Two gyroscopes can give information on the flexure.
  The problem with damping bending with gyroscopes is that they measure not
  only the local pitch rate of the bending but also the rigid-body pitch
  rate.
- Thus two of them are needed to substract the rigid-body pitch rate.
+ Thus two of them are needed to subtract the rigid-body pitch rate.
  Indeed, a gyro at node 
 \begin_inset Formula $i$
 \end_inset
@@ -13221,7 +13222,7 @@ Two gyroscopes can give information on the flexure.
 \end_inset
 
 .
- The substraction of the signals coming from the two gyroscopes will give:
+ The subtraction of the signals coming from the two gyroscopes will give:
 \end_layout
 
 \begin_layout Standard
@@ -13908,7 +13909,7 @@ name "fig:completeGyrFB"
 
 \begin_layout Standard
 This controller architecture has the disadvantage that the two gyroscopes
- must be similarily calibrated and synchronized to perform the substraction
+ must be similarly calibrated and synchronized to perform the subtraction
  correctly.
  The great advantage is the absence of fins deflection in static.
 \end_layout
@@ -14750,8 +14751,8 @@ name "fig:completeAccFB"
 
 \begin_layout Standard
 Using accelerometers for structural damping might bring some problems because
- the accelerometers must be similarily calibrated and synchronized like
- the gyroscopes.
+ the accelerometers must be similarly calibrated and synchronized like the
+ gyroscopes.
  The position of the center of gravity does not need to be known.
  Indeed when the linear equation system has been solved, the solution do
  not depend on the center of gravity location.
@@ -14768,7 +14769,7 @@ H
 \end_layout
 
 \begin_layout Standard
-Four controller architectures will be assesed.
+Four controller architectures will be assessed.
  They all have in common the lateral acceleration control composed of a
  pitch rate feedback and a proportional integral controller on the lateral
  acceleration.
@@ -14825,13 +14826,13 @@ Acc
 \end_layout
 
 \begin_layout Standard
-These architectures will be tuned using the same criterias to eventually
+These architectures will be tuned using the same criterion to eventually
  compare their performance.
  The method will use the 
 \begin_inset Formula $H_{\infty}$
 \end_inset
 
--tuning for fixed-structure controllers developped by P.
+-tuning for fixed-structure controllers developed by P.
  Apkarian in 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -15099,7 +15100,7 @@ The exogenous vector
  The fins actuator perturbations is assumed to be very few compared to the
  thrust vectoring perturbations which will not be considered for tuning
  but later for assessment.
- Finally, gusts have a speed which is negligeable compared to the missile
+ Finally, gusts have a speed which is negligible compared to the missile
  speed of Mach 2.
 \end_layout
 
@@ -15130,7 +15131,7 @@ The performance vector
 \begin_inset Formula $z$
 \end_inset
 
- to limitate the use of this actuator which has a rate limit, a deflection
+ to limit the use of this actuator which has a rate limit, a deflection
  limit and second-order dynamics.
  The output weight matrix 
 \begin_inset Formula $W_{out}$
@@ -15156,7 +15157,7 @@ W_{err} & 0\\
 
  is set to minimize the error at low frequency and bound it at high frequency
  for resonance reduction.
- The controller is equiped with an integrator so the error will tend to
+ The controller is equipped with an integrator so the error will tend to
  0.
  An empirical tuning of this weight is 
 \end_layout
@@ -15641,7 +15642,7 @@ The uncertainty has been defined considering the thrust, the center of gravity,
  The thrust is generated by the rocket engine and is then very uncertain.
  The center of gravity moves along the flight because of the propellant
  combustion.
- Finally the bending modes natural frequency and espacially damping are
+ Finally the bending modes natural frequency and especially damping are
  often poorly identified and they vary.
  These parameters uncertainties are summarized in Table 
 \begin_inset CommandInset ref
@@ -16084,7 +16085,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Step Reponse of 
+Step Response of 
 \begin_inset Formula $a_{zref}$
 \end_inset
 
@@ -16317,10 +16318,10 @@ Notch
 \begin_inset Quotes erd
 \end_inset
 
- architecture has a thourough stop-band around the 1st bending mode natural
+ architecture has a thorough stop-band around the 1st bending mode natural
  frequency of 125 rad/s.
  The three active damping architectures keep a satisfactory margin.
- Similarily for the fins actuator, Figure 
+ Similarly for the fins actuator, Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:sigmaFins"
@@ -16532,7 +16533,7 @@ In the previous section, it has been seen that an architecture with a notch
 \end_layout
 
 \begin_layout Subsubsection
-Vibrations Allevation
+Vibrations Alleviation
 \end_layout
 
 \begin_layout Standard
@@ -16782,10 +16783,10 @@ key "fleeman2006tactical"
  with slight changes.
  Flight of slender bodies is generally highly nonlinear but for simplification
  purposes, it has been assumed linear.
- This might create inconsistancies at high angle of attack.
+ This might create inconsistencies at high angle of attack.
  The equations are therefore valid within very small variations from the
  trim state.
- However, the purpose of the study is to demonstrate the feasability of
+ However, the purpose of the study is to demonstrate the feasibility of
  active damping and not to accurately design a functional controller.
 \end_layout
 
@@ -16795,7 +16796,7 @@ Only the SPPO is considered as a mode in this model.
  scale which belongs to navigation issue and not lateral acceleration generation.
  The SPPO natural frequency was calculated at ???Hz with a damping ratio
  of ??? which is realistic.
- The SPPO dynamics set a limit to the fastest reponse to generate latax
+ The SPPO dynamics set a limit to the fastest response to generate latax
  with the proposed feedback architecture.
 \end_layout
 
@@ -16820,7 +16821,7 @@ Structural Modeling
 \end_layout
 
 \begin_layout Standard
-The missile has been modeled using a discretized method using point masses
+The missile has been modeled using a discretised method using point masses
  and massless beams.
  This structural stiffness of the beam has been estimated assuming that
  the missile skin is in carbon fibre and divided in two pipes of similar
@@ -16830,7 +16831,7 @@ The missile has been modeled using a discretized method using point masses
  The mass is not uniformly distributed as assumed.
  Of course knowing the exact mass distribution and structural stiffness,
  the model can be adapted to be more accurate.
- Also one assumption was that pur moments and rotational inertias are negligeabl
+ Also one assumption was that pure moments and rotational inertias are negligibl
 e which might be false especially at the fins location or about the missile
  warhead.
 \end_layout
@@ -16906,7 +16907,7 @@ Three controllers have been designed with the measurements provided by the
 
 \begin_layout Standard
 The first architecture is based on the phase loss of the fins actuator and
- can be faulty if the actuator is not properly modelled.
+ can be faulty if the actuator is not properly modeled.
  Indeed if the actuator has a faster reaction time and the phase loss is
  close to 0°, the loop would increase the natural frequency of the bending
  mode and not damp it.
@@ -16919,14 +16920,14 @@ The first architecture is based on the phase loss of the fins actuator and
 \end_layout
 
 \begin_layout Standard
-The second architecture requires the substraction of two pitch rate measurements
+The second architecture requires the subtraction of two pitch rate measurements
  whereas the third one needs three accelerometers.
  The performance from both architectures is very similar however the gyroscopes
  feedback uses less the fins at low frequencies.
  The advantage of the accelerometers feedback is the use of an integrator
  that will minimize high frequency noise sent to the actuator.
- The use of gyroscopes must be prefered though because only one additional
- gyrometer is need whereas it is three for the accelerometers.
+ The use of gyroscopes must be preferred though because only one additional
+ gyroscope is need whereas it is three for the accelerometers.
  Accelerometers also measure gravity and it must be removed using the attitude
  and gravity magnitude estimations which is a disadvantage compared to gyroscope
 s.
@@ -16937,7 +16938,7 @@ It has been shown that these three architectures actively damp bending oscillati
 ons generated by the rocket engine whereas the conventional architecture
  using a notch filter do not.
  Tracking performance is identical for all of the architectures tested.
- The criterias used to asses each controller are summarized in Table 
+ The criterion used to asses each controller are summarized in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:perfControllers"
@@ -17315,7 +17316,7 @@ Increased
 \begin_inset Text
 
 \begin_layout Plain Layout
-Accelero- meters Feedback
+Accelerometers Feedback
 \end_layout
 
 \end_inset
@@ -17442,14 +17443,14 @@ Conclusions
 \begin_layout Standard
 Active structural damping on a tactical missile has been investigated.
  A linear time-invariant model of the flexible missile has been derived
- using classical flight dynamics coupled with a discretized dynamic Euler
+ using classical flight dynamics coupled with a discretised dynamic Euler
  Bernoulli beam.
  To measure the missile flexure, additional sensors - a strain gauge, two
  gyroscopes and three accelerometers - have been placed at optimal locations
  on the airframe.
  Several active damping controllers have been designed and assessed according
- to multiples criterias.
- The feedback loop using gyroscopes being prefered for the robustness of
+ to multiples criterion.
+ The feedback loop using gyroscopes being preferred for the robustness of
  these sensors, the low number required and its low control power consumption
  compared to other architectures.
 \end_layout
@@ -17460,7 +17461,7 @@ Active structural damping is feasible on ASTER 30 for the first bending
  The prior limiting factor being often the slow actuator dynamics.
  ASTER 30 slenderness makes the bending mode natural frequency low and the
  fins have a bandwidth large enough to perform active damping.
- The benefits of such a control are principaly vibrations alleviation for
+ The benefits of such a control are principally vibrations alleviation for
  the seeker leading to an enhanced tracking of the target.
 \end_layout
 
