@@ -823,6 +823,154 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Chapter*
+Abbreviations
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AC
+\series default
+ aerodynamic center
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AFW
+\series default
+ Active Flexible Wing
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AoA
+\series default
+ angle of attack
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+CG
+\series default
+ center of gravity
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+DOF
+\series default
+ degrees of freedom
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+IMU
+\series default
+ inertial measurement unit
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+ISA
+\series default
+ International Standard Atmosphere
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+ISS
+\series default
+ International Space Station
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+latax
+\series default
+ lateral acceleration
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+MEMS
+\series default
+ micro electromechanical system
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+MIMO
+\series default
+ multiple inputs/multiple outputs
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+NASA
+\series default
+ National Aeronautics and Space Administration
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+SISO
+\series default
+ single input/single output
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+SPPO
+\series default
+ short period pitch oscillation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+TMD
+\series default
+ tuned-mass damper
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+UAV
+\series default
+ unmanned aerial vehicle
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
@@ -867,6 +1015,332 @@ status open
 \backslash
 mainmatter
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_m$"
+description "pitching moment coefficient"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{L\\alpha}$"
+description "pitching moment coefficient slope"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{m0}$"
+description "zero AoA pitching moment coefficient"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{L\\delta F}$"
+description "fins lift coefficient slope"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{m\\delta F}$"
+description "fins pitching moment coefficient slope"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{D0}$"
+description "zero lift drag coefficient"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$k_D$"
+description "drag coefficient slope"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_D$"
+description "drag coefficient"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$a_z$"
+description "lateral inertial acceleration"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\theta$"
+description "pitch angle"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$q$"
+description "pitch rate"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\alpha$"
+description "AoA"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\vec{\\Omega}_{\\nicefrac{\\mathcal{R}_1}{\\mathcal{R}_2}}$"
+description "angular speed velocity of $\\mathcal{R}_1$ w.r.t. $\\mathcal{R}_2$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$g$"
+description "standard gravity"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$V$"
+description "airspeed"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\gamma$"
+description "flight path"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\rho$"
+description "air density"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\omega$"
+description "frequency"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\zeta$"
+description "damping ratio"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$r$"
+description "air specific gas constant"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$T$"
+description "thrust or temperature"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$S_{ref}$"
+description "reference surface (booster cross-section)"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$L_{ref}$"
+description "reference length (booster diameter)"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\bar{\\lambda}$"
+description "deviation of $\\lambda$ from $\\lambda_0$ ($\\lambda-\\lambda_0$)"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\lambda_0$"
+description "trim value of $\\lambda$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\lambda_i$"
+description "value of $\\lambda$ at node $i$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\lambda_{rb}$"
+description "rigid-body component of $\\lambda$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\lambda_{fb}$"
+description "flexible-body component of $\\lambda$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\lambda_m$"
+description "modal formulation of $\\lambda$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\theta_T$"
+description "thrust orientation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\delta_F$"
+description "fins deflection"
 
 \end_inset
 
@@ -1952,6 +2426,14 @@ The spring stiffness is calculated using a Euler Bernoulli beam model.
 \end_inset
 
  giving a second moment of area about the y-axis of 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$I$"
+description "second moment of area"
+
+\end_inset
+
+
 \begin_inset Formula $I=5.5\cdot10^{-6}m^{4}$
 \end_inset
 
@@ -1965,6 +2447,14 @@ reference "fig:Bending-Link-Geometry"
 
 .
  The material is assumed to be carbon fibre of Young modulus 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$E$"
+description "Young modulus"
+
+\end_inset
+
+
 \begin_inset Formula $E=170\,GPa$
 \end_inset
 
@@ -2078,6 +2568,14 @@ Value
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$m$"
+description "mass"
+
+\end_inset
+
+
 \begin_inset Formula $m_{1}$
 \end_inset
 
@@ -2130,6 +2628,14 @@ Value
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$l$"
+description "beam element length"
+
+\end_inset
+
+
 \begin_inset Formula $l_{1}$
 \end_inset
 
@@ -2182,6 +2688,14 @@ Value
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$J_y$"
+description "rotational inertia about y-axis at CG"
+
+\end_inset
+
+
 \begin_inset Formula $J_{y1}$
 \end_inset
 
@@ -2260,6 +2774,30 @@ Value
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{L}$"
+description "lift coefficient"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{L\\alpha}$"
+description "lift coefficient slope"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$C_{L0}$"
+description "zero AoA lift coefficient"
+
+\end_inset
+
+
 \begin_inset Formula $C_{L\alpha1}$
 \end_inset
 
@@ -12546,7 +13084,7 @@ The feedback gain
  The feedback transfer function would then be
 \begin_inset Formula 
 \[
-K\,\frac{s}{1+\nicefrac{s}{\omega_{fast}}}
+K_{\varepsilon}\,\frac{s}{1+\nicefrac{s}{\omega_{fast}}}
 \]
 
 \end_inset
