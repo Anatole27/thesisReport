@@ -722,6 +722,103 @@ frontmatter
 \end_layout
 
 \begin_layout Chapter*
+Declaration of Authorship
+\end_layout
+
+\begin_layout Standard
+I, Anatole Verhaegen, declare that this thesis titled, 
+\begin_inset Quotes eld
+\end_inset
+
+Active Damping of Missile Bending Vibrations" and the work presented in
+ it are my own.
+ I confirm that:
+\end_layout
+
+\begin_layout Itemize
+This work was done wholly or mainly while in candidature for a degree at
+ this University.
+\end_layout
+
+\begin_layout Itemize
+Where any part of this thesis has previously been submitted for a degree
+ or any other qualification at this University or any other institution,
+ this has been clearly stated.
+\end_layout
+
+\begin_layout Itemize
+Where I have consulted the published work of others, this is always clearly
+ attributed.
+\end_layout
+
+\begin_layout Itemize
+Where I have quoted from the work of others, the source is always given.
+ With the exception of such quotations, this thesis is entirely my own work.
+\end_layout
+
+\begin_layout Itemize
+I have acknowledged all main sources of help.
+\end_layout
+
+\begin_layout Itemize
+Where the thesis is based on work done by myself jointly with others, I
+ have made clear exactly what was done by others and what I have contributed
+ myself.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{15mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Signed:
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
 Abstract
 \end_layout
 
@@ -1877,7 +1974,8 @@ name "fig:ISS"
 
 \begin_layout Standard
 Active damping for satellites is commonplace because the flexible-body dynamics
- are slow but it is a different story for smaller flying structures.
+ are slow and thus easy to control but it is a different story for smaller
+ flying structures.
  Structural dynamic instabilities are encountered by fixed-wing aircrafts
  at high speeds.
  This happens when the airflow interacts with the first bending mode and
@@ -1981,6 +2079,45 @@ s are accounted.
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "alazard2000commandeActive"
+
+\end_inset
+
+ gives a complete method to derive an active damping controller from a structura
+l model.
+ This model can be obtained from an FEM model or from an empirical identificatio
+n process explained in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "juang1994systemIdentification"
+
+\end_inset
+
+.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "alazard2000commandeActive"
+
+\end_inset
+
+, active damping controllers are designed on two different examples: a telescope
+ and a flexible airplane.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nesline1985structuralStabilization"
+
+\end_inset
+
+, the issue of bending vibrations for missiles is investigated but Nesline
+ does not design an active damping controller, just a phase and a gain filter
+ to avoid structural instability.
+\end_layout
+
+\begin_layout Standard
 If space structures active damping, building tuned-mass damper and flutter
  suppression have been thoroughly studied, applications of active damping
  for missiles or rockets are very limited in the public domain.
@@ -2022,6 +2159,16 @@ reference "fig:Nanolike-Strain-Gauge"
 
 .
  This strain gauge is manufactured by Nanolike using gold nanoparticles.
+ Strain gauges can also be distributed over large areas giving more information
+ on the structure shape as presented in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "laflamme2013elastomericCapacitor"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2245,6 +2392,14 @@ reference "fig:PIF-concept"
 .
  This system is very powerful and can generate several dozens of g's.
  However its accuracy is poor.
+ The aerodynamic flow is fully described in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "viti2009detailed"
+
+\end_inset
+
+.
  The attitude correction is done with the PAF system (
 \begin_inset Quotes eld
 \end_inset
@@ -2254,6 +2409,14 @@ Pilotage Aerodynamique Fort
 \end_inset
 
  - strong aerodynamic steering) using the fins.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "harcaut1998aerodynamiqueMissile"
+
+\end_inset
+
+ explains more precisely the mechanism of PIF-PAF.
 \end_layout
 
 \begin_layout Standard
