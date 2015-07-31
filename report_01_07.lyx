@@ -2,10 +2,11 @@
 \lyxformat 474
 \begin_document
 \begin_header
-\textclass book
+\textclass extbook
 \begin_preamble
 \usepackage{tikz} 
-\usetikzlibrary{shapes,arrows,positioning,calc}
+\usetikzlibrary{shapes,arrows,positioning,calc,trees}
+
 \usepackage{schemabloc}
 \usepackage{emptypage}
 \usepackage{layout}
@@ -1048,6 +1049,15 @@ SISO
 SPPO
 \series default
  short period pitch oscillation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+SS
+\series default
+ state-space
 \end_layout
 
 \begin_layout Labeling
@@ -17091,15 +17101,7 @@ Strain
 \begin_inset Quotes erd
 \end_inset
 
- and the 
-\begin_inset Quotes eld
-\end_inset
-
-Acc
-\begin_inset Quotes erd
-\end_inset
-
- architectures generate greater commands on the fins deflection at frequencies
+ architecture generate greater commands on the fins deflection at frequencies
  under 100 rad/s compared to the 
 \begin_inset Quotes eld
 \end_inset
@@ -17108,7 +17110,15 @@ Gyro
 \begin_inset Quotes erd
 \end_inset
 
- architecture.
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Acc
+\begin_inset Quotes erd
+\end_inset
+
+ architectures.
  These closed-loop do not generate fins deflection at high frequencies.
 \end_layout
 
@@ -17914,7 +17924,7 @@ Limited
 \begin_inset Text
 
 \begin_layout Plain Layout
-High
+Medium
 \end_layout
 
 \end_inset
@@ -18044,7 +18054,7 @@ Limited
 \begin_inset Text
 
 \begin_layout Plain Layout
-Medium
+Low
 \end_layout
 
 \end_inset
@@ -18254,6 +18264,1324 @@ Finally an approach can be tracking performance enhancing.
  A notch filter would be unusable in such a case.
  Thus, considering the flexible missile as a whole, an optimal controller
  could be designed to maximize lateral acceleration settling time.
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+Software Development - MATLAB
+\end_layout
+
+\begin_layout Standard
+This appendix gives the preamble of all key m-files that were developed
+ for this thesis.
+ The full source code is available on ???.
+ The units of all parameters are in International System of Units.
+\end_layout
+
+\begin_layout Section
+Flexible Missile Modeling
+\end_layout
+
+\begin_layout Standard
+Several m-files will generate the flexible missile model.
+ These files call each other according to the tree in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Calling-Tree"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{every node}=[draw=black,thick,anchor=west,font=
+\backslash
+ttfamily]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[% 
+\end_layout
+
+\begin_layout Plain Layout
+
+grow via three points={one child at (0.5,-0.7) and  
+\end_layout
+
+\begin_layout Plain Layout
+
+two children at (0.5,-0.7) and (0.5,-1.4)}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+edge from parent path={(
+\backslash
+tikzparentnode.south) |- (
+\backslash
+tikzchildnode.west)}]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node {initFlexibleMissileFullIO} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {loadModelEB}}	    
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {getRigidBodySS}       
+\end_layout
+
+\begin_layout Plain Layout
+
+		child { node {addUncertaintyRB}}      
+\end_layout
+
+\begin_layout Plain Layout
+
+	}     
+\end_layout
+
+\begin_layout Plain Layout
+
+	child [missing] {}	
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {getFlexibleBodySS}       
+\end_layout
+
+\begin_layout Plain Layout
+
+		child { node {getMDKLeckie}}       
+\end_layout
+
+\begin_layout Plain Layout
+
+		child { node {getModalRepTrunc}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+		child { node {addUncertaintyFB}}  
+\end_layout
+
+\begin_layout Plain Layout
+
+		child { node {getSSForm2}}     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}     			     
+\end_layout
+
+\begin_layout Plain Layout
+
+	child [missing] {}				     
+\end_layout
+
+\begin_layout Plain Layout
+
+	child [missing] {}				     
+\end_layout
+
+\begin_layout Plain Layout
+
+	child [missing] {}				     
+\end_layout
+
+\begin_layout Plain Layout
+
+	child [missing] {}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Calling Tree - Flexible Missile Modeling
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Calling-Tree"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Servo-aeroelastic Model Generation
+\end_layout
+
+\begin_layout Description
+Filename 
+\family typewriter
+initMissileFullIO.m
+\end_layout
+
+\begin_layout Description
+Author A.
+ Verhaegen
+\end_layout
+
+\begin_layout Description
+Description This is the main file to generate the servo-aeroelastic model.
+\end_layout
+
+\begin_layout Description
+Algorithm This script will first initialize all structural and flight parameters
+ with the function 
+\family typewriter
+loadModelEB
+\family default
+.
+ The rigid-body model, the flexible-body model and the actuators dynamics
+ are derived.
+ Finally these models are fused in a simulink file at extracted to the MATLAB
+ workspace.
+\end_layout
+
+\begin_layout Description
+Inputs None
+\end_layout
+
+\begin_layout Description
+Outputs 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+missile 
+\family default
+uncertain state-space system of the missile
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Calling 
+\family typewriter
+loadModelEB
+\family default
+, 
+\family typewriter
+getRigidBodySS
+\family default
+, 
+\family typewriter
+getFlexibleBodySS
+\end_layout
+
+\begin_layout Description
+Called
+\begin_inset space ~
+\end_inset
+
+from 
+\family typewriter
+main
+\family default
+ 
+\end_layout
+
+\begin_layout Subsection
+Rigid-body State-space System Generation
+\end_layout
+
+\begin_layout Description
+Filename 
+\family typewriter
+getRigidBodySS.m
+\end_layout
+
+\begin_layout Description
+Author A.
+ Verhaegen
+\end_layout
+
+\begin_layout Description
+Description The function 
+\family typewriter
+getRigidBodySS
+\family default
+ generates the rigid-body state-space system of a missile.
+\end_layout
+
+\begin_layout Description
+Algorithm The first step is to find the equilibrium.
+ The algorithm defines symbolic variables to create the three equations
+ of motion.
+ An approximate solution of the trim is found and feeds the solver to find
+ a numerical solution for the trim.
+ Once this equilibrium is found the second step is to compute the state-space
+ matrices A,B,C,D with uncertainty on 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{CG}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Inputs 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+S
+\family default
+ reference surface 
+\begin_inset Formula $S_{ref}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+rho
+\family default
+ air density 
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+CL0
+\family default
+ zero AoA lift coefficient 
+\begin_inset Formula $C_{L0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+CLa
+\family default
+ lift coefficient slope 
+\begin_inset Formula $C_{L\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+CLd
+\family default
+ fins lift coefficient slope 
+\begin_inset Formula $C_{L\delta_{F}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+xFins
+\family default
+ position of the fins from the tail 
+\begin_inset Formula $x_{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+xAE
+\family default
+ position of the aerodynamic center 
+\begin_inset Formula $x_{AC}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Cm0
+\family default
+ zero AoA pitching moment coefficient 
+\begin_inset Formula $C_{m0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Cma
+\family default
+ pitching moment coefficient slope 
+\begin_inset Formula $C_{m\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Cmd
+\family default
+ fins pitching moment coefficient 
+\begin_inset Formula $C_{m\delta_{F}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+CD0
+\family default
+ zero lift drag coefficient 
+\begin_inset Formula $C_{D0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+kD
+\family default
+ drag coefficient slope 
+\begin_inset Formula $k_{D}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Dref
+\family default
+ reference length 
+\begin_inset Formula $L_{ref}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+V0
+\family default
+ trim speed 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+gamm0
+\family default
+ trim flight path 
+\begin_inset Formula $\gamma_{0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Vdot0
+\family default
+ trim acceleration 
+\begin_inset Formula $\dot{V_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+l
+\family default
+ beam element length 
+\begin_inset Formula $l$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+dm
+\family default
+ vector of nodes masses 
+\begin_inset Formula $(m_{i})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+listAcc
+\family default
+ indices of accelerometers (here 10, 53, 83 and 92)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Jy
+\family default
+ rotational inertia at CG about y-axis 
+\begin_inset Formula $J_{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+xCG
+\family default
+ center of gravity position 
+\begin_inset Formula $x_{CG}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Outputs
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+rigidBody 
+\family default
+uncertain SS system of the rigid-body
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+alph0
+\family default
+ trim AoA 
+\begin_inset Formula $\alpha_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+T0
+\family default
+ trim thrust 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+thetaT0
+\family default
+ trim thrust orientation 
+\begin_inset Formula $\theta_{T0}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Calling 
+\family typewriter
+addUncertaintyRB
+\end_layout
+
+\begin_layout Description
+Called
+\begin_inset space ~
+\end_inset
+
+from 
+\family typewriter
+initMissileFullIO
+\end_layout
+
+\begin_layout Subsection
+Flexible-body Modeling
+\end_layout
+
+\begin_layout Description
+Filename 
+\family typewriter
+getFlexibleBodySS.m
+\end_layout
+
+\begin_layout Description
+Author A.
+ Verhaegen
+\end_layout
+
+\begin_layout Description
+Description The function 
+\family typewriter
+getFlexibleBodySS
+\family default
+ generates the flexible-body state-space system of a missile.
+\end_layout
+
+\begin_layout Description
+Algorithm The first step is to find the second order structural matrices
+ M, D and K using 
+\family typewriter
+getMDKLeckie
+\family default
+.
+ Then the structural system is formulated under its modal form keeping only
+ a few flexible-body modes with 
+\family typewriter
+getModalRepTrunc
+\family default
+.
+ Finally after adding uncertainty on the natural frequencies and the damping
+ ratios, the system is formulated under its state-space form 2 with 
+\family typewriter
+getSSForm2
+\family default
+.
+\end_layout
+
+\begin_layout Description
+Inputs 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+EI 
+\family default
+vector of bending stiffnesses 
+\begin_inset Formula $\left(EI_{i}\right)_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+l
+\family default
+ beam element length 
+\begin_inset Formula $l$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+dm
+\family default
+ vector of nodes masses 
+\begin_inset Formula $\left(m_{i}\right)_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Diam 
+\family default
+vector of diameters at nodes
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+m 
+\family default
+total mass 
+\begin_inset Formula $m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+xCG
+\family default
+ position of CG 
+\begin_inset Formula $x_{CG}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Jy
+\family default
+ rotational inertia 
+\begin_inset Formula $J_{y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+n_modes
+\family default
+ number of flexible modes kept (5 here)
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Outputs
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+flexibleBody
+\family default
+ uncertain SS system of flexible body
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Vm
+\family default
+ transformation matrix of modal SS to nodal SS
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Calling 
+\family typewriter
+getMDKLeckie
+\family default
+, 
+\family typewriter
+getModalRepTrunc
+\family default
+, 
+\family typewriter
+addUncertaintyFB
+\family default
+, 
+\family typewriter
+getSSForm2
+\end_layout
+
+\begin_layout Description
+Called
+\begin_inset space ~
+\end_inset
+
+from 
+\family typewriter
+initMissileFullIO
+\end_layout
+
+\begin_layout Section
+Control Design
+\end_layout
+
+\begin_layout Standard
+The controllers have been implemented in MATLAB with 6 m-files.
+ They are summarized in Figure ??? by a calling tree.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{every node}=[draw=black,thick,anchor=west,font=
+\backslash
+ttfamily]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[% 
+\end_layout
+
+\begin_layout Plain Layout
+
+grow via three points={one child at (0.5,-0.7) and  
+\end_layout
+
+\begin_layout Plain Layout
+
+two children at (0.5,-0.7) and (0.5,-1.4)}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+edge from parent path={(
+\backslash
+tikzparentnode.south) |- (
+\backslash
+tikzchildnode.west)}]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node {initControllers} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {weightsHinfStruct}}	 
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {notchFeedbackOpt}}
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {strainFeedbackOpt}}
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {gyrFeedbackOpt}}
+\end_layout
+
+\begin_layout Plain Layout
+
+	child { node {accFeedbackOpt}}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Calling Tree - Control Design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Controllers Initialisation
+\end_layout
+
+\begin_layout Description
+Filename 
+\family typewriter
+initControllers.m
+\end_layout
+
+\begin_layout Description
+Author A.
+ Verhaegen
+\end_layout
+
+\begin_layout Description
+Description The script 
+\family typewriter
+initControllers
+\family default
+ creates four different closed-loop system for the flexible missile using
+ the 
+\begin_inset Formula $H_{\infty}$
+\end_inset
+
+ structured tuning.
+\end_layout
+
+\begin_layout Description
+Algorithm After generating the frequency weights with 
+\family typewriter
+weightsHinfStruct
+\family default
+, this script will tune the four different latax controllers (
+\begin_inset Quotes eld
+\end_inset
+
+Notch
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Strain
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Gyro
+\begin_inset Quotes erd
+\end_inset
+
+, and 
+\begin_inset Quotes eld
+\end_inset
+
+Acc
+\begin_inset Quotes erd
+\end_inset
+
+) with the 
+\begin_inset Formula $H_{\infty}$
+\end_inset
+
+ structured tuning in the m-files 
+\family typewriter
+notchFeedbackOpt
+\family default
+, 
+\family typewriter
+strainFeedbackOpt
+\family default
+, 
+\family typewriter
+gyrFeedbackOpt
+\family default
+ and 
+\family typewriter
+accFeedbackOpt
+\family default
+.
+\end_layout
+
+\begin_layout Description
+Inputs 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+missile 
+\family default
+uncertain state-space system of the missile
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Outputs
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+notchCL
+\family default
+ closed-loop featured with a notch filter
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+strainCL
+\family default
+ closed-loop using the strain measurement
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+gyrCL
+\family default
+ closed-loop using the multiple gyroscopes
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+accCL
+\family default
+ closed-loop using the multiple accelerometers
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Calling 
+\family typewriter
+weightsHinfStruct
+\family default
+, 
+\family typewriter
+notchFeedbackOpt
+\family default
+, 
+\family typewriter
+strainFeedbackOpt
+\family default
+, 
+\family typewriter
+gyrFeedbackOpt
+\family default
+, 
+\family typewriter
+accFeedbackOpt
+\end_layout
+
+\begin_layout Description
+Called
+\begin_inset space ~
+\end_inset
+
+from 
+\family typewriter
+main
+\end_layout
+
+\begin_layout Subsection
+H
+\begin_inset Formula $_{\infty}$
+\end_inset
+
+ Tuning
+\end_layout
+
+\begin_layout Description
+Filenames 
+\family typewriter
+notchFeedbackOpt.m, strainFeedbackOpt.m, gyrFeedbackOpt.m, accFeedbackOpt.m
+\end_layout
+
+\begin_layout Description
+Author A.
+ Verhaegen
+\end_layout
+
+\begin_layout Description
+Description These functions create a closed-loop system respectively for
+ architectures 
+\begin_inset Quotes eld
+\end_inset
+
+Notch
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Strain
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Gyro
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Acc
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Algorithm A tunable system is generated using Simulink.
+ This system is weighted with the frequency weights generated with 
+\family typewriter
+weightsHinfStruct
+\family default
+ and tuned with the H
+\begin_inset Formula $_{\infty}$
+\end_inset
+
+ structured tuning method.
+\end_layout
+
+\begin_layout Description
+Inputs 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Win 
+\family default
+input weights
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+Wout
+\family default
+ output weights
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+inputs
+\family default
+ input names
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+outputs
+\family default
+ output names
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Outputs
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+notchCL
+\family default
+ closed-loop featured with a notch filter
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+strainCL
+\family default
+ closed-loop using the strain measurement
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+gyrCL
+\family default
+ closed-loop using the multiple gyroscopes
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\family typewriter
+accCL
+\family default
+ closed-loop using the multiple accelerometers
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Calling None
+\end_layout
+
+\begin_layout Description
+Called
+\begin_inset space ~
+\end_inset
+
+from 
+\family typewriter
+initControllers
 \end_layout
 
 \begin_layout Standard
