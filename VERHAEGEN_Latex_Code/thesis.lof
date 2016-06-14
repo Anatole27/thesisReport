@@ -1,0 +1,76 @@
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces ASTER 30 Illustration }}{1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Bending Effects}}{2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Active Flutter Suppression on AFW \cite {waszak1992flutterSuppression}}}{6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Flexible Body with Discrete Hinge }}{7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Nanolike Strain Gauge}}{8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces InvenSense IMU}}{9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces PIF concept}}{10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Two Part Model}}{11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Bending Link Geometry}}{11}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces ASTER 30 Launch}}{14}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Origin of Abscissa Convention}}{15}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Frames Definition}}{16}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Flared Missile Lift and Pitching Moment Coefficients \cite {lesieutre2002MISL3}}}{18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of External Efforts}}{19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Impulse response of $\frac {\alpha }{\theta _{T}}(s)$}}{28}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces ASTER 30 Dimensions}}{29}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Lumped Element Model (5 nodes)}}{30}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Computed First Bending Mode Natural Frequency}}{31}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Summary of Structural Parameters for 20 Nodes}}{31}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Elementary Cases for Two Nodes}}{34}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Modes Shape of ASTER 30}}{39}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Bode plot of $F_{1}$ to $a_{z,75}$}}{46}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Hankel Singular Values Decomposition - Strain Gauges Output}}{48}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Hankel Singular Values Decomposition - Gyroscopes Output}}{49}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Hankel Singular Values Decomposition - Accelerometer Output}}{49}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Placement Indices - Strain Gauges}}{52}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Placements Indices - Gyroscopes}}{54}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Placement Indices - Accelerometers}}{55}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Sensors Locations - Strain gauges $\varepsilon ,$ Gyroscopes $q$ and Accelerometers $a_{z}$}}{56}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Flexible Missile Model}}{58}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Step (1\textdegree ) Response of $\frac {a_{z83}}{\theta _{Tref}}(s)$ (10 s)}}{59}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Step (1\textdegree ) Response of $\frac {a_{z83}}{\theta _{Tref}}(s)$ (3 s)}}{59}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Latax Control Architecture}}{62}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Root Locus of Pitch Rate Feedback}}{63}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Root Locus of $\frac {q_{83}}{\theta _{Tref}}$}}{64}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Bode Diagram of the Notch Filter}}{65}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Bode Diagram of $\frac {q_{83}(s)}{\theta _{Tref}(s)}$}}{66}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Closed-Loop with Notch Filter}}{66}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Bode Diagram of $\frac {\theta _{T}(s)}{\theta _{Tref}(s)}$}}{67}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Bode Diagram of $\frac {\delta _{F}(s)}{\delta _{Fref}(s)}$}}{68}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Block Diagram of Derivative Strain Feedback}}{69}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Root Locus of $\frac {\varepsilon _{46}}{\delta _{Fref}}(s)$}}{70}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Bode of $\frac {q_{83}}{\theta _{Tref}}(s)$ With and Without Strain Feedback}}{71}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Feedback Architecture with Strain Gauges}}{71}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Root Locus of $\frac {\Delta q}{\delta _{Fref}}(s)$}}{72}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Bode of $\frac {q_{83}}{\theta _{Tref}}(s)$ With and Without $\Delta q$ Feedback}}{73}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Feedback Architecture with Gyroscopes}}{73}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Root Locus of $\frac {1}{s}\frac {\DOTSB \sum@ \slimits@ a_{z}}{\delta _{Fref}}(s)$}}{75}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Bode of $\frac {q_{83}}{\theta _{Tref}}(s)$ With and Without $\DOTSB \sum@ \slimits@ a_{z}$ Feedback}}{76}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Feedback Architecture with Accelerometers}}{76}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Weighted Form for $H_{\infty }$-tuning}}{77}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Singular Values of $\nicefrac {1}{W_{err}(s)}$}}{78}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Poles of Closed Loop 1 to 4 Subject to Uncertainty}}{80}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Step Response of $a_{zref}$ to $(a_{zref}-a_{zCG})$}}{81}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Sigma Plot of $a_{zref}$ to $(a_{zref}-a_{zCG})$}}{82}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Singular Values of $a_{zref}$ to $\theta _{T}$}}{83}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Singular Values of $a_{zref}$ to $\delta _{F}$}}{83}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Singular Values of $\theta _{Tpert}$ to $\theta _{T}$}}{84}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Singular Values of $\theta _{Tpert}$ to $a_{z83v}$ (left) and $q_{83v}$ (right) }}{85}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Singular Values of $\theta _{Tpert}$ to $\varepsilon _{46}$}}{86}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Calling Tree - Flexible Missile Modeling}}{94}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Calling Tree - Control Design}}{96}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Simulink Files Tree}}{99}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Flexible Missile Model}}{101}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Rigid Body Model}}{102}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Flight Dynamics Model}}{102}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Flexible Body Model}}{103}

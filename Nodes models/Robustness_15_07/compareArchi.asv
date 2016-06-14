@@ -1,0 +1,60 @@
+%% Bodes
+%% azref/azerr
+figure
+hold on
+[sig,w] = sigma(CLraw.NominalValue('a_{zerr}','a_{zref}'));
+plot(w,20*log10(sig),'ko','MarkerSize',3);
+sigma(CLnotch.NominalValue('a_{zerr}','a_{zref}'),'k');
+sigma(CLstrain.NominalValue('a_{zerr}','a_{zref}'),'k-.');
+sigma(CLgyr.NominalValue('a_{zerr}','a_{zref}'),'k.');
+sigma(CLacc.NominalValue('a_{zerr}','a_{zref}'),'k--');
+legend('Raw','Notch','Strain','Gyro','Acc')
+plotSetup(gca,[]);
+
+print('../figures/sigmaErr', '-dpng', '-r300'); %<-Save as PNG with 300 DPI
+
+%% Vibration creation by rocket motor
+figure
+hold on
+bode(CLraw.NominalValue('a_{z83v}','\theta_{Tpert}'));
+bode(CLnotch.NominalValue('a_{z83v}','\theta_{Tpert}'));
+bode(CLstrain.NominalValue('a_{z83v}','\theta_{Tpert}'));
+bode(CLgyr.NominalValue('a_{z83v}','\theta_{Tpert}'));
+bode(CLacc.NominalValue('a_{z83v}','\theta_{Tpert}'));
+legend('Raw','Notch','Strain','Gyro','Acc')
+
+%% theta demand for azref
+figure
+hold on
+bode(CLraw.NominalValue('\theta_T','a_{zref}'));
+bode(CLnotch.NominalValue('\theta_T','a_{zref}'));
+bode(CLstrain.NominalValue('\theta_T','a_{zref}'));
+bode(CLgyr.NominalValue('\theta_T','a_{zref}'));
+bode(CLacc.NominalValue('\theta_T','a_{zref}'));
+legend('Raw','Notch','Strain','Gyro','Acc')
+
+%% rocket engine noise to actuator position (parasites)
+figure
+hold on
+bode(CLraw.NominalValue('\theta_T','\theta_{Tpert}'));
+bode(CLnotch.NominalValue('\theta_T','\theta_{Tpert}'));
+bode(CLstrain.NominalValue('\theta_T','\theta_{Tpert}'));
+bode(CLgyr.NominalValue('\theta_T','\theta_{Tpert}'));
+bode(CLacc.NominalValue('\theta_T','\theta_{Tpert}'));
+legend('Raw','Notch','Strain','Gyro','Acc')
+
+%% Steps
+
+figure
+hold on
+[dat,t] = step(CLraw.NominalValue('a_{zerr}','a_{zref}'));
+plot(t,dat,'ko','MarkerSize',3)
+step(CLnotch.NominalValue('a_{zerr}','a_{zref}'),'k');
+step(CLstrain.NominalValue('a_{zerr}','a_{zref}'),'k-.');
+step(CLgyr.NominalValue('a_{zerr}','a_{zref}'),'k.');
+step(CLacc.NominalValue('a_{zerr}','a_{zref}'),'k--');
+legend('Raw','Notch','Strain','Gyro','Acc')
+plotSetup(gca,[]);
+print('~/Documents/Etudes/Cranfield University/Thesis/Reports/figures/step', '-dpng', '-r300');
+
+%%

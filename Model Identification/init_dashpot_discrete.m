@@ -1,0 +1,12 @@
+n = 4;
+r = 1;
+m = 1;
+l = 200;
+Ac = [0 1; -1 -0.01];
+Bc = [0;1];
+C = [-1 -0.01];
+D = 1;
+dt = 0.2;
+[A,B] = c2d(Ac,Bc,dt);
+input = randn(l,1);
+output = dlsim(A,B,C,D,input,[1,0]);

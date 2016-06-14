@@ -1,0 +1,276 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>getRigidBodySS</title><meta name="generator" content="MATLAB 8.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2015-08-01"><meta name="DC.source" content="getRigidBodySS.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Generates the rigid-body state-space system of a missile.</a></li><li><a href="#3">Mass properties</a></li><li><a href="#4">Lift, Moment and Drag coefficients</a></li><li><a href="#5">State Equations</a></li><li><a href="#6">Approximate solution (gamm0 = 0)</a></li><li><a href="#7">Solving</a></li><li><a href="#8">Compute SS system</a></li><li><a href="#9">Naming</a></li><li><a href="#10">Creating SS</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> [rigidBodySS,alph0,T0,thetaT0] = <span class="keyword">...</span>
+    getRigidBodySS(S,rho,CL0,CLa,CLd,xFins,xAC,Cm0,Cma,Cmd,CD0,kD,<span class="keyword">...</span>
+    Dref,V0,gamm0,Vdot0,l,dm,listAcc,Jy,xCG)
+</pre><h2>Generates the rigid-body state-space system of a missile.<a name="2"></a></h2><p>Author : Anatole VERHAEGEN</p><p>The first step is to find the equilibrium. The algorithm defines symbolic variables to create the three equations of motion. An approximate solution of the trim is found and feeds the solver to find a numerical solution for the trim. Once this equilibrium is found the second step is to compute the state-space matrices A,B,C,D with uncertainty on <img src="getRigidBodySS_eq07389878485796935067.png" alt="$T_{0}$"> and <img src="getRigidBodySS_eq15088555179431966764.png" alt="$x_{CG}$"></p><p>INPUTS:</p><div><ul><li>S : reference surface (m2)</li><li>rho : air density (kg/m3)</li><li>CL0, CLa : lift coefficients (zero value and slope) (alph in rad !!)</li><li>CLd : lift coeff slope of fins (rad-1)</li><li>xFins : fins position (m)</li><li>xAC : aerodynamic center position (m)</li><li>Cm0, Cma : pitching moment coefficients (zero value and slope) (alph in rad)</li><li>CD0, kD : zero lift drag and induced drag coefficient</li><li>Dref : length reference (booster diameter) (m)</li><li>V0 : Missile speed (m/s)</li><li>gamm0 : flight path (rad)</li><li>l : beam element length (m)</li><li>dm : vector of nodes mass (kg) [nx1]</li><li>listAcc : list of nodes features with an accelerometer</li><li>Jy : Rotational inertia at CG about y-axis (kg.m2)</li><li>xCG : CG position (m)</li></ul></div><p>OUTPUTS:</p><div><ul><li>rigidBodySS : Uncertain SS system of the rigid body (FD + Actuators)</li><li>alph0 : trim AoA (rad)</li><li>T0 : trim thrust magnitude (N)</li><li>thetaT0 : trim thrust orientation (rad)</li></ul></div><h2>Mass properties<a name="3"></a></h2><pre class="codeinput">m = sum(dm); <span class="comment">% Mass</span>
+grav = 9.81;
+</pre><pre class="codeoutput error">Error using getRigidBodySS (line 44)
+Not enough input arguments.
+</pre><h2>Lift, Moment and Drag coefficients<a name="4"></a></h2><pre class="codeinput">syms <span class="string">u</span> <span class="string">gamm</span> <span class="string">alph</span> <span class="string">q</span> <span class="string">thetaT</span> <span class="string">deltaF</span> <span class="string">T</span> <span class="comment">% Symbolic variables</span>
+CL = CL0 + alph*CLa + deltaF*CLd; <span class="comment">% Lift coeff</span>
+Cm = Cm0 + alph*Cma + deltaF*Cmd; <span class="comment">% Pitching moment coeff</span>
+CD = CD0 + kD*CL^2; <span class="comment">% Drag coeff</span>
+V = V0*(u+1); <span class="comment">% Speed (u : reduced speed)</span>
+qS = 1/2*rho*S*V^2; <span class="comment">% dynamic pressure</span>
+</pre><h2>State Equations<a name="5"></a></h2><p>Propulsion equation</p><pre class="codeinput">longax = -Vdot0 + 1/m*(-qS*CD + T*cos(alph+thetaT) - m*grav*sin(gamm));
+
+<span class="comment">% Lift equation</span>
+gammdot = 1/(m*V)*(qS*CL + T*sin(alph+thetaT) - m*grav*cos(gamm));
+
+<span class="comment">% Link between alphdot, q and gammdot</span>
+alphdot = q - gammdot;
+
+<span class="comment">% Pitching moment equation</span>
+qdot = 1/Jy*(qS*Dref*Cm - T*sin(thetaT)*xCG);
+
+<span class="comment">% System of equations</span>
+system = [longax,gammdot,alphdot,qdot]';
+systemEq = subs(system([1,2,4]),{gamm,u,q,deltaF},{gamm0,0,0,0});
+</pre><h2>Approximate solution (gamm0 = 0)<a name="6"></a></h2><pre class="codeinput">alph0  = (m*grav/(1/2*rho*S*V0^2) -CL0)/CLa;
+T0 = (1/2*rho*S*V0^2)*(CD0 + kD*(CL0 + CLa*alph0)^2) + Vdot0*m;
+thetaT0 = 1/(T0*xCG)*(1/2*rho*S*V0^2)*(Dref*(Cm0+Cma*alph0));
+</pre><h2>Solving<a name="7"></a></h2><pre class="codeinput">[T0,thetaT0,alph0] = vpasolve(systemEq,[ T, thetaT, alph],[T0,thetaT0,alph0]);
+alph0 = double(alph0);
+T0 = double(T0);
+thetaT0 = double(thetaT0);
+</pre><h2>Compute SS system<a name="8"></a></h2><p>Uncertainty definition</p><pre class="codeinput">[xCG,T0,Cma,Cmd] = addUncertaintyRB(xCG,T0,CLa,CLd,xFins,xAC,Dref);
+
+<span class="comment">% State matrix</span>
+A11 = -1/(m*V0)*(1/2*rho*S*V0^2*CLa + T0*cos(thetaT0 + alph0));
+A12 = 1;
+A21 = 1/Jy*1/2*rho*S*V0^2*Dref*Cma;
+A22 = 0;
+Arb = [A11 A12; A21 A22];
+
+<span class="comment">% Input matrix</span>
+B1 =  [-T0*cos(thetaT0 + alph0),  -1/2*rho*S*V0^2*CLd]/(m*V0);
+B2 = [-T0*cos(thetaT0)*xCG,  1/2*rho*S*V0^2*Dref*Cmd]/Jy;
+Brb = [B1;B2];
+
+<span class="comment">% Output matrix</span>
+Cx = eye(2);
+CAccCG = [-1/m*(1/2*rho*S*V0^2*CLa + T0*cos(thetaT0 + alph0)),  0];
+CAcc = [CAccCG(1) + 1/Jy*(xCG - (listAcc-1)'*l)*1/2*rho*S*V0^2*Dref*Cma,<span class="keyword">...</span>
+    zeros(length(listAcc),1)];
+Crb = [Cx; CAccCG; CAcc];
+
+<span class="comment">% Feedforward matrix</span>
+Dx = zeros(2);
+DAccCG = -1/m*[T0*cos(thetaT0 + alph0),  1/2*rho*S*V0^2*CLd];
+DAcc = ones(length(listAcc),1)*DAccCG  +<span class="keyword">...</span>
+    1/Jy*(xCG - (listAcc-1)'*l)*[-T0*cos(thetaT0)*xCG,<span class="keyword">...</span>
+    1/2*rho*S*V0^2*Dref*Cmd];
+Drb = [Dx; DAccCG; DAcc];
+</pre><h2>Naming<a name="9"></a></h2><p>states</p><pre class="codeinput">xnames = {<span class="string">'\alpha'</span>,<span class="string">'q'</span>};
+<span class="comment">% inputs</span>
+unames = {<span class="string">'\theta_T'</span>;<span class="string">'\delta_f'</span>};
+<span class="comment">% outputs</span>
+ynames = {<span class="string">'\alpha'</span>,<span class="string">'q'</span>,<span class="string">'a_zCG'</span>};
+<span class="keyword">for</span> acc = listAcc
+    ynames = [ynames, strcat(<span class="string">'a_{z'</span>,num2str(acc),<span class="string">'}'</span>)];
+<span class="keyword">end</span>
+</pre><h2>Creating SS<a name="10"></a></h2><pre class="codeinput">rigidBodySS = ss(Arb,Brb,Crb,Drb);
+rigidBodySS.u = unames;
+rigidBodySS.y = ynames;
+rigidBodySS.StateName = xnames;
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+function [rigidBodySS,alph0,T0,thetaT0] = ...
+    getRigidBodySS(S,rho,CL0,CLa,CLd,xFins,xAC,Cm0,Cma,Cmd,CD0,kD,...
+    Dref,V0,gamm0,Vdot0,l,dm,listAcc,Jy,xCG)
+
+%% Generates the rigid-body state-space system of a missile.
+%
+% Author : Anatole VERHAEGEN
+%
+% The first step is to find the equilibrium.
+% The algorithm defines symbolic variables to create the three equations of
+% motion. An approximate solution of the trim is found and feeds the solver
+% to find a numerical solution for the trim. Once this equilibrium is found
+% the second step is to compute the state-space matrices A,B,C,D with
+% uncertainty on $T_{0}$ and $x_{CG}$
+%
+% INPUTS:
+% 
+% * S : reference surface (m2)
+% * rho : air density (kg/m3)
+% * CL0, CLa : lift coefficients (zero value and slope) (alph in rad !!)
+% * CLd : lift coeff slope of fins (rad-1)
+% * xFins : fins position (m)
+% * xAC : aerodynamic center position (m)
+% * Cm0, Cma : pitching moment coefficients (zero value and slope) (alph in
+% rad)
+% * CD0, kD : zero lift drag and induced drag coefficient
+% * Dref : length reference (booster diameter) (m)
+% * V0 : Missile speed (m/s)
+% * gamm0 : flight path (rad)
+% * l : beam element length (m)
+% * dm : vector of nodes mass (kg) [nx1]
+% * listAcc : list of nodes features with an accelerometer
+% * Jy : Rotational inertia at CG about y-axis (kg.m2)
+% * xCG : CG position (m)
+%
+% OUTPUTS:
+%
+% * rigidBodySS : Uncertain SS system of the rigid body (FD + Actuators)
+% * alph0 : trim AoA (rad)
+% * T0 : trim thrust magnitude (N)
+% * thetaT0 : trim thrust orientation (rad)
+
+%% Mass properties
+m = sum(dm); % Mass
+grav = 9.81;
+
+%% Lift, Moment and Drag coefficients
+syms u gamm alph q thetaT deltaF T % Symbolic variables
+CL = CL0 + alph*CLa + deltaF*CLd; % Lift coeff
+Cm = Cm0 + alph*Cma + deltaF*Cmd; % Pitching moment coeff
+CD = CD0 + kD*CL^2; % Drag coeff
+V = V0*(u+1); % Speed (u : reduced speed)
+qS = 1/2*rho*S*V^2; % dynamic pressure
+
+%% State Equations
+% Propulsion equation
+longax = -Vdot0 + 1/m*(-qS*CD + T*cos(alph+thetaT) - m*grav*sin(gamm));
+
+% Lift equation
+gammdot = 1/(m*V)*(qS*CL + T*sin(alph+thetaT) - m*grav*cos(gamm));
+
+% Link between alphdot, q and gammdot
+alphdot = q - gammdot;
+
+% Pitching moment equation
+qdot = 1/Jy*(qS*Dref*Cm - T*sin(thetaT)*xCG);
+
+% System of equations
+system = [longax,gammdot,alphdot,qdot]';
+systemEq = subs(system([1,2,4]),{gamm,u,q,deltaF},{gamm0,0,0,0});
+
+%% Approximate solution (gamm0 = 0)
+alph0  = (m*grav/(1/2*rho*S*V0^2) -CL0)/CLa;
+T0 = (1/2*rho*S*V0^2)*(CD0 + kD*(CL0 + CLa*alph0)^2) + Vdot0*m;
+thetaT0 = 1/(T0*xCG)*(1/2*rho*S*V0^2)*(Dref*(Cm0+Cma*alph0));
+
+%% Solving
+[T0,thetaT0,alph0] = vpasolve(systemEq,[ T, thetaT, alph],[T0,thetaT0,alph0]);
+alph0 = double(alph0);
+T0 = double(T0);
+thetaT0 = double(thetaT0);
+
+%% Compute SS system
+% Uncertainty definition
+[xCG,T0,Cma,Cmd] = addUncertaintyRB(xCG,T0,CLa,CLd,xFins,xAC,Dref);
+
+% State matrix
+A11 = -1/(m*V0)*(1/2*rho*S*V0^2*CLa + T0*cos(thetaT0 + alph0));
+A12 = 1;
+A21 = 1/Jy*1/2*rho*S*V0^2*Dref*Cma;
+A22 = 0;
+Arb = [A11 A12; A21 A22];
+
+% Input matrix
+B1 =  [-T0*cos(thetaT0 + alph0),  -1/2*rho*S*V0^2*CLd]/(m*V0);
+B2 = [-T0*cos(thetaT0)*xCG,  1/2*rho*S*V0^2*Dref*Cmd]/Jy;
+Brb = [B1;B2];
+
+% Output matrix
+Cx = eye(2);
+CAccCG = [-1/m*(1/2*rho*S*V0^2*CLa + T0*cos(thetaT0 + alph0)),  0];
+CAcc = [CAccCG(1) + 1/Jy*(xCG - (listAcc-1)'*l)*1/2*rho*S*V0^2*Dref*Cma,...
+    zeros(length(listAcc),1)];
+Crb = [Cx; CAccCG; CAcc];
+
+% Feedforward matrix
+Dx = zeros(2);
+DAccCG = -1/m*[T0*cos(thetaT0 + alph0),  1/2*rho*S*V0^2*CLd];
+DAcc = ones(length(listAcc),1)*DAccCG  +...
+    1/Jy*(xCG - (listAcc-1)'*l)*[-T0*cos(thetaT0)*xCG,...
+    1/2*rho*S*V0^2*Dref*Cmd];
+Drb = [Dx; DAccCG; DAcc];
+
+%% Naming
+% states
+xnames = {'\alpha','q'};
+% inputs
+unames = {'\theta_T';'\delta_f'};
+% outputs
+ynames = {'\alpha','q','a_zCG'};
+for acc = listAcc
+    ynames = [ynames, strcat('a_{z',num2str(acc),'}')];
+end
+
+%% Creating SS
+rigidBodySS = ss(Arb,Brb,Crb,Drb);
+rigidBodySS.u = unames;
+rigidBodySS.y = ynames;
+rigidBodySS.StateName = xnames;
+
+##### SOURCE END #####
+--></body></html>

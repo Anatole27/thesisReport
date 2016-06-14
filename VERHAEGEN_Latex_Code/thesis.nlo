@@ -1,0 +1,51 @@
+\nomenclatureentry{a$C_m$@[{$C_m$}]\begingroup pitching moment coefficient\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_{L\alpha}$@[{$C_{L\alpha}$}]\begingroup pitching moment coefficient slope\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_{m0}$@[{$C_{m0}$}]\begingroup zero AoA pitching moment coefficient\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_{L\delta F}$@[{$C_{L\delta F}$}]\begingroup fins lift coefficient slope\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_{m\delta F}$@[{$C_{m\delta F}$}]\begingroup fins pitching moment coefficient slope\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_{D0}$@[{$C_{D0}$}]\begingroup zero lift drag coefficient\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$k_D$@[{$k_D$}]\begingroup drag coefficient slope\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_D$@[{$C_D$}]\begingroup drag coefficient\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$a_z$@[{$a_z$}]\begingroup lateral inertial acceleration\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\theta$@[{$\theta$}]\begingroup pitch angle\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$q$@[{$q$}]\begingroup pitch rate\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\alpha$@[{$\alpha$}]\begingroup AoA\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\vec{\Omega}_{\nicefrac{\mathcal{R}_1}{\mathcal{R}_2}}$@[{$\vec{\Omega}_{\nicefrac{\mathcal{R}_1}{\mathcal{R}_2}}$}]\begingroup angular speed velocity of $\mathcal{R}_1$ w.r.t. $\mathcal{R}_2$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$g$@[{$g$}]\begingroup standard gravity\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$V$@[{$V$}]\begingroup airspeed\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\gamma$@[{$\gamma$}]\begingroup flight path\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\rho$@[{$\rho$}]\begingroup air density\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\omega$@[{$\omega$}]\begingroup frequency\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\zeta$@[{$\zeta$}]\begingroup damping ratio\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$r$@[{$r$}]\begingroup air specific gas constant\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$T$@[{$T$}]\begingroup thrust or temperature\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$S_{ref}$@[{$S_{ref}$}]\begingroup reference surface (booster cross-section)\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$L_{ref}$@[{$L_{ref}$}]\begingroup reference length (booster diameter)\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\bar{\lambda}$@[{$\bar{\lambda}$}]\begingroup deviation of $\lambda$ from $\lambda_0$ ($\lambda-\lambda_0$)\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\lambda_0$@[{$\lambda_0$}]\begingroup trim value of $\lambda$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\lambda_i$@[{$\lambda_i$}]\begingroup value of $\lambda$ at node $i$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\lambda_{rb}$@[{$\lambda_{rb}$}]\begingroup rigid-body component of $\lambda$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\lambda_{fb}$@[{$\lambda_{fb}$}]\begingroup flexible-body component of $\lambda$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\lambda_m$@[{$\lambda_m$}]\begingroup modal formulation of $\lambda$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\theta_T$@[{$\theta_T$}]\begingroup thrust orientation\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$\delta_F$@[{$\delta_F$}]\begingroup fins deflection\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$Id_n$@[{$Id_n$}]\begingroup identity matrix of size $n\times n$\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$I$@[{$I$}]\begingroup second moment of area\nomeqref {2.0}|nompageref}{10}
+\nomenclatureentry{a$E$@[{$E$}]\begingroup Young modulus\nomeqref {2.0}|nompageref}{10}
+\nomenclatureentry{a$m$@[{$m$}]\begingroup mass\nomeqref {2.0}|nompageref}{12}
+\nomenclatureentry{a$l$@[{$l$}]\begingroup beam element length\nomeqref {2.0}|nompageref}{12}
+\nomenclatureentry{a$J_y$@[{$J_y$}]\begingroup rotational inertia about y-axis at CG\nomeqref {2.0}|nompageref}{12}
+\nomenclatureentry{a$C_{L}$@[{$C_{L}$}]\begingroup lift coefficient\nomeqref {2.0}|nompageref}{12}
+\nomenclatureentry{a$C_{L\alpha}$@[{$C_{L\alpha}$}]\begingroup lift coefficient slope\nomeqref {2.0}|nompageref}{12}
+\nomenclatureentry{a$C_{L0}$@[{$C_{L0}$}]\begingroup zero AoA lift coefficient\nomeqref {2.0}|nompageref}{12}
+\nomenclatureentry{aE@[{E}]\begingroup longitudinal Young modulus of the missile\nomeqref {3.6}|nompageref}{29}
+\nomenclatureentry{a$\rho_m$@[{$\rho_m$}]\begingroup linear mass density\nomeqref {3.6}|nompageref}{29}
+\nomenclatureentry{a$n$@[{$n$}]\begingroup number of nodes\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$l$@[{$l$}]\begingroup length of an element beam\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$L$@[{$L$}]\begingroup missile length\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$m_i$@[{$m_i$}]\begingroup mass of node $i$\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$m$@[{$m$}]\begingroup missile mass\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$G$@[{$G$}]\begingroup center of gravity\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$I_{G,y,i}$ or $I_i$@[{$I_{G,y,i}$ or $I_i$}]\begingroup second moment of area of beam $i$\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$F_i$@[{$F_i$}]\begingroup external force along z-axis applied on node $i$\nomeqref {3.6}|nompageref}{32}
+\nomenclatureentry{a$M_{y,i}$@[{$M_{y,i}$}]\begingroup external moment along y-axis applied on node $i$\nomeqref {3.6}|nompageref}{32}

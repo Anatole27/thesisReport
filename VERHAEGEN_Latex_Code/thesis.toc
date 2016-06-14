@@ -1,0 +1,115 @@
+\select@language {english}
+\contentsline {chapter}{List of Figures}{xi}
+\contentsline {chapter}{List of Tables}{xiii}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Motivations for Active Damping}{1}
+\contentsline {section}{\numberline {1.2}Contributions to Knowledge}{2}
+\contentsline {section}{\numberline {1.3}Thesis Structure}{3}
+\contentsline {chapter}{\numberline {2}Literature Review and Preliminary Study}{5}
+\contentsline {section}{\numberline {2.1}Literature Review}{5}
+\contentsline {subsection}{\numberline {2.1.1}Structure Active Damping}{5}
+\contentsline {subsection}{\numberline {2.1.2}Flexible Missile Modeling}{7}
+\contentsline {subsection}{\numberline {2.1.3}Sensors for Structure Monitoring}{8}
+\contentsline {subsection}{\numberline {2.1.4}Actuators of ASTER}{9}
+\contentsline {section}{\numberline {2.2}Preliminary Study}{10}
+\contentsline {chapter}{\numberline {3}Flexible Missile Modeling}{13}
+\contentsline {section}{\numberline {3.1}Characteristics}{13}
+\contentsline {section}{\numberline {3.2}Flight Dynamics}{15}
+\contentsline {subsection}{\numberline {3.2.1}Frames}{15}
+\contentsline {subsection}{\numberline {3.2.2}Mass Properties}{16}
+\contentsline {subsection}{\numberline {3.2.3}Aerodynamics}{17}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Standard Atmosphere}{17}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Main Body Aerodynamics}{17}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Fins Aerodynamics}{18}
+\contentsline {subsection}{\numberline {3.2.4}External Efforts}{18}
+\contentsline {subsubsection}{\numberline {3.2.4.1}Gravity}{20}
+\contentsline {subsubsection}{\numberline {3.2.4.2}Aerodynamic Efforts}{20}
+\contentsline {paragraph}{Lift}{20}
+\contentsline {paragraph}{Drag}{20}
+\contentsline {paragraph}{Pitching Moment}{20}
+\contentsline {subsubsection}{\numberline {3.2.4.3}Propulsion Efforts}{20}
+\contentsline {subsection}{\numberline {3.2.5}Equations of Motion}{20}
+\contentsline {subsubsection}{\numberline {3.2.5.1}Linear Acceleration}{21}
+\contentsline {subsubsection}{\numberline {3.2.5.2}Pitching Moment Equation}{21}
+\contentsline {subsection}{\numberline {3.2.6}Trim}{22}
+\contentsline {subsection}{\numberline {3.2.7}State Space System}{23}
+\contentsline {subsubsection}{\numberline {3.2.7.1}State Equation}{25}
+\contentsline {subsubsection}{\numberline {3.2.7.2}Output Equation}{26}
+\contentsline {subsection}{\numberline {3.2.8}Short Period Pitch Oscillations}{27}
+\contentsline {section}{\numberline {3.3}Actuators Dynamics}{27}
+\contentsline {section}{\numberline {3.4}Structural Model}{28}
+\contentsline {subsection}{\numberline {3.4.1}From continuous to discrete}{28}
+\contentsline {paragraph}{Geometry}{30}
+\contentsline {paragraph}{Mass and stiffness}{30}
+\contentsline {paragraph}{External efforts}{32}
+\contentsline {subsection}{\numberline {3.4.2}Second-Order Structural Model}{32}
+\contentsline {subsubsection}{\numberline {3.4.2.1}Nodal Model}{32}
+\contentsline {paragraph}{Simplified second-order structural model}{37}
+\contentsline {subsubsection}{\numberline {3.4.2.2}Modal Model}{38}
+\contentsline {subsubsection}{\numberline {3.4.2.3}Output equation}{40}
+\contentsline {paragraph}{Gyroscope}{40}
+\contentsline {paragraph}{Accelerometer}{40}
+\contentsline {paragraph}{Strain gauge}{40}
+\contentsline {paragraph}{Concatenation}{42}
+\contentsline {paragraph}{Modal output matrix}{42}
+\contentsline {subsection}{\numberline {3.4.3}Rigid-body Modes Elimination}{42}
+\contentsline {subsection}{\numberline {3.4.4}State Space Model}{44}
+\contentsline {subsubsection}{\numberline {3.4.4.1}From Second-Order Model to State Space Model}{44}
+\contentsline {subsubsection}{\numberline {3.4.4.2}Formulation in State Space Modal Form 2}{45}
+\contentsline {subsection}{\numberline {3.4.5}Model Reduction}{47}
+\contentsline {section}{\numberline {3.5}Actuator \& Sensor Placement}{50}
+\contentsline {subsection}{\numberline {3.5.1}Actuator Selection}{50}
+\contentsline {subsection}{\numberline {3.5.2}Sensor Placement}{50}
+\contentsline {subsubsection}{\numberline {3.5.2.1}Placement Indices}{51}
+\contentsline {subsubsection}{\numberline {3.5.2.2}Strain Gauges Placement}{52}
+\contentsline {subsubsection}{\numberline {3.5.2.3}Gyroscopes Placement}{53}
+\contentsline {subsubsection}{\numberline {3.5.2.4}Accelerometer Placement}{53}
+\contentsline {subsubsection}{\numberline {3.5.2.5}Outputs Selection}{54}
+\contentsline {section}{\numberline {3.6}Flexible Missile Model}{55}
+\contentsline {subsection}{\numberline {3.6.1}Structural and Flight Dynamics Interactions}{56}
+\contentsline {subsection}{\numberline {3.6.2}Servo-aeroelastic Model Inputs and Outputs}{57}
+\contentsline {subsection}{\numberline {3.6.3}Simulations}{57}
+\contentsline {chapter}{\numberline {4}Active Damping Autopilots}{61}
+\contentsline {section}{\numberline {4.1}Missile Control Inputs and Outputs}{61}
+\contentsline {subsection}{\numberline {4.1.1}Actuators}{61}
+\contentsline {subsection}{\numberline {4.1.2}Sensors}{62}
+\contentsline {section}{\numberline {4.2}Lateral Acceleration Control}{62}
+\contentsline {section}{\numberline {4.3}Vibrations Alleviation}{63}
+\contentsline {subsection}{\numberline {4.3.1}Notch Filtering}{64}
+\contentsline {subsection}{\numberline {4.3.2}Active Structural Damping}{67}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Requirements}{67}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Strain Feedback}{68}
+\contentsline {subsubsection}{\numberline {4.3.2.3}Gyroscope Feedback}{69}
+\contentsline {subsubsection}{\numberline {4.3.2.4}Accelerometer Feedback}{72}
+\contentsline {section}{\numberline {4.4}H$_{\infty }$ Fixed-Structure Tuning}{75}
+\contentsline {section}{\numberline {4.5}Controllers Assessment and Comparison}{79}
+\contentsline {subsection}{\numberline {4.5.1}Robustness to Uncertainty}{79}
+\contentsline {subsection}{\numberline {4.5.2}Tracking}{81}
+\contentsline {subsection}{\numberline {4.5.3}Actuators Demand}{81}
+\contentsline {subsubsection}{\numberline {4.5.3.1}Demand for Lateral Acceleration}{82}
+\contentsline {subsubsection}{\numberline {4.5.3.2}Parasitic Effects}{82}
+\contentsline {subsection}{\numberline {4.5.4}Bending Reduction}{84}
+\contentsline {subsubsection}{\numberline {4.5.4.1}Vibrations Alleviation}{84}
+\contentsline {subsubsection}{\numberline {4.5.4.2}Dynamic Stress Alleviation}{85}
+\contentsline {chapter}{\numberline {5}Results and Discussions}{87}
+\contentsline {paragraph}{Flight Dynamics}{87}
+\contentsline {paragraph}{Actuators}{87}
+\contentsline {paragraph}{Structural Modeling}{88}
+\contentsline {paragraph}{Servo-aeroelastic Model}{88}
+\contentsline {paragraph}{Sensor Placement}{88}
+\contentsline {paragraph}{Damping controllers}{88}
+\contentsline {chapter}{\numberline {6}Conclusions and Further Developments}{91}
+\contentsline {section}{\numberline {6.1}Conclusions}{91}
+\contentsline {section}{\numberline {6.2}Further Developments}{91}
+\contentsline {chapter}{\numberline {A}Software Development - MATLAB}{93}
+\contentsline {section}{\numberline {A.1}Flexible Missile Modeling}{93}
+\contentsline {subsection}{\numberline {A.1.1}Servo-aeroelastic Model Generation}{93}
+\contentsline {subsection}{\numberline {A.1.2}Rigid-body State-space System Generation}{94}
+\contentsline {subsection}{\numberline {A.1.3}Flexible-body Modeling}{95}
+\contentsline {section}{\numberline {A.2}Control Design}{96}
+\contentsline {subsection}{\numberline {A.2.1}Controllers Initialisation}{96}
+\contentsline {subsection}{\numberline {A.2.2}H$_{\infty }$ Tuning}{97}
+\contentsline {chapter}{\numberline {B}Software Development - Simulink}{99}
+\contentsline {section}{\numberline {B.1}Flexible Missile Model}{99}
+\contentsline {section}{\numberline {B.2}Rigid Body Model}{100}
+\contentsline {section}{\numberline {B.3}Flexible Body Model}{100}
